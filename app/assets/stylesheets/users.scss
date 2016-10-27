@@ -1,3 +1,89 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+	margin: 0 !important;
+    background-color: #c9c9c9; /*light grey */
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: #c4c4c4;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+	background-color: #d6d6d6;
+}
+
+th, td {
+	padding: 0.3em;
+	width: 12em;
+}
+
+a:link,
+a:visited,
+a:hover {
+	color: blue;
+	background-color: transparent;
+}
+
+#top_bar a:link,
+#top_bar a:visited,
+#top_bar a:hover {
+   color: white;
+}
+
+#top_bar {
+	display: block;
+	margin:0 auto;
+	min-width: 49em;
+	width: 90%;
+	height: 2em;
+	background-color: #333333;
+	padding-left: 1em;
+	padding-top: 0.3em;
+}
+#bot_bar {
+	display: block;
+	margin:0 auto;
+	min-width: 49em;
+	width: 90%;
+	height: 1em;
+	background-color: #333333;
+	padding: 1em;
+}
+
+#big_container {
+	display: block;
+	margin:0 auto;
+	min-width: 49em;
+	width: 90%;
+	padding: 1em;
+	background-color: white;
+}
+
+#app_container {
+	padding: 0.5em;
+	background-color: #dce8e5; /*light green-blue */
+}
+
+#page_title {
+	text-align: left;
+	font-family: Arial;
+	font-size: 2em;
+	font-style: bold;
+}
+
+.red_title {
+	text-align: left;
+	font-family: Arial;
+	font-size: 1.4em;
+	font-style: bold;
+	color: #a30026;
+}
