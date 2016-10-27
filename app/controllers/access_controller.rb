@@ -19,7 +19,8 @@ class AccessController < ApplicationController
       @user = User.where(user_name: @username_param, password: @password_param).first #.first is needed so it returns 1 object only
       session[:user_name] = @user.user_name
       flash[:loginmessage] = "Login successful #{@user.user_name}."
-      redirect_to(access_logintest_path)
+      # redirect_to(access_logintest_path)
+      redirect_to(user_path(@user.id))
     else
       flash[:loginmessage] = "Login failed."
       redirect_to(access_login_path)
@@ -33,7 +34,7 @@ class AccessController < ApplicationController
   def logout
     session[:user_name] = nil
     flash[:loginmessage] = 'Logged out.'
-    redirect_to(access_login_path)
+    redirect_to(welcome_index_path)
   end
 
   private
