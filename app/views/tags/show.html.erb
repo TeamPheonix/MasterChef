@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Tag:</strong>
-  <%= @tag.tag_id %>
-</p>
-
-<p>
   <strong>Tag name:</strong>
   <%= @tag.tag_name %>
 </p>
 
 <p>
-  <strong>Accepted:</strong>
-  <%= @tag.accepted %>
+  <strong>Approved:</strong>
+  <%= @tag.approved %>
 </p>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
