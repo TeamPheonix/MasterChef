@@ -51,8 +51,12 @@
         <%= @user.points %>
       </p>
 
-      <%= link_to 'Edit', edit_user_path(@user) %> |
-      <%= link_to 'Back', users_path %>
+      <% if session[:user_name] == @user.user_name %>
+        <%= link_to 'Edit', edit_user_path(@user) %> |
+        <%= link_to 'Back', users_path %>
+      <% else %>
+        <%= link_to 'Back', users_path %>
+      <% end %>
 
     </div>
     <div id="bot_bar"></div>

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :confirm_logged_in, only: [:edit, :update, :destroy]#this line goes last!!!
+  
 
   # GET /users
   # GET /users.json
@@ -71,4 +73,12 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points)
     end
+
+    def confirm_logged_in
+      unless session[:user_name] == @user.user_name
+        flash[:loginmessage] = 'You do not have permission to edit that user'
+        redirect_to (access_login_path)
+      end
+    end
+
 end
