@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :approved %>
-    <%= f.number_field :approved %>
+    <%= f.select :approved, [['Yes',1],['No',0]]%>
   </div>
 
   <div class="actions">
