@@ -1,7 +1,10 @@
 <% if !flash[:loginmessage].blank? %>
-  <div class="alert alert-warning alert-dismissable">
-    <strong><%= flash[:loginmessage]%></strong>
+  <div class="container">
+    <div class="alert alert-warning alert-dismissable">
+      <strong><%= flash[:loginmessage]%></strong>
+    </div>
   </div>
+
 <% end %>
 
 <% @page_title = 'User Login' %>

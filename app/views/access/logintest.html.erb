@@ -4,9 +4,15 @@
     </div>
 <% end %>
 
-<%= link_to('Logout',access_logout_path, {class: 'btn btn-warning'}) %>
 
-<h1>Welcome</h1>
-<sub>If you can see this page, you have succesfully logged in. OR The session ID is still contains your username.</sub>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-3 col-lg-6"></div>
+  </div>
+  <h1>Welcome</h1>
+  <sub>If you can see this page, you have succesfully logged in. OR The session ID is still contains your username.</sub>
+  <%= link_to('Session Test', access_obscure_session_path, {class: 'btn btn-primary'}) %>
+  <%= link_to('Logout',access_logout_path, {class: 'btn btn-warning'}) %>
+</div>
 
-<%= link_to('Session Test', access_obscure_session_path, {class: 'btn btn-primary'}) %>
+

@@ -5,51 +5,59 @@
 </head>
 <body>
   <div>
-    <div id="top_bar"></div>
-    <div id="big_container">
-    <p id="page_title">Listing Users</p>
-      <div id="app_container">
-        <p class="red_title">Users</p>
-        <p id="notice"><%= notice %></p>
-        <table>
-          <thead>
-            <tr>
-              <th>User name</th>
-              <th>Password</th>
-              <th>First name</th>
-              <th>Last name</th>
-              <th>Email</th>
-              <th>Privileges</th>
-              <th>User level</th>
-              <th>Points</th>
-              <th>View user</th>
-              <th>Edit user</th>
-              <th><%= link_to 'Create new user', new_user_path %></th>
-            </tr>
-          </thead>
+    <div class="container">
+      <h1 id="page_title">Listing Users</h1>
+      <p id="notice"><%= notice %></p>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3>Users</h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-bordered table-responsive">
+                <caption> List of all users in the database</caption>
+                <thead>
+                <tr>
+                  <th>User name</th>
+                  <th>Password</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email</th>
+                  <th>Privileges</th>
+                  <th>User level</th>
+                  <th>Points</th>
+                  <th>View user</th>
+                  <th>Edit user</th>
+                  <th><%= link_to 'Create new user', new_user_path %></th>
+                </tr>
+                </thead>
 
-          <tbody>
-            <% @users.each do |user| %>
-              <tr>
-                <td><%= user.user_name %></td>
-                <td><%= user.password %></td>
-                <td><%= user.first_name %></td>
-                <td><%= user.last_name %></td>
-                <td><%= user.email %></td>
-                <td><%= user.privileges %></td>
-                <td><%= user.user_level %></td>
-                <td><%= user.points %></td>
-                <td><%= link_to 'View user', user %></td>
-                <td><%= link_to 'Edit user', edit_user_path(user) %></td>
-                <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
+                <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                      <td><%= user.user_name %></td>
+                      <td><%= user.password %></td>
+                      <td><%= user.first_name %></td>
+                      <td><%= user.last_name %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.privileges %></td>
+                      <td><%= user.user_level %></td>
+                      <td><%= user.points %></td>
+                      <td><%= link_to 'View user', user, {class: 'btn btn-primary'} %></td>
+                      <td><%= link_to 'Edit user', edit_user_path(user), {class: 'btn btn-info'} %></td>
+                      <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-        </table>
+        </div>
         </div> 
-      </div>
-    <div id="bot_bar"></div>
+    </div>
+
   </div>
 </body>
 </html>
