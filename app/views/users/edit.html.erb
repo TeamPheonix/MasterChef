@@ -1,6 +1,23 @@
-<h1>Editing User</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editing <%= @user.user_name %></title>
+  </head>
 
-<%= render 'form', user: @user %>
+  <body>
+    <div>
+	    <div id="top_bar"></div>
+	    <div id="big_container">
+	      <h1>Editing User: <%= @user.user_name %></h1>
+	      <%= render 'form', user: @user %>
+	      <%= link_to 'Show', @user %> |
+		  <%= link_to 'Back', users_path %>
+		</div>
+	    <div id="bot_bar"></div>
+  	</div>
+  </body>
+</html>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+
+
+

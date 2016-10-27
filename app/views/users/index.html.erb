@@ -1,41 +1,55 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+  <div>
+    <div id="top_bar"></div>
+    <div id="big_container">
+    <p id="page_title">Listing Users</p>
+      <div id="app_container">
+        <p class="red_title">Users</p>
+        <p id="notice"><%= notice %></p>
+        <table>
+          <thead>
+            <tr>
+              <th>User name</th>
+              <th>Password</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Privileges</th>
+              <th>User level</th>
+              <th>Points</th>
+              <th>View user</th>
+              <th>Edit user</th>
+              <th><%= link_to 'Create new user', new_user_path %></th>
+            </tr>
+          </thead>
 
-<h1>Users</h1>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.user_name %></td>
+                <td><%= user.password %></td>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.privileges %></td>
+                <td><%= user.user_level %></td>
+                <td><%= user.points %></td>
+                <td><%= link_to 'View user', user %></td>
+                <td><%= link_to 'Edit user', edit_user_path(user) %></td>
+                <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
 
-<table>
-  <thead>
-    <tr>
-      <th>User name</th>
-      <th>Password</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Privileges</th>
-      <th>User level</th>
-      <th>Points</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.user_name %></td>
-        <td><%= user.password %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.privileges %></td>
-        <td><%= user.user_level %></td>
-        <td><%= user.points %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+        </table>
+        </div> 
+      </div>
+    <div id="bot_bar"></div>
+  </div>
+</body>
+</html>
