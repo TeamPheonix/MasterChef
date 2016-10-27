@@ -36,20 +36,9 @@
     <%= f.text_field :email %>
   </div>
 
-  <div class="field">
-    <%= f.label :privileges %>
-    <%= f.number_field :privileges %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_level %>
-    <%= f.number_field :user_level %>
-  </div>
-
-  <div class="field">
-    <%= f.label :points %>
-    <%= f.number_field :points %>
-  </div>
+  <%= f.hidden_field :privileges %>
+  <%= f.hidden_field :user_level %>
+  <%= f.hidden_field :points %>
 
   <div class="actions">
     <%= f.submit %>
