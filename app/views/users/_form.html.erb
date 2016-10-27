@@ -12,13 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_name %>
+    <%= f.label "* fields are required" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_name, "*User name" %>
     <%= f.text_field :user_name %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "*Password" %>
     <%= f.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "*Email" %>
+    <%= f.text_field :email %>
   </div>
 
   <div class="field">
@@ -29,11 +38,6 @@
   <div class="field">
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
   </div>
 
   <%= f.hidden_field :privileges %>
