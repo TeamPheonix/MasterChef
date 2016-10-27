@@ -7,7 +7,11 @@
 
 <p>
   <strong>Approved:</strong>
-  <%= @tag.approved %>
+  <% if @tag.approved == 1 %>
+  <%= "Yes" %>
+  <% else %>
+  <%= "No" %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |

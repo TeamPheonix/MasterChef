@@ -15,7 +15,13 @@
     <% @tags.each do |tag| %>
       <tr>
         <td><%= tag.tag_name %></td>
-        <td><%= tag.approved %></td>
+        <td>
+	  <% if tag.approved == 1 %>
+ 	  <%= "Yes" %>
+  	  <% else %>
+	  <%= "No" %>
+          <% end %>
+	</td>
         <td><%= link_to 'Show', tag %></td>
         <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
         <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
