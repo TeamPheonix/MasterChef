@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'access/login'
   get 'access/logout'
   get 'access/logintest'
+  get 'access/obscure_session'
   post 'access/attempt_login'
 
   resources :users

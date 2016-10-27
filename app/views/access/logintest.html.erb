@@ -4,5 +4,9 @@
     </div>
 <% end %>
 
+<%= link_to('Logout',access_logout_path, {class: 'btn btn-warning'}) %>
+
 <h1>Welcome</h1>
-<sub>If you can see this page, you have succesfully logged in.</sub>
+<sub>If you can see this page, you have succesfully logged in. OR The session ID is still contains your username.</sub>
+
+<%= link_to('Session Test', access_obscure_session_path, {class: 'btn btn-primary'}) %>
