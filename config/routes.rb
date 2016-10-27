@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  #login routes
+  get 'access/login'
+  get 'access/logout'
+  get 'access/logintest'
+  post 'access/attempt_login'
+
   resources :users
   # root :to => 'boostrap#index'
   get 'boostrap/index'

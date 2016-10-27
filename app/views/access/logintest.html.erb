@@ -1,0 +1,8 @@
+<% if !flash[:loginmessage].blank? %>
+    <div class="alert alert-success alert-dismissable">
+      <strong><%= flash[:loginmessage]%></strong>
+    </div>
+<% end %>
+
+<h1>Welcome</h1>
+<sub>If you can see this page, you have succesfully logged in.</sub>
