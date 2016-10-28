@@ -8,6 +8,29 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <!--        Navigation bar -->
+  <nav class="navbar navbar-default navbar-static-top-top">
+    <ul class="nav navbar-nav">
+      <li><%= link_to('Home',welcome_index_path)%></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+      <% if session[:user_name]%>
+          <li><%= link_to("#{session[:user_name]}",user_path(User.where(user_name: session[:user_name]).first.id))%></li>
+          <li><%= link_to('Log Out',access_logout_path)%></li>
+      <% else %>
+          <li><%= link_to('Login',access_login_path)%></li>
+          <li><%= link_to('Sign Up',new_user_path)%></li>
+      <% end %>
+
+
+
+
+    </ul>
+  </nav>
+
   <body>
     <%= yield %>
   </body>
