@@ -11,40 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "* fields are required" %>
-  </div>
+        <%= f.label "* fields are required" %>
 
-  <div class="field">
-    <%= f.label :user_name, "*User name" %>
-    <%= f.text_field :user_name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password, "*Password" %>
-    <%= f.text_field :password %>
-  </div>
+      <div class="field form-group">
+        <%= f.label :user_name, "*User name" %>
+        <%= f.text_field :user_name ,{class: 'form-control'}%>
+      </div>
 
-  <div class="field">
-    <%= f.label :email, "*Email" %>
-    <%= f.text_field :email %>
-  </div>
+      <div class="field form-group">
+        <%= f.label :password, "*Password" %>
+        <%= f.text_field :password ,{class: 'form-control'}%>
+      </div>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+      <div class="field form-group ">
+        <%= f.label :email, "*Email" %>
+        <%= f.text_field :email ,{class: 'form-control'}%>
+      </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
+      <div class="field form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name ,{class: 'form-control'}%>
+      </div>
 
-  <%= f.hidden_field :privileges %>
-  <%= f.hidden_field :user_level %>
-  <%= f.hidden_field :points %>
+      <div class="field form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name,{class: 'form-control'} %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <%= f.hidden_field :privileges %>
+      <%= f.hidden_field :user_level %>
+      <%= f.hidden_field :points %>
+
+      <div class="actions">
+        <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
+      </div>
+
 <% end %>

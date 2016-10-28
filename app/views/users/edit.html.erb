@@ -5,16 +5,15 @@
   </head>
 
   <body>
-    <div>
-	    <div id="top_bar"></div>
-	    <div id="big_container">
-	      <h1>Editing User: <%= @user.user_name %></h1>
+    <div  class="container" id="big_container">
+        <div class="page-header" id="top_bar">
+          <h1>Editing User: <%= @user.user_name %></h1>
+        </div>
 	      <%= render 'form', user: @user %>
 	      <%= link_to 'Show', @user %> |
 		  <%= link_to 'Back', users_path %>
 		</div>
-	    <div id="bot_bar"></div>
-  	</div>
+
   </body>
 </html>
 
