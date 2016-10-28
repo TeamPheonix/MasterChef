@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'recipes/success'
 
-  #login routes
-  get 'access/login'
-  get 'access/logout'
-  get 'access/logintest'
-  get 'access/obscure_session'
-  post 'access/attempt_login'
+  get 'recipes/failed'
 
-  resources :users
-  root 'welcome#index'
+  get 'recipes/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+match	':controller(/:action(/:id))',	:via	=>	:get
+match	':controller(/:action(/:id))',	:via	=>	:post

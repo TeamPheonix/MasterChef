@@ -8,59 +8,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <!--        Navigation bar -->
-  <nav class="navbar navbar-default navbar-static-top-top">
-
-    <div class="navbar-header">
-      <div class="navbar-brand">
-        MasterChef
-      </div>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><%= link_to('Home',welcome_index_path)%></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recipes <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a> Sort by:</a></li>
-          <li class="divider"></li>
-          <li><%= link_to 'Difficulty', '#' %></li>
-          <li><%= link_to 'Rating', '#' %></li>
-        </ul>
-      </li>
-      <li><%= link_to('About','#')%></li>
-      <li><%= link_to('Contact Us','#')%></li>
-    </ul>
-
-
-
-
-    <!--<form class="navbar-form navbar-left">-->
-      <!--<div class="form-group">-->
-        <!--<input type="text" class="form-control" placeholder="Search for recipes">-->
-      <!--</div>-->
-      <!--<button type="submit" class="btn btn-default">Submit</button>-->
-    <!--</form>-->
-
-    <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
-      <li>
-        <%= form_tag '#;', {class: 'navbar-form', style: 'padding-right: 0px'} do %>
-            <div class="form-group">
-              <%= text_field_tag 'search', nil, {class: 'form-control', placeholder: 'Search for recipes'}%>
-              <%= submit_tag('Search',{class: 'btn btn-default'}) %>
-            </div>
-        <% end %>
-      </li>
-      <% if session[:user_name]%>
-          <li><%= link_to("#{session[:user_name]}",user_path(User.where(user_name: session[:user_name]).first.id))%></li>
-          <li><%= link_to('Log Out',access_logout_path)%></li>
-      <% else %>
-          <li><%= link_to('Login',access_login_path)%></li>
-          <li><%= link_to('Sign Up',new_user_path)%></li>
-      <% end %>
-
-    </ul>
-  </nav>
-
   <body>
     <%= yield %>
   </body>
