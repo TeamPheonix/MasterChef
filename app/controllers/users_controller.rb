@@ -17,10 +17,10 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     #if there is session information in omniauth
-    if session[:omniauth]
-      @user = User.create_new_from_omniauth(session[:omniauth])
-    else
+    if session[:omniauth].nil?
       @user = User.new
+    else
+      @user = User.create_new_from_omniauth(session[:omniauth])
     end
   end
 

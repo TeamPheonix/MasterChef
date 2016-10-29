@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     session[:omniauth] = auth
     # if user can login, meaning user already as an account with us
-    if (User.exists_from_omniauth(auth))
+    if User.exists_from_omniauth(auth)
       @user = User.sign_in_from_omniauth(auth)
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Signed In'
@@ -19,8 +19,8 @@ class SessionsController < ApplicationController
   end
 
   def psuedo_destroy
+    session[:omniauth] = nil
     session[:user_id] = nil
-    session[:user_id] = nil
-    view_context.link_to('/auth/facebook')
+    redirect_to new_user_path
   end
 end
