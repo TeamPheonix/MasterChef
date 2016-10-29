@@ -13,10 +13,13 @@
 <h1>Create your own recipe!</h1>
 <p>Record your masterpiece here for all the world to see! Start out with a basic description...</p
 
+<form action="" method="" id="someform">
+    <textarea name="ingredient[content][0]"></textarea>
+</form>
+
 <form_tag do>
 <%= text_area_tag(:brief, "Write a short description here!", size: "48x24") %>
-
-
+<button id="js-add-question-row">+</button>
 <%= text_area_tag(:details, "Write your detailed recipe here!", size: "96x36") %>
 <%= button_to "Submit!", action: "success" %>
 </form>
