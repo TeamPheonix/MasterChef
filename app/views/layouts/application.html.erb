@@ -17,7 +17,7 @@
       </div>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to('Home',welcome_index_path)%></li>
+      <li><%= link_to('Home',root_path)%></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recipes <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -32,15 +32,6 @@
     </ul>
 
 
-
-
-    <!--<form class="navbar-form navbar-left">-->
-      <!--<div class="form-group">-->
-        <!--<input type="text" class="form-control" placeholder="Search for recipes">-->
-      <!--</div>-->
-      <!--<button type="submit" class="btn btn-default">Submit</button>-->
-    <!--</form>-->
-
     <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
       <li>
         <%= form_tag '#;', {class: 'navbar-form', style: 'padding-right: 0px'} do %>
@@ -50,11 +41,11 @@
             </div>
         <% end %>
       </li>
-      <% if session[:user_name]%>
-          <li><%= link_to("#{session[:user_name]}",user_path(User.where(user_name: session[:user_name]).first.id))%></li>
-          <li><%= link_to('Log Out',access_logout_path)%></li>
+      <% if current_user%>
+          <li><%= link_to("#{current_user.user_name}",user_path(session[:user_id])) %></li>
+          <li><%= link_to('Log Out','sign_out')%></li>
       <% else %>
-          <li><%= link_to('Login',access_login_path)%></li>
+          <li> <%= link_to 'Login Facebook','auth/facebook' %></li>
           <li><%= link_to('Sign Up',new_user_path)%></li>
       <% end %>
 

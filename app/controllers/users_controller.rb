@@ -75,9 +75,9 @@ class UsersController < ApplicationController
     end
 
     def confirm_logged_in
-      unless session[:user_name] == @user.user_name
+      unless session[:user_id] == @user.id
         flash[:loginmessage] = 'You do not have permission to edit that user'
-        redirect_to (access_login_path)
+        redirect_to (root_path)
       end
     end
 

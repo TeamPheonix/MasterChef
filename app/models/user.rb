@@ -3,4 +3,33 @@ class User < ApplicationRecord
 	validates :password, presence: true
 	validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 	validates :email, uniqueness: true
+
+  def self.exists_from_omniauth(auth)
+    find_by(provider: auth['provider'], uid: auth['uid']).present?
+  end
+
+	def self.sign_in_from_omniauth(auth)
+		find_by(provider: auth['provider'], uid: auth['uid'])
+	end
+
+	def self.create_user_from_omniauth(auth,username,password)
+		create(
+				provider: auth['provider'],
+				uid: auth['uid'],
+				first_name: auth['extra']['first_name'],
+        last_name: auth['extra']['last_name'],
+				email: auth['info']['email'],
+				password: password,
+        user_name: username
+		)
+  end
+
+  def self.create_new_from_omniauth(auth)
+    new(
+        provider: auth['provider'],
+        uid: auth['uid'],
+        first_name: auth['extra']['raw_info']['first_name'],
+        last_name: auth['extra']['raw_info']['last_name']
+    )
+  end
 end
