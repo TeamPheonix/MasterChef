@@ -10,26 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161027003758) do
-=======
 ActiveRecord::Schema.define(version: 20161028231346) do
->>>>>>> features/recipes
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table "users", force: :cascade do |t|
-    t.string   "user_name"
-    t.string   "password"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.integer  "privileges"
-    t.integer  "user_level"
-    t.integer  "points"
-=======
   create_table "recipes", force: :cascade do |t|
     t.integer  "recipe_id"
     t.integer  "user_id"
@@ -44,13 +29,23 @@ ActiveRecord::Schema.define(version: 20161028231346) do
     t.integer  "tag_id"
     t.string   "tag_name"
     t.boolean  "approved"
->>>>>>> features/recipes
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
+  create_table "users", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.integer  "privileges"
+    t.integer  "user_level"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "widgets", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -59,5 +54,4 @@ ActiveRecord::Schema.define(version: 20161028231346) do
     t.datetime "updated_at"
   end
 
->>>>>>> features/recipes
 end
