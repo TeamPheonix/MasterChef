@@ -51,7 +51,7 @@
         <%= @user.points %>
       </p>
 
-      <% if session[:user_name] == @user.user_name %>
+      <% if current_user && current_user.id == @user.id %>
         <%= link_to 'Edit', edit_user_path(@user) %> |
         <%= link_to 'Back', users_path %>
       <% else %>

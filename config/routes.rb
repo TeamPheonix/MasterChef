@@ -3,9 +3,14 @@ Rails.application.routes.draw do
   get 'welcome/about'
   #login routes
   get 'sessions/psuedo_destroy'
-  post 'sessions/create'
+  get 'sessions/destroy'
   get 'auth/:provider/callback', to: 'sessions#new'
-  delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
+  post 'sessions/create'
+
+  #login routes
+  get 'sessions/login'
+  post 'sessions/attempt_login'
+
 
   resources :users
 

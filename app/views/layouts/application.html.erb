@@ -41,9 +41,10 @@
       </li>
       <% if current_user%>
           <li><%= link_to("#{current_user.user_name}",user_path(session[:user_id])) %></li>
-          <li><%= link_to('Log Out','sign_out', method: :delete)%></li>
+          <li><%= link_to('Log Out',sessions_destroy_path)%></li>
       <% else %>
           <li> <%= link_to 'Login Facebook','/auth/facebook' %></li> <!-- path start with a '/' otherwise routing errors...-->
+          <li><%= link_to 'Login', sessions_login_path %></li>
           <li><%= link_to 'Sign Up',sessions_psuedo_destroy_path %></li>
       <% end %>
     </ul>
