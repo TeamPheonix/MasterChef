@@ -27,7 +27,7 @@
           <li><%= link_to 'Rating', '#' %></li>
         </ul>
       </li>
-      <li><%= link_to('About','#')%></li>
+      <li><%= link_to('About',welcome_about_path)%></li>
       <li><%= link_to('Contact Us','#')%></li>
     </ul>
     <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
@@ -43,7 +43,7 @@
           <li><%= link_to("#{current_user.user_name}",user_path(session[:user_id])) %></li>
           <li><%= link_to('Log Out','sign_out', method: :delete)%></li>
       <% else %>
-          <li> <%= link_to 'Login Facebook', 'auth/facebook' %></li>
+          <li> <%= link_to 'Login Facebook','/auth/facebook' %></li> <!-- path start with a '/' otherwise routing errors...-->
           <li><%= link_to 'Sign Up',new_user_path %></li>
       <% end %>
     </ul>

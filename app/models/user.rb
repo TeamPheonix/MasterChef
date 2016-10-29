@@ -12,18 +12,6 @@ class User < ApplicationRecord
 		find_by(provider: auth['provider'], uid: auth['uid'])
 	end
 
-	def self.create_user_from_omniauth(auth,username,password)
-		create(
-				provider: auth['provider'],
-				uid: auth['uid'],
-				first_name: auth['extra']['first_name'],
-        last_name: auth['extra']['last_name'],
-				email: auth['info']['email'],
-				password: password,
-        user_name: username
-		)
-  end
-
   def self.create_new_from_omniauth(auth)
     new(
         provider: auth['provider'],

@@ -7,17 +7,9 @@ class SessionsController < ApplicationController
       @user = User.sign_in_from_omniauth(auth)
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Signed In'
-    else
-    #  user has no account with us yet
-    #  redirect to signup page with
-    #   @user = User.create_new_from_omniauth(auth)
+    else # user has no account with us yet
       redirect_to (new_user_path)
     end
-  end
-
-  def create
-    @new_user = User.create_user_from_omniauth(session[:omniauth],params[:user][:user_name],params[:user][:password])
-    redirect_to root_path, notice: 'User Created'
   end
 
   def destroy
@@ -29,6 +21,6 @@ class SessionsController < ApplicationController
   def psuedo_destroy
     session[:user_id] = nil
     session[:user_id] = nil
-    view_context.link_to('auth/facebook')
+    view_context.link_to('/auth/facebook')
   end
 end
