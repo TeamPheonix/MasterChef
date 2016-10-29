@@ -30,8 +30,6 @@
       <li><%= link_to('About','#')%></li>
       <li><%= link_to('Contact Us','#')%></li>
     </ul>
-
-
     <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
       <li>
         <%= form_tag '#;', {class: 'navbar-form', style: 'padding-right: 0px'} do %>
@@ -43,12 +41,11 @@
       </li>
       <% if current_user%>
           <li><%= link_to("#{current_user.user_name}",user_path(session[:user_id])) %></li>
-          <li><%= link_to('Log Out','sign_out')%></li>
+          <li><%= link_to('Log Out','sign_out', method: :delete)%></li>
       <% else %>
-          <li> <%= link_to 'Login Facebook','auth/facebook' %></li>
-          <li><%= link_to('Sign Up',new_user_path)%></li>
+          <li> <%= link_to 'Login Facebook', 'auth/facebook' %></li>
+          <li><%= link_to 'Sign Up',new_user_path %></li>
       <% end %>
-
     </ul>
   </nav>
 

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   #login routes
   get 'auth/:provider/callback', to: 'sessions#new'
+  get 'sessions/psuedo_destroy'
   post 'sessions/create'
   delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
 

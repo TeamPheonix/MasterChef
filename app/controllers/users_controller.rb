@@ -16,7 +16,12 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    #if there is session information in omniauth
+    if session[:omniauth]
+      @user = User.create_new_from_omniauth(session[:omniauth])
+    else
+      @user = User.new
+    end
   end
 
   # GET /users/1/edit
@@ -71,7 +76,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points)
+      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points, :uid, :provider)
     end
 
     def confirm_logged_in

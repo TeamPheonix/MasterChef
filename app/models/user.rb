@@ -29,7 +29,8 @@ class User < ApplicationRecord
         provider: auth['provider'],
         uid: auth['uid'],
         first_name: auth['extra']['raw_info']['first_name'],
-        last_name: auth['extra']['raw_info']['last_name']
+        last_name: auth['extra']['raw_info']['last_name'],
+				email: auth['info']['email']
     )
   end
 end

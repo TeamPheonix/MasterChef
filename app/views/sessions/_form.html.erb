@@ -1,23 +1,41 @@
-<%= form_for @user, url: {:controller => :sessions, :action => :create} do |f|%>
-    <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-    <div class="form-group">
-      <%= f.label :user_name, "Username" %>
-      <%= f.text_field :user_name, {class: 'form-control'}%>
+<%= form_for(user) do |f| %>
+    <%= error_messages_for(f.object)%>
+
+    <%= f.label "* fields are required" %>
+
+    <div class="field form-group">
+      <%= f.label :user_name, "*User name" %>
+      <%= f.text_field :user_name ,{class: 'form-control'}%>
     </div>
 
-    <div class="form-group">
-      <%= f.label :password, "Password" %>
-      <%= f.password_field :password, {class: 'form-control'} %>
+    <div class="field form-group">
+      <%= f.label :password, "*Password" %>
+      <%= f.text_field :password ,{class: 'form-control'}%>
     </div>
 
-    <%= f.submit 'Sign Up' %>
+    <div class="field form-group ">
+      <%= f.label :email, "*Email" %>
+      <%= f.text_field :email ,{class: 'form-control'}%>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name ,{class: 'form-control'}%>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name,{class: 'form-control'} %>
+    </div>
+
+    <%= f.hidden_field :privileges %>
+    <%= f.hidden_field :user_level %>
+    <%= f.hidden_field :points %>
+    <%= f.hidden_field :provider %>
+    <%= f.hidden_field :uid %>
+
+    <div class="actions">
+      <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
+    </div>
+
 <% end %>

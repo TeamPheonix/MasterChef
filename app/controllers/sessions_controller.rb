@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: 'Signed In'
     else
     #  user has no account with us yet
-    #   @new_user = User.create_new_from_omniauth(auth)
-    #   render the form
-      @user = User.create_new_from_omniauth(auth)
+    #  redirect to signup page with
+    #   @user = User.create_new_from_omniauth(auth)
+      redirect_to (new_user_path)
     end
   end
 
@@ -24,5 +24,11 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     session[:user_id] = nil
     redirect_to root_path, notice: 'Signed Out'
+  end
+
+  def psuedo_destroy
+    session[:user_id] = nil
+    session[:user_id] = nil
+    view_context.link_to('auth/facebook')
   end
 end
