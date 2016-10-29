@@ -1,19 +1,19 @@
 <<<<<<< HEAD
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Recipe Create</h1>
 =======
+
 <div>
   <p> Add Ingredients Here! </p>
-  <form action="" method="" id="someform">
+  <form action="" method="" id="ingredients">
     <button id="js-add-question-row">+</button>
     <textarea name="ingredient[content][0]"></textarea>
   </form>
 </div>
+
 <form_tag do>
-<%= text_area_tag(:brief, "Write a short description here!", size: "48x18") %>
-<%= text_area_tag(:details, "Write your detailed recipe here!", size: "96x36") %>
-<%= button_to "Submit!", action: "success" %>
+  <%= text_area_tag(:brief, "Write a short description here!", size: "48x18") %>
+  <%= text_area_tag(:details, "Write your detailed recipe here!", size: "96x36") %>
+  <%= button_to "Submit!", action: "success" %>
 </form>
 
-<p>Find me in app/views/recipes/success.html.erb</p>
 >>>>>>> features/recipes
