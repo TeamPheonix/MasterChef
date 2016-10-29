@@ -3,15 +3,20 @@
 =======
 
 <div>
+
+</div>
+  <form_tag do>
+    <%= text_area_tag(:brief, "Write a short description here!", size: "48x18") %>
+  </form>
+<div>
   <p> Add Ingredients Here! </p>
   <form action="" method="" id="ingredients">
-    <button id="js-add-question-row">+</button>
+    <button id="js-add-question-row">+</button> #currently not working - going to try non-js approach
     <textarea name="ingredient[content][0]"></textarea>
   </form>
 </div>
 
 <form_tag do>
-  <%= text_area_tag(:brief, "Write a short description here!", size: "48x18") %>
   <%= text_area_tag(:details, "Write your detailed recipe here!", size: "96x36") %>
   <%= button_to "Submit!", action: "success" %>
 </form>

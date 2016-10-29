@@ -8,3 +8,6 @@ $ ->
     compiled_textarea = $(template.replace("INDEX", index))
     $('#ingredients').append(compiled_textarea)
     index = index + 1;
+
+
+#currently not working - probably gonna try a non-js approach
