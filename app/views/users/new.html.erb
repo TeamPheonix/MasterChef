@@ -7,16 +7,16 @@
   <body>
     <div class="container" id="big_container">
       <div class="page-header">
-        <h1>Register</h1>
+        <% if session[:omniauth] %>
+          <h1>Register via <%= session[:omniauth]["provider"] %></h1>
+          <% else %>
+          <h1>Register</h1>
+        <% end %>
       </div>
 
       <div class="col-lg-offset-3 col-lg-6">
         <%= render 'form', user: @user %>
       </div>
-
 		</div>
-    <div class="container">
-      <%= link_to 'Back', users_path, {class: 'btn btn-default'} %>
-    </div>
   </body>
 </html>
