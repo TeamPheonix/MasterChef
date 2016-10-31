@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
     if User.exists_from_omniauth(auth)
       @user = User.sign_in_from_omniauth(auth)
       session[:user_id] = @user.id
-      redirect_to root_path, notice: 'Signed In'
+      flash[:loginmessage] = "Login successful #{@user.user_name}."
+      redirect_to root_path
     else # user has no account with us yet
       redirect_to (new_user_path)
     end
@@ -41,7 +42,7 @@ class SessionsController < ApplicationController
       redirect_to(root_path)
     else
       flash[:loginmessage] = "Login failed."
-      redirect_to(sessions_attempt_login_path)
+      redirect_to(sessions_login_path)
     end
   end
 end
