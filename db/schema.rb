@@ -24,20 +24,45 @@ ActiveRecord::Schema.define(version: 20161029022440) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "recipes", force: :cascade do |t|
-    t.integer  "recipe_id"
-    t.integer  "user_id"
-    t.string   "description"
-    t.string   "instructions"
-    t.integer  "complexity"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "measurements", force: :cascade do |t|
+    t.string   "measurement_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.string   "tag_name"
-    t.boolean  "approved"
+  create_table "people", force: :cascade do |t|
+    t.string   "pname"
+    t.integer  "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "things", force: :cascade do |t|
+    t.string   "tname"
+    t.text     "description"
+    t.integer  "person_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tokimons", force: :cascade do |t|
+    t.string   "name"
+    t.float    "weight"
+    t.float    "height"
+    t.integer  "fly"
+    t.integer  "fight"
+    t.integer  "fire"
+    t.integer  "water"
+    t.integer  "electric"
+    t.integer  "ice"
+    t.integer  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trainers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
