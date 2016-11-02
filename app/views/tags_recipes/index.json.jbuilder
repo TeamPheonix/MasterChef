@@ -1,0 +1,1 @@
+json.array! @tags_recipes, partial: 'tags_recipes/tags_recipe', as: :tags_recipe

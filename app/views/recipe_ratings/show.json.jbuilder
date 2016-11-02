@@ -1,0 +1,1 @@
+json.partial! "recipe_ratings/recipe_rating", recipe_rating: @recipe_rating

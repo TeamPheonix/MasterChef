@@ -1,0 +1,1 @@
+json.partial! "tags_recipes/tags_recipe", tags_recipe: @tags_recipe

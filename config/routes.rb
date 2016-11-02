@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :tags_recipes
+  resources :measurements
+  resources :recipe_ratings
+  resources :recipes
   get 'recipes/success'
 
   get 'recipes/failed'

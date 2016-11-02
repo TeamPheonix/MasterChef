@@ -1,24 +1,35 @@
-<<<<<<< HEAD
-<h1>Recipe Create</h1>
-=======
+<p id="notice"><%= notice %></p>
 
-<div>
+<h1>Recipes</h1>
 
-</div>
-  <form_tag do>
-    <%= text_area_tag(:brief, "Write a short description here!", size: "48x18") %>
-  </form>
-<div>
-  <p> Add Ingredients Here! </p>
-  <form action="" method="" id="ingredients">
-    <button id="js-add-question-row">+</button> #currently not working - going to try non-js approach
-    <textarea name="ingredient[content][0]"></textarea>
-  </form>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>User</th>
+      <th>Recipe name</th>
+      <th>Instructions</th>
+      <th>Complexity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<form_tag do>
-  <%= text_area_tag(:details, "Write your detailed recipe here!", size: "96x36") %>
-  <%= button_to "Submit!", action: "success" %>
-</form>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.recipe_id %></td>
+        <td><%= recipe.user_id %></td>
+        <td><%= recipe.recipe_name %></td>
+        <td><%= recipe.instructions %></td>
+        <td><%= recipe.complexity %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
->>>>>>> features/recipes
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %>

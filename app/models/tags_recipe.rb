@@ -1,0 +1,2 @@
+class TagsRecipe < ApplicationRecord
+end
