@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029022440) do
+ActiveRecord::Schema.define(version: 20161102231325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,44 +25,41 @@ ActiveRecord::Schema.define(version: 20161029022440) do
   end
 
   create_table "measurements", force: :cascade do |t|
-    t.string   "measurement_type"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string   "pname"
-    t.integer  "age"
+    t.string   "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "things", force: :cascade do |t|
-    t.string   "tname"
-    t.text     "description"
-    t.integer  "person_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "tokimons", force: :cascade do |t|
-    t.string   "name"
-    t.float    "weight"
-    t.float    "height"
-    t.integer  "fly"
-    t.integer  "fight"
-    t.integer  "fire"
-    t.integer  "water"
-    t.integer  "electric"
-    t.integer  "ice"
-    t.integer  "total"
+  create_table "recipe_ratings", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.string   "comment"
+    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "trainers", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "level"
+  create_table "recipes", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.string   "recipe_name"
+    t.string   "instructions"
+    t.integer  "complexity"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.string   "tag_name"
+    t.boolean  "approved"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_recipes", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
