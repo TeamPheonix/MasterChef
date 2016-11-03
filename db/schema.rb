@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161102231325) do
+=======
+ActiveRecord::Schema.define(version: 20161029024450) do
+>>>>>>> a553956bae4d498b63a2264657cc73046ed653b8
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "ingredients", force: :cascade do |t|
     t.integer  "ingredient_id"
     t.integer  "recipe_id"
@@ -62,6 +67,12 @@ ActiveRecord::Schema.define(version: 20161102231325) do
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+  create_table "Measurements", force: :cascade do |t|
+    t.string   "measurement_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+>>>>>>> a553956bae4d498b63a2264657cc73046ed653b8
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,6 +86,8 @@ ActiveRecord::Schema.define(version: 20161102231325) do
     t.integer  "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "uid"
+    t.string   "provider"
   end
 
   create_table "widgets", force: :cascade do |t|

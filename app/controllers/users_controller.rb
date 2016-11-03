@@ -16,7 +16,12 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    #if there is session information in omniauth
+    if session[:omniauth].nil?
+      @user = User.new
+    else
+      @user = User.create_new_from_omniauth(session[:omniauth])
+    end
   end
 
   # GET /users/1/edit
@@ -71,13 +76,13 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points)
+      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points, :uid, :provider)
     end
 
     def confirm_logged_in
-      unless session[:user_name] == @user.user_name
+      unless session[:user_id] == @user.id
         flash[:loginmessage] = 'You do not have permission to edit that user'
-        redirect_to (access_login_path)
+        redirect_to (root_path)
       end
     end
 
