@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :tags
   resources :tags_recipes
   resources :measurements

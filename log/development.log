@@ -1317,6 +1317,7 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2016-11-02 16:16:07 -0700
 Started GET "/" for 127.0.0.1 at 2016-11-02 16:16:07 -0700
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -2502,3 +2503,5 @@ Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.0ms)
 
 
+=======
+>>>>>>> parent of f150a67... removed coffeescript for ingredients button.  made basic scaffold for creating new recipe
