@@ -8,8 +8,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<<<<<<< HEAD
-=======
   <!--        Navigation bar -->
   <nav class="navbar navbar-default navbar-static-top-top">
 
@@ -44,6 +42,7 @@
       <% if current_user%>
           <li><%= link_to("#{current_user.user_name}",user_path(session[:user_id])) %></li>
           <li><%= link_to('Log Out',sessions_destroy_path)%></li>
+          <li><%= link_to 'Create New Recipe', new_recipe_path %></li>
       <% else %>
           <li> <%= link_to 'Login Facebook','/auth/facebook' %></li> <!-- path start with a '/' otherwise routing errors...-->
           <li><%= link_to 'Login', sessions_login_path %></li>
@@ -52,7 +51,6 @@
     </ul>
   </nav>
 
->>>>>>> a553956bae4d498b63a2264657cc73046ed653b8
   <body>
     <%= yield %>
   </body>

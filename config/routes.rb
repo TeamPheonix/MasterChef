@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :tags
-  resources :tags_recipes
-  resources :measurements
-  resources :recipe_ratings
-  resources :recipes
+
   get 'recipes/success'
 
   get 'recipes/failed'
@@ -21,5 +17,10 @@ Rails.application.routes.draw do
   post '/sessions/attempt_login'
 
   resources :users
+  resources :tags
+  resources :tags_recipes
+  resources :measurements
+  resources :recipe_ratings
+  resources :recipes
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

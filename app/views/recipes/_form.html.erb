@@ -1,42 +1,23 @@
 <%= form_for(recipe) do |f| %>
-  <% if recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+    <%= error_messages_for_recipes(f.object)%>
 
-      <ul>
-      <% recipe.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :recipe_id %>
-    <%= f.number_field :recipe_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
-  </div>
-
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :recipe_name %>
     <%= f.text_field :recipe_name %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :instructions %>
     <%= f.text_field :instructions %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :complexity %>
     <%= f.number_field :complexity %>
   </div>
 
-  <div class="actions">
+  <div class="field form-group">
     <%= f.submit %>
   </div>
+
 <% end %>
