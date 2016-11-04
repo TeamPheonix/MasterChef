@@ -3,21 +3,21 @@
 
   <div class="field form-group">
     <%= f.label :recipe_name %>
-    <%= f.text_field :recipe_name %>
+    <%= f.text_field :recipe_name,{class: 'form-control'} %>
   </div>
 
   <div class="field form-group">
     <%= f.label :instructions %>
-    <%= f.text_field :instructions %>
+    <%= f.text_field :instructions,{class: 'form-control'} %>
   </div>
 
   <div class="field form-group">
     <%= f.label :complexity %>
-    <%= f.number_field :complexity %>
+    <%= f.number_field :complexity,{class: 'form-control'} %>
   </div>
 
   <div class="field form-group">
-    <%= f.submit %>
+    <%= f.submit'Create', {class: 'btn btn-primary'} %>
   </div>
 
 <% end %>
