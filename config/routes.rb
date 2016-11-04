@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-
   get 'recipes/success'
-
   get 'recipes/failed'
-
   get 'recipes/index'
-
   root 'welcome#index'
   get 'welcome/about'
   #login routes
