@@ -6,7 +6,9 @@
   <body>
     <div>
     <div class="container" id="big_container">
-      <p id="page_title"><%= @user.user_name %></p>
+      <div class="page-header">
+        <h1><%= @user.user_name %></h1>
+      </div>
 
       <p id="notice"><%= notice %></p>
       <p>
@@ -49,8 +51,17 @@
         <%= link_to 'Back', users_path %>
       <% end %>
 
+
+      <!--Display Recipes-->
+      <ul class="list-group">
+
+        <% @recipes.each do |recipe|%>
+            <li class="list-group-item"><%= recipe.recipe_name %></li>
+        <% end %>
+        <%= paginate @recipes%>
+      </ul>
+
     </div>
-    <div id="bot_bar"></div>
   </div>
   </body>
 </html>

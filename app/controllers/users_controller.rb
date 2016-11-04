@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @recipes = @user.recipes
+    @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(2)
   end
 
   # GET /users/new

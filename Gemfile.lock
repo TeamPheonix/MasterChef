@@ -1,3 +1,18 @@
+GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 5c09979ee565e9580b8b84adb68cc12fb8f44e52
+  specs:
+    kaminari (1.0.0.alpha)
+      activesupport (>= 4.1.0)
+      kaminari-actionview
+      kaminari-activerecord
+      kaminari-core
+    kaminari-actionview (0.1.0)
+      actionview
+    kaminari-activerecord (0.1.0)
+      activerecord
+    kaminari-core (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -176,6 +191,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari!
   omniauth-facebook
   pg (~> 0.18)
   puma (~> 3.0)
