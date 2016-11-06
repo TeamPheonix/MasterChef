@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :tag_id %>
-    <%= f.number_field :tag_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :tag_name %>
     <%= f.text_field :tag_name %>
   </div>
 
   <div class="field">
     <%= f.label :approved %>
-    <%= f.check_box :approved %>
+    <%= f.select :approved, [['Choose One',],['Yes',1],['No',0]]%>
   </div>
 
   <div class="actions">

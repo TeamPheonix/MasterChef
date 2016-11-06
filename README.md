@@ -28,3 +28,22 @@ Gordon is a celebrity chef looking to increase his online prestige.  With a veri
 Mary loves cooking and is looking for a place online to socialize with people with the same passion.  She is able to make a personal profile on Masterchef and interact with other users like her, and comment on other people’s recipes on how she loves their recipes.
 
 Kate is a busy working mom who also loves to learn new recipes to treat her kids. Especially she has subscribed Bob’s page and continuously learned Bob’s new secret family recipes. She doesn’t have much time shopping due to full-time working; however, she could use Grocery Shopping API to purchase necessary ingredients to complete the dishes in a timely manner.
+
+# Changelog Dev 0.1
+Every feature known has been merged.
+- Merged feature/tags branch
+- Edited MakeAdmin/MakeNormal to be visibile to admins only
+- Base level set to 1,privilege to basic user (0), and points to 0
+- Show username instead of user id in recipes
+- Only show your own stuffs (recipes,tags, etc.) unless you're admin
+- Toolbar (?) on top now have admin-only features
+- Added tags - recipe (and relationship tags-recipe) relationship (many to many)
+
+
+# Things to do / discussed
+- Add search feature for admin to search all databases
+- Add sessions to other pages
+- Make websites look better (currently most of the pages are basic)
+- Range of complexity for recipe should be discussed
+- Better tags/recipe pages and relationship. Currently only optimized for Iteration 1, that is to pursue features.
+

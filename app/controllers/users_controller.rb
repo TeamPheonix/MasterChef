@@ -35,6 +35,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.user_level = 1
+    @user.privileges = 0 #0 is for basic user
+    @user.points = 0
 
     respond_to do |format|
       if @user.save

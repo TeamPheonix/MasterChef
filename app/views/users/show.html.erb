@@ -148,6 +148,7 @@
       </div>
 
       <div class="row">
+	<% if is_admin %>
         <div class="col-xs-1">
           <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
           <%= error_messages_for_users(f.object)%>
@@ -167,6 +168,7 @@
             <%= f.submit 'MakeNormal',{class: 'btn btn-primary'}   %>
           <% end %>
         </div>
+	<% end %>
       </div>
 
       <!--Display Recipes-->

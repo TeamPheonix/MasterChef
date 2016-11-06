@@ -7,7 +7,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @recipe.user_id %>
+  <%= @recipe.user.user_name %>
 </p>
 
 <p>
@@ -23,6 +23,15 @@
 <p>
   <strong>Complexity:</strong>
   <%= @recipe.complexity %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+    <% @tags_recipes.each do |tags_recipe| %>
+    <% if tags_recipe.recipe_id == @recipe.id || is_admin %>
+        <td><%= tags_recipe.tag.tag_name %></td>
+    <% end %>
+    <% end %>
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

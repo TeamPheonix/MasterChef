@@ -19,19 +19,27 @@
     <ul class="nav navbar-nav">
       <li><%= link_to('Home',root_path)%></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recipes <span class="caret"></span></a>
+	<li><%= link_to('Recipes', recipes_path)%></li>
+	<!--
+        <a href="/recipes" class="dropdown-toggle" data-toggle="dropdown">Recipes <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a> Sort by:</a></li>
           <li class="divider"></li>
           <li><%= link_to 'Difficulty', '#' %></li>
           <li><%= link_to 'Rating', '#' %></li>
         </ul>
+	-->
       </li>
       <li><%= link_to('About',welcome_about_path)%></li>
       <li><%= link_to('Contact Us','#')%></li>
+      <% if is_admin %>
       <li><%= link_to('UserList',users_path)%></li>
+      <li><%= link_to('Tags', tags_path)%></li>
+      <li><%= link_to('Tags-Recipe', tags_recipes_path)%></li>
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
+	<!--
       <li>
         <%= form_tag '#;', {class: 'navbar-form', style: 'padding-right: 0px'} do %>
             <div class="form-group">
@@ -40,6 +48,7 @@
             </div>
         <% end %>
       </li>
+	-->
       <% if current_user%>
           <li><%= link_to("#{current_user.user_name}",user_path(session[:user_id])) %></li>
           <li><%= link_to('Log Out',sessions_destroy_path)%></li>

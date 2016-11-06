@@ -4,12 +4,17 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    if is_admin
+        @recipes = Recipe.all
+    else
+    	@recipes = Recipe.where(:user_id => current_user.id)
+    end
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+	@tags_recipes = TagsRecipe.all
   end
 
   # GET /recipes/new
@@ -74,3 +79,5 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:recipe_name, :instructions, :complexity)
     end
 end
+
+

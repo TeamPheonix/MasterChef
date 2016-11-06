@@ -13,13 +13,15 @@
 
   <tbody>
     <% @tags_recipes.each do |tags_recipe| %>
+    <% if tags_recipe.recipe.user_id == current_user.id || is_admin %>
       <tr>
-        <td><%= tags_recipe.tag_id %></td>
-        <td><%= tags_recipe.recipe_id %></td>
+        <td><%= tags_recipe.tag.tag_name %></td>
+        <td><%= tags_recipe.recipe.recipe_name %></td>
         <td><%= link_to 'Show', tags_recipe %></td>
         <td><%= link_to 'Edit', edit_tags_recipe_path(tags_recipe) %></td>
         <td><%= link_to 'Destroy', tags_recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
