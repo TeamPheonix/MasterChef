@@ -30,6 +30,7 @@ Mary loves cooking and is looking for a place online to socialize with people wi
 Kate is a busy working mom who also loves to learn new recipes to treat her kids. Especially she has subscribed Bob’s page and continuously learned Bob’s new secret family recipes. She doesn’t have much time shopping due to full-time working; however, she could use Grocery Shopping API to purchase necessary ingredients to complete the dishes in a timely manner.
 
 # Changelog Dev 0.1
+IMPORTANT: Update database, I made changes to the TAGS database.
 Every feature known has been merged.
 - Merged feature/tags branch
 - Edited MakeAdmin/MakeNormal to be visibile to admins only
@@ -40,10 +41,11 @@ Every feature known has been merged.
 - Added tags - recipe (and relationship tags-recipe) relationship (many to many)
 
 
-# Things to do / discussed
+# Things to do in Dev 0.1
 - Add search feature for admin to search all databases
 - Add sessions to other pages
 - Make websites look better (currently most of the pages are basic)
 - Range of complexity for recipe should be discussed
 - Better tags/recipe pages and relationship. Currently only optimized for Iteration 1, that is to pursue features.
+
 
