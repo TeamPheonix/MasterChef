@@ -12,18 +12,7 @@
         <strong>| Points:</strong> <%= @user.points %></small>
       </h1>
 
-      <% if session[:user_id] != @user.id %>
-
-        <div class="row">
-          <div class="col-md-12">
-            <p>About Me:</p>
-            <div class="jumbotron">
-              <p><%= simple_format(@user.bio) %></p>
-            </div>
-          </div>
-        </div>
-
-      <% else %>
+      <% if session[:user_id] == @user.id || is_admin %>
 
         <div class="row">
           <div class="col-md-12">
@@ -39,6 +28,18 @@
             </div>
           </div>
         </div>
+
+      <% else %>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <p>About Me:</p>
+            <div class="jumbotron">
+              <p><%= simple_format(@user.bio) %></p>
+            </div>
+          </div>
+        </div>
+
       <% end %>
 
       <div class="row">
@@ -50,7 +51,7 @@
         </div>
 
         <div class="col-md-4">
-          <% if session[:user_id] == @user.id %>
+          <% if session[:user_id] == @user.id || is_admin %>
             <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
             <%= error_messages_for(f.object)%>
               <div class="field form-group">
@@ -62,7 +63,7 @@
         </div>
       </div>
 
-      <% if session[:user_id] == @user.id %>
+      <% if session[:user_id] == @user.id || is_admin %>
         <div class="row">
           <div class="col-sm-2">
               <p>
@@ -93,7 +94,7 @@
         </div>
 
         <div class="col-md-4">
-          <% if session[:user_id] == @user.id %>
+          <% if session[:user_id] == @user.id || is_admin %>
             <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
             <%= error_messages_for(f.object)%>
               <div class="field form-group">
@@ -114,7 +115,7 @@
         </div>
 
         <div class="col-md-4">
-          <% if session[:user_id] == @user.id %>
+          <% if session[:user_id] == @user.id || is_admin %>
             <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
             <%= error_messages_for(f.object)%>
               <div class="field form-group">
@@ -135,7 +136,7 @@
         </div>
 
         <div class="col-md-4">
-          <% if session[:user_id] == @user.id %>
+          <% if session[:user_id] == @user.id || is_admin %>
             <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
             <%= error_messages_for(f.object)%>
               <div class="field form-group">
@@ -143,6 +144,28 @@
               </div>
               <%= f.submit 'Edit Email',{class: 'btn btn-primary'}   %>
             <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-1">
+          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+          <%= error_messages_for(f.object)%>
+            <div class="field form-group">
+              <%= f.hidden_field :privileges, :value => 1 %>
+            </div>
+            <%= f.submit 'MakeAdmin',{class: 'btn btn-primary'}   %>
+          <% end %>
+        </div>
+
+         <div class="col-xs-1">
+          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+          <%= error_messages_for(f.object)%>
+            <div class="field form-group">
+              <%= f.hidden_field :privileges, :value => 0 %>
+            </div>
+            <%= f.submit 'MakeNormal',{class: 'btn btn-primary'}   %>
           <% end %>
         </div>
       </div>

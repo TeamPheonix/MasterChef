@@ -28,7 +28,6 @@
                   <th>User level</th>
                   <th>Points</th>
                   <th>View user</th>
-                  <th>Edit user</th>
                   <th><%= link_to 'Create new user', new_user_path %></th>
                 </tr>
                 </thead>
@@ -45,7 +44,6 @@
                       <td><%= user.user_level %></td>
                       <td><%= user.points %></td>
                       <td><%= link_to 'View user', user, {class: 'btn btn-primary'} %></td>
-                      <td><%= link_to 'Edit user', edit_user_path(user), {class: 'btn btn-info'} %></td>
                       <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     </tr>
                 <% end %>

@@ -6,7 +6,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if is_admin
+      @users = User.all
+    else
+      flash[:loginmessage] = 'You must be logged in AND an admin to access this page'
+      redirect_to (root_path)
+    end
   end
 
   # GET /users/1
@@ -76,10 +81,9 @@ class UsersController < ApplicationController
     end
 
     def confirm_logged_in
-      unless session[:user_id] == @user.id
+      unless session[:user_id] == @user.id || is_admin
         flash[:loginmessage] = 'You do not have permission to edit that user'
         redirect_to (root_path)
       end
     end
-
 end
