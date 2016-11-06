@@ -7,4 +7,13 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
+
+  # Sets the variable @is_admin to t/f based on the session[:user_id]
+  def is_admin
+  	@is_admin = false
+  	if current_user
+    	@is_admin = (@current_user.privileges == 1)
+    end
+  end
+  helper_method :is_admin
 end

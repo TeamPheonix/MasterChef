@@ -6,7 +6,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if is_admin
+      @users = User.all
+    else
+      flash[:loginmessage] = 'You must be logged in AND an admin to access this page'
+      redirect_to (root_path)
+    end
   end
 
   # GET /users/1
@@ -24,10 +29,6 @@ class UsersController < ApplicationController
     else
       @user = User.create_new_from_omniauth(session[:omniauth])
     end
-  end
-
-  # GET /users/1/edit
-  def edit
   end
 
   # POST /users
@@ -78,14 +79,13 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points, :uid, :provider)
+      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points, :uid, :provider, :bio)
     end
 
     def confirm_logged_in
-      unless session[:user_id] == @user.id
+      unless session[:user_id] == @user.id || is_admin
         flash[:loginmessage] = 'You do not have permission to edit that user'
         redirect_to (root_path)
       end
     end
-
 end
