@@ -53,5 +53,3 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Secu
