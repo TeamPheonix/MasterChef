@@ -13,12 +13,11 @@
         <th>Recipe name</th>
         <th>Instructions</th>
         <th>Complexity</th>
-        <th colspan="3"></th>
+        <th colspan="3">Options</th>
       </tr>
     </thead>
     <tbody>
     <% @recipes.each do |recipe| %>
-        <% if recipe.user_id == recipe.user.id || is_admin %>
             <tr>
               <td><%= recipe.id %></td>
               <td><%= recipe.user.user_name %></td>
@@ -26,8 +25,9 @@
               <td><%= recipe.instructions %></td>
               <td><%= recipe.complexity %></td>
               <td><%= link_to 'Show Tags', recipe %></td>
-              <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-              <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
+                <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+                <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
         <% end %>
     <% end %>
