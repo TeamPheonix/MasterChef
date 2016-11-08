@@ -1,0 +1,27 @@
+<%= form_for(tags_recipe) do |f| %>
+  <% if tags_recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tags_recipe.errors.count, "error") %> prohibited this tags_recipe from being saved:</h2>
+
+      <ul>
+      <% tags_recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :tag_id, {for: 'tags_recipe_tag_id'} %>
+    <%= f.collection_select :tag_id, Tag.where( :approved => 1 ) , :id, :tag_name, {:class => 'form-control'} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recipe_id %>
+    <%= f.collection_select :recipe_id, Recipe.where( :user_id => current_user.id ), :id, :recipe_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit',{class: 'btn btn-primary'}   %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class RecipeRating < ApplicationRecord
+end

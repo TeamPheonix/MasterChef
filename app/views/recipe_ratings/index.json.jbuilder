@@ -1,0 +1,1 @@
+json.array! @recipe_ratings, partial: 'recipe_ratings/recipe_rating', as: :recipe_rating

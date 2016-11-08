@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tag name:</strong>
+  <%= @tag.tag_name %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <% if @tag.approved == 1 %>
+  <%= "Yes" %>
+  <% else %>
+  <%= "No" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

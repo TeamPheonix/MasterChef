@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+<div class="page-header">
+  <h1>Listing Users</h1>
+</div>
+  <div>
+    <div class="container">
+
+      <p id="notice"><%= notice %></p>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3>Users</h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-bordered table-responsive">
+                <caption> List of all users in the database</caption>
+                <thead>
+                <tr>
+                  <th>User name</th>
+                  <th>Password</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email</th>
+                  <th>Privileges</th>
+                  <th>User level</th>
+                  <th>Points</th>
+                  <th>View user</th>
+                  <th><%= link_to 'Create new user', new_user_path %></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                      <td><%= user.user_name %></td>
+                      <td><%= user.password %></td>
+                      <td><%= user.first_name %></td>
+                      <td><%= user.last_name %></td>
+                      <td><%= user.email %></td>
+                      <td><%= user.privileges %></td>
+                      <td><%= user.user_level %></td>
+                      <td><%= user.points %></td>
+                      <td><%= link_to 'View user', user, {class: 'btn btn-default'} %></td>
+                      <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+        </div> 
+    </div>
+
+  </div>
+</body>
+</html>

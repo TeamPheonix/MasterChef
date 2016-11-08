@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @user.user_name %></title>
+  </head>
+  <body>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <h1>
+        <strong><%= @user.user_name %></strong> <small><strong>| Level:</strong> <%= @user.user_level %>
+        <strong>| Privileges:</strong> <%= @user.privileges %>
+        <strong>| Points:</strong> <%= @user.points %></small>
+      </h1>
+
+      <% if session[:user_id] == @user.id || is_admin %>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p>About Me:</p>
+            <div class="jumbotron">
+              <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+                <%= error_messages_for_users(f.object)%>
+                <div class="field form-group">
+                  <%= f.text_area :bio ,{class: 'form-control'}%>
+                </div>
+                <%= f.submit 'Update bio',{class: 'btn btn-primary'}   %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <p>About Me:</p>
+            <div class="jumbotron">
+              <p><%= simple_format(@user.bio) %></p>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <p>
+            <strong>User name:</strong>
+            <%= @user.user_name %>
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <% if session[:user_id] == @user.id || is_admin %>
+            <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+            <%= error_messages_for_users(f.object)%>
+              <div class="field form-group">
+                <%= f.text_field :user_name ,{class: 'form-control'}%>
+              </div>
+              <%= f.submit 'Edit Name',{class: 'btn btn-primary'}   %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <% if session[:user_id] == @user.id || is_admin %>
+        <div class="row">
+          <div class="col-sm-2">
+              <p>
+                <strong>Password:</strong>
+                <%= @user.password %>
+              </p>
+          </div>
+          
+          <div class="col-md-4">
+            <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+              <%= error_messages_for_users(f.object)%>
+              <div class="field form-group">
+                <%= f.text_field :password ,{class: 'form-control'}%>
+              </div>
+              <%= f.submit 'Edit Password',{class: 'btn btn-primary'}   %>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <p>
+            <strong>First name:</strong>
+            <%= @user.first_name %>
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <% if session[:user_id] == @user.id || is_admin %>
+            <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+            <%= error_messages_for_users(f.object)%>
+              <div class="field form-group">
+                <%= f.text_field :first_name ,{class: 'form-control'}%>
+              </div>
+              <%= f.submit 'Edit Name',{class: 'btn btn-primary'}   %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <p>
+            <strong>Last name:</strong>
+            <%= @user.last_name %>
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <% if session[:user_id] == @user.id || is_admin %>
+            <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+            <%= error_messages_for_users(f.object)%>
+              <div class="field form-group">
+                <%= f.text_field :last_name ,{class: 'form-control'}%>
+              </div>
+              <%= f.submit 'Edit Name',{class: 'btn btn-primary'}   %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <p>
+            <strong>Email:</strong>
+            <%= @user.email %>
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <% if session[:user_id] == @user.id || is_admin %>
+            <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+            <%= error_messages_for_users(f.object)%>
+              <div class="field form-group">
+                <%= f.text_field :email ,{class: 'form-control'}%>
+              </div>
+              <%= f.submit 'Edit Email',{class: 'btn btn-primary'}   %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+	<% if is_admin %>
+        <div class="col-xs-1">
+          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+          <%= error_messages_for_users(f.object)%>
+            <div class="field form-group">
+              <%= f.hidden_field :privileges, :value => 1 %>
+            </div>
+            <%= f.submit 'MakeAdmin',{class: 'btn btn-primary'}   %>
+          <% end %>
+        </div>
+
+         <div class="col-xs-1">
+          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+          <%= error_messages_for_users(f.object)%>
+            <div class="field form-group">
+              <%= f.hidden_field :privileges, :value => 0 %>
+            </div>
+            <%= f.submit 'MakeNormal',{class: 'btn btn-primary'}   %>
+          <% end %>
+        </div>
+	<% end %>
+      </div>
+
+      <!--Display Recipes-->
+      <ul class="list-group">
+
+        <% @recipes.each do |recipe|%>
+            <li class="list-group-item"><%= recipe.recipe_name %></li>
+        <% end %>
+        <%= paginate @recipes%>
+      </ul>
+
+    </div>
+  </body>
+</html>
+
