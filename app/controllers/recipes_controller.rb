@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-	@tags_recipes = TagsRecipe.all
+	  @tags_recipes = TagsRecipe.all
   end
 
   # GET /recipes/new
@@ -27,7 +27,6 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
-
 
     respond_to do |format|
       if current_user.recipes << @recipe

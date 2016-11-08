@@ -33,5 +33,8 @@
 
 <br>
 
+<% if current_user || is_admin %>
 <%= link_to 'New Recipe', new_recipe_path %> ||
 <%= link_to 'Add New Tag to a Recipe', new_tags_recipe_path %>
+<% end %>
+
