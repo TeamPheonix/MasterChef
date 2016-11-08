@@ -4,11 +4,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    if is_admin
-      @recipes = Recipe.all
-    else
-    	@recipes = Recipe.where(:user_id => current_user.id)
-    end
+    @recipes = Recipe.all
   end
 
   # GET /recipes/1
