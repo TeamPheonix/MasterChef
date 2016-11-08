@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+    <div class="field form-group">
     <%= f.label :tag_name %>
-    <%= f.text_field :tag_name %>
+    <%= f.text_field :tag_name, {class: 'form-control'} %>
   </div>
 
-  <div class="field">
+    <div class="field form-group">
     <%= f.label :approved %>
     <%= f.select :approved, [['Choose One',],['Yes',1],['No',0]]%>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit',{class: 'btn btn-primary'}   %>
   </div>
 <% end %>

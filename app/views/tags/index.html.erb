@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Tags</h1>
+</div>
 
-<h1>Tags</h1>
-
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Tag name</th>
@@ -32,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Tag', new_tag_path %>
+<%= link_to 'New Tag', new_tag_path, {class: 'btn btn-default'} %>

@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-control">
     <%= f.label :tag_id %>
     <%= f.collection_select :tag_id, Tag.where( :approved => 1 ) , :id, :tag_name %>
   </div>
 
-  <div class="field">
+  <div class="field form-control">
     <%= f.label :recipe_id %>
     	<%= f.collection_select :recipe_id, Recipe.where( :user_id => current_user.id ), :id, :recipe_name %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit',{class: 'btn btn-primary'}   %>
   </div>
 <% end %>

@@ -4,9 +4,12 @@
   <title>User Page</title>
 </head>
 <body>
+<div class="page-header">
+  <h1>Listing Users</h1>
+</div>
   <div>
     <div class="container">
-      <h1 id="page_title">Listing Users</h1>
+
       <p id="notice"><%= notice %></p>
       <div class="row">
         <div class="col-md-12">
@@ -43,7 +46,7 @@
                       <td><%= user.privileges %></td>
                       <td><%= user.user_level %></td>
                       <td><%= user.points %></td>
-                      <td><%= link_to 'View user', user, {class: 'btn btn-primary'} %></td>
+                      <td><%= link_to 'View user', user, {class: 'btn btn-default'} %></td>
                       <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     </tr>
                 <% end %>
