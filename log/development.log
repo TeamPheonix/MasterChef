@@ -19739,3 +19739,1895 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 147ms (Views: 125.9ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:11:55 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 197ms (Views: 179.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1/edit" for 127.0.0.1 at 2016-11-07 19:11:57 -0800
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered application/_error_messages_recipes.html.erb (0.0ms)
+  Rendered recipes/_form.html.erb (14.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 166ms (Views: 149.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:12:54 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 140ms (Views: 119.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:12:54 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 161ms (Views: 127.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:12:56 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:12:56 -0800
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (29.0ms)
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (5.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (10.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:12:56 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (22.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+Completed 200 OK in 571ms (Views: 538.3ms | ActiveRecord: 14.0ms)
+
+
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 461ms (Views: 413.2ms | ActiveRecord: 6.0ms)
+
+
+Completed 200 OK in 227ms (Views: 164.7ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 19:13:04 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 135ms (Views: 118.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 19:13:10 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mdt9xbtNeqgWfpEGgmPZRaJ1Pg4HOXwEwuhSUURosCVo5qmA9gsv7i3rorenqlFLBWApXa2HP6TXE8Zj1GcezQ==", "username"=>"DongCena", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:13:10 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 135ms (Views: 122.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-11-07 19:13:12 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (108.1ms)
+Completed 200 OK in 235ms (Views: 218.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:13:15 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 136ms (Views: 117.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:13:18 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (57.0ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipe' for #<#<Class:0xae85b18>:0xa8ca200>):
+    33:     <% end %>
+    34:     <% end %>
+    35: </p>
+    36: <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
+    37:   <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    38: <% end %>
+    39: 
+  
+app/views/recipes/show.html.erb:36:in `_app_views_recipes_show_html_erb__64828110_88495176'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (752.9ms)
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:13:35 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 141ms (Views: 123.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-11-07 19:13:37 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (1.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (168.1ms)
+Completed 200 OK in 356ms (Views: 338.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:13:38 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (66.1ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipe' for #<#<Class:0xae85b18>:0x49ab728>):
+    33:     <% end %>
+    34:     <% end %>
+    35: </p>
+    36: <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
+    37:   <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    38: <% end %>
+    39: 
+  
+app/views/recipes/show.html.erb:36:in `_app_views_recipes_show_html_erb__64828110_38695536'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:13:39 -0800
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+Processing by RecipesController#show as HTML
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Parameters: {"id"=>"1"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1013.5ms)
+  [1m[36mUser Load (217.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (218.1ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (984.7ms)
+Completed 500 Internal Server Error in 1533ms (ActiveRecord: 436.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipe' for #<#<Class:0xae85b18>:0x9813780>):
+    33:     <% end %>
+    34:     <% end %>
+    35: </p>
+    36: <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
+    37:   <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    38: <% end %>
+    39: 
+  
+app/views/recipes/show.html.erb:36:in `_app_views_recipes_show_html_erb__64828110_79979628'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (759.5ms)
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:15:59 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 157ms (Views: 140.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:01 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 145ms (Views: 127.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:16:05 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:16:05 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 251ms (Views: 229.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:16:05 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 286ms (Views: 267.5ms | ActiveRecord: 5.0ms)
+
+
+Completed 200 OK in 178ms (Views: 153.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:09 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 145ms (Views: 131.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:35 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:35 -0800
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by RecipesController#show as HTML
+Completed 200 OK in 157ms (Views: 138.6ms | ActiveRecord: 1.0ms)
+
+
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (4.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:35 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 183ms (Views: 169.2ms | ActiveRecord: 1.0ms)
+
+
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:35 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 215ms (Views: 195.1ms | ActiveRecord: 1.0ms)
+
+
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:36 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (4.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+Completed 200 OK in 244ms (Views: 220.8ms | ActiveRecord: 1.0ms)
+
+
+  Rendered recipes/show.html.erb within layouts/application (9.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:36 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 245ms (Views: 220.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:36 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (2.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (7.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 267ms (Views: 247.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:36 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (12.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (16.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 306ms (Views: 286.7ms | ActiveRecord: 4.0ms)
+
+
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 191ms (Views: 156.6ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:16:39 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 146ms (Views: 128.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:16:40 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 144ms (Views: 126.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:18:25 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 117.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:18:26 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:18:26 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 222.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 154ms (Views: 135.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:19:27 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 162ms (Views: 132.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:19:29 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 141ms (Views: 119.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:19:29 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:19:30 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (21.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (29.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:19:30 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (3.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 393ms (Views: 371.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 347ms (Views: 305.8ms | ActiveRecord: 25.0ms)
+
+
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 224ms (Views: 194.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:22:29 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 137ms (Views: 121.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:23:21 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 243ms (Views: 222.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:23:24 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:23:24 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (2.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 233ms (Views: 211.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 160ms (Views: 139.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:23:25 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 138ms (Views: 121.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:23:36 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 147ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 19:23:46 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:23:46 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 212ms (Views: 192.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:23:47 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 192ms (Views: 177.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:23:48 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 144ms (Views: 127.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 19:24:02 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 159ms (Views: 142.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 19:24:06 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CKXTOgGx4I/PdmbBSappf4WnjGz4RcpPIsBDzwEc9qr5mAd/TPe1yfTjVXBsY+FxIrKbP1L7ie83O9f9kRNYQg==", "username"=>"DongCena", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:24:06 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 151.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:24:08 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 132ms (Views: 119.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:24:10 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (4.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered tags_recipes/_form.html.erb (21.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 205ms (Views: 173.7ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:24:18 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 132ms (Views: 118.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:24:25 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 150ms (Views: 132.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/1/edit" for 127.0.0.1 at 2016-11-07 19:24:27 -0800
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered application/_error_messages_recipes.html.erb (1.0ms)
+  Rendered recipes/_form.html.erb (23.1ms)
+  Rendered recipes/edit.html.erb within layouts/application (46.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 240.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:24:29 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 142ms (Views: 128.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 19:24:34 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:24:35 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 127ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:24:35 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 131ms (Views: 119.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:25:09 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:25:09 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 238ms (Views: 218.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 162ms (Views: 144.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 19:25:11 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 135ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 19:25:17 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5/2SgA4svLcY9ReuD2QjD6v5dBHsvz9Ksy/6ebgTtVSoiIPTX7ntOf25++d9BiCmbryg+0Mv10/Nyvbdu/gPQ==", "username"=>"DongCena", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:25:17 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 170ms (Views: 149.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:25:19 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 118.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:25:20 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 138ms (Views: 125.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1/edit" for 127.0.0.1 at 2016-11-07 19:25:23 -0800
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered application/_error_messages_recipes.html.erb (0.0ms)
+  Rendered recipes/_form.html.erb (16.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (32.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 199ms (Views: 179.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 19:25:24 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:25:24 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 142ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:25:25 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 159ms (Views: 141.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:25:26 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 138ms (Views: 122.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:25:27 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 127ms (Views: 115.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:25:29 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 157ms (Views: 135.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:27:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 382ms (Views: 357.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/psuedo_destroy" for 127.0.0.1 at 2016-11-07 19:27:15 -0800
+Processing by SessionsController#psuedo_destroy as HTML
+Redirected to http://127.0.0.1:3000/users/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-11-07 19:27:15 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (1.0ms)
+  Rendered users/_form.html.erb (36.0ms)
+  Rendered users/new.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 263ms (Views: 181.9ms | ActiveRecord: 29.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-11-07 19:27:30 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kium+FYX33DwMFnPBT50Z7PmnFYUCl/CL0fdVT74mWpjFnK9G1GKNsulan4g9/xpFPOLBb60HGI6vElnrvc3gg==", "user"=>{"user_name"=>"test", "password"=>"[FILTERED]", "email"=>"test@gmail.com", "first_name"=>"", "last_name"=>"", "privileges"=>"", "user_level"=>"", "points"=>"", "provider"=>"", "uid"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 LIMIT $2[0m  [["user_name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "first_name", "last_name", "email", "privileges", "user_level", "points", "created_at", "updated_at", "uid", "provider") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["user_name", "test"], ["password", "test"], ["first_name", ""], ["last_name", ""], ["email", "test@gmail.com"], ["privileges", 0], ["user_level", 1], ["points", 0], ["created_at", 2016-11-08 03:27:31 UTC], ["updated_at", 2016-11-08 03:27:31 UTC], ["uid", ""], ["provider", ""]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/users/3
+Completed 302 Found in 30ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-11-07 19:27:31 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 234ms (Views: 181.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:27:38 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 139ms (Views: 122.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 19:27:39 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 137ms (Views: 120.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 19:28:01 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dnLBoqsXy+oixX9Dh5m49BLdBQBI8IyFoQx+G9wUbDKHTxXn5lGerBlQTPKiUDD6tcgSU+JOzyW09+opTBvC2g==", "username"=>"test", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "test"], ["password", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "test"], ["password", "test"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:28:01 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 132.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:28:04 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 150ms (Views: 132.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:28:06 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 147ms (Views: 126.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:28:11 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (12.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 157ms (Views: 136.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:28:23 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 153ms (Views: 136.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:28:26 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 129ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:28:29 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (3.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 153ms (Views: 138.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:32:37 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (5.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 185ms (Views: 158.1ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:33:34 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 199ms (Views: 165.9ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:33:37 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (19.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (480.3ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (719.5ms)
+Completed 200 OK in 1325ms (Views: 1227.0ms | ActiveRecord: 58.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:34:09 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (6.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 164ms (Views: 142.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:34:29 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (6.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 154ms (Views: 133.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:34:46 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (6.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 169ms (Views: 146.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:35:03 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (3.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 154ms (Views: 133.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:35:33 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (5.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 205ms (Views: 179.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:35:34 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:35:34 -0800
+Processing by TagsRecipesController#new as HTML
+  [1m[36mTag Load (19.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (44.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendering tags_recipes/new.html.erb within layouts/application
+  Rendered tags_recipes/_form.html.erb (81.1ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (114.1ms)
+  [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (17.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 324ms (Views: 215.8ms | ActiveRecord: 76.1ms)
+
+
+Completed 200 OK in 211ms (Views: 192.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:36:03 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (10.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 161ms (Views: 142.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:36:03 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 156ms (Views: 132.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:36:17 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (10.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 165ms (Views: 142.8ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:40:07 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 215ms (Views: 184.7ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 19:40:31 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:40:31 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 136ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 19:40:32 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 145ms (Views: 128.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 19:40:35 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KtLN+yWgoKCx5mnJnEnCQ8AF6oAtZWxWoSFbYG06c0bb7xm+aOb15opzWni5gEpNZxD904fbL/a02s9S/TXdrg==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:40:35 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 118.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2016-11-07 19:40:38 -0800
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 151ms (Views: 133.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2016-11-07 19:40:39 -0800
+Processing by TagsController#new as HTML
+  Rendering tags/new.html.erb within layouts/application
+  Rendered tags/_form.html.erb (9.0ms)
+  Rendered tags/new.html.erb within layouts/application (21.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 175ms (Views: 149.3ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/tags" for 127.0.0.1 at 2016-11-07 19:40:46 -0800
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Y+67thoNMzBvt/yQ5nzw3I/CVq646que85FLC7eiEAosm6rlS5hivor7ENmUHvN1SoeCRBd6Q5uNdEevtEmqA==", "tag"=>{"tag_name"=>"vegan", "approved"=>"1"}, "commit"=>"Submit"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE LOWER("tags"."tag_name") = LOWER($1) LIMIT $2[0m  [["tag_name", "vegan"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "approved", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_name", "vegan"], ["approved", 1], ["created_at", 2016-11-08 03:40:46 UTC], ["updated_at", 2016-11-08 03:40:46 UTC]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/tags/1
+Completed 302 Found in 409ms (ActiveRecord: 395.6ms)
+
+
+Started GET "/tags/1" for 127.0.0.1 at 2016-11-07 19:40:46 -0800
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tags/show.html.erb within layouts/application
+  Rendered tags/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 159ms (Views: 136.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2016-11-07 19:40:49 -0800
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 130ms (Views: 116.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags/new" for 127.0.0.1 at 2016-11-07 19:40:50 -0800
+Processing by TagsController#new as HTML
+  Rendering tags/new.html.erb within layouts/application
+  Rendered tags/_form.html.erb (1.0ms)
+  Rendered tags/new.html.erb within layouts/application (14.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 185ms (Views: 167.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/tags" for 127.0.0.1 at 2016-11-07 19:40:57 -0800
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9N/QqyzsvmNxr43gtVQSLqvDFAvGIcPTeIDvyeWzrLcF4gTuYarrJUo6vlGQnZogDNYDWGyfgHNte3v7dbwCXw==", "tag"=>{"tag_name"=>"peanut", "approved"=>"1"}, "commit"=>"Submit"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE LOWER("tags"."tag_name") = LOWER($1) LIMIT $2[0m  [["tag_name", "peanut"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tags" ("tag_name", "approved", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_name", "peanut"], ["approved", 1], ["created_at", 2016-11-08 03:40:57 UTC], ["updated_at", 2016-11-08 03:40:57 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/tags/2
+Completed 302 Found in 14ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/tags/2" for 127.0.0.1 at 2016-11-07 19:40:57 -0800
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering tags/show.html.erb within layouts/application
+  Rendered tags/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 117.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2016-11-07 19:41:02 -0800
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 139ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-11-07 19:41:05 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (1.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (137.1ms)
+Completed 200 OK in 267ms (Views: 250.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:41:08 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 220ms (Views: 198.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:41:09 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 120.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/1/edit" for 127.0.0.1 at 2016-11-07 19:41:12 -0800
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered application/_error_messages_recipes.html.erb (1.0ms)
+  Rendered recipes/_form.html.erb (17.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (29.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 145.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:41:17 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 136ms (Views: 123.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:41:19 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 161ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:42:59 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (5.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 181ms (Views: 157.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:43:00 -0800
+Processing by TagsRecipesController#new as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+  Rendering tags_recipes/new.html.erb within layouts/application
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+  Rendered tags_recipes/_form.html.erb (5.1ms)
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  Rendered tags_recipes/new.html.erb within layouts/application (18.1ms)
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Completed 200 OK in 186ms (Views: 167.4ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:45:00 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 158ms (Views: 136.3ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/tags_recipes" for 127.0.0.1 at 2016-11-07 19:46:39 -0800
+Processing by TagsRecipesController#index as HTML
+  Rendering tags_recipes/index.html.erb within layouts/application
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered tags_recipes/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 129.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags_recipes" for 127.0.0.1 at 2016-11-07 19:46:39 -0800
+Processing by TagsRecipesController#index as HTML
+  Rendering tags_recipes/index.html.erb within layouts/application
+  [1m[36mTagsRecipe Load (0.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered tags_recipes/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 126.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags_recipes" for 127.0.0.1 at 2016-11-07 19:46:59 -0800
+Processing by TagsRecipesController#index as HTML
+  Rendering tags_recipes/index.html.erb within layouts/application
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered tags_recipes/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 146ms (Views: 122.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags_recipes" for 127.0.0.1 at 2016-11-07 19:46:59 -0800
+Processing by TagsRecipesController#index as HTML
+  Rendering tags_recipes/index.html.erb within layouts/application
+  [1m[36mTagsRecipe Load (1.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered tags_recipes/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 141ms (Views: 125.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:47:07 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 156ms (Views: 137.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:47:09 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (3.7ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 185ms (Views: 167.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:47:14 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 168ms (Views: 144.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:47:14 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (4.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 146ms (Views: 130.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:50:15 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (8.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 457ms (Views: 407.2ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 19:50:19 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:50:19 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 149ms (Views: 135.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:50:20 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 198ms (Views: 166.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2016-11-07 19:50:21 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTagsRecipe Load (4.0ms)[0m  [1m[34mSELECT "tags_recipes".* FROM "tags_recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 169ms (Views: 142.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:50:23 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 138ms (Views: 123.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 19:50:24 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 155ms (Views: 138.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 19:50:27 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w0BUvGgbiohR2NrrPV8o7W5Qi6fhA7N/QJJPLUR+iU0yfYD5JV3fzmpN6VoYlqDjyUWc9Eu98N9Vadsf1HEnpQ==", "username"=>"DongCena", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "DongCena"], ["password", "askdh"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:50:27 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 130ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:50:29 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 148ms (Views: 131.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 19:50:30 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered tags_recipes/_form.html.erb (28.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 178ms (Views: 156.4ms | ActiveRecord: 3.0ms)
+
+

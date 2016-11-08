@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field form-control">
-    <%= f.label :tag_id %>
-    <%= f.collection_select :tag_id, Tag.where( :approved => 1 ) , :id, :tag_name %>
+  <div class="field form-group">
+    <%= f.label :tag_id, {for: 'tags_recipe_tag_id'} %>
+    <%= f.collection_select :tag_id, Tag.where( :approved => 1 ) , :id, :tag_name, {:class => 'form-control'} %>
   </div>
 
-  <div class="field form-control">
+  <div class="field">
     <%= f.label :recipe_id %>
-    	<%= f.collection_select :recipe_id, Recipe.where( :user_id => current_user.id ), :id, :recipe_name %>
+    <%= f.collection_select :recipe_id, Recipe.where( :user_id => current_user.id ), :id, :recipe_name %>
   </div>
 
   <div class="actions">
