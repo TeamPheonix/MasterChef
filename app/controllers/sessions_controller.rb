@@ -14,8 +14,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user
+    flash[:sign_out_message] = "#{current_user.user_name} logged out"
     session[:omniauth] = nil
     session[:user_id] = nil
+
     redirect_to root_path, notice: 'Signed Out'
   end
 

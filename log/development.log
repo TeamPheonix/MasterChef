@@ -18989,3 +18989,518 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 178ms (Views: 133.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:53:54 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (44.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (45.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1825ms (Views: 1633.3ms | ActiveRecord: 125.8ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 18:54:01 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:54:01 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 156ms (Views: 143.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-11-07 18:54:02 -0800
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-11-07 18:54:02 -0800
+Started GET "/auth/facebook/callback?code=AQCOqjgvcpMpR0huYzFZeFlN_ydyOHDtSMepN9KbfWt85WYQpV9JGYPUcAqoaL0ytKxO5pil9LI2cUQPC8QQ4Ec5ZJ-BrhZcSN_2vP5EAobnnbehyTuk28YH2RlVLl05mqVj6CRpGQe31m6YG9RqsPw12fmNmo4ma7uvupBG4TkioAlcVFlP6PjRQonyVYvXbmzLY0VM3l0AjwW5UHhRJc8XfaOzIhcA_cz1cXglxTOCxGRqgJ7GEP7vJGOMIWYfFxz_7W9kE8pRuLVtY6b47O4sGxrqbdeLx6puBTzse-WftKg3wGaCxTAFdArazjbpVnPjGVaKdXTAgVj2_G0vw9dc&state=383af42da355333ba89a904ddcc0d0e6d52d4f19bad1d9fe" for 127.0.0.1 at 2016-11-07 18:54:03 -0800
+Processing by SessionsController#new as HTML
+  Parameters: {"code"=>"AQCOqjgvcpMpR0huYzFZeFlN_ydyOHDtSMepN9KbfWt85WYQpV9JGYPUcAqoaL0ytKxO5pil9LI2cUQPC8QQ4Ec5ZJ-BrhZcSN_2vP5EAobnnbehyTuk28YH2RlVLl05mqVj6CRpGQe31m6YG9RqsPw12fmNmo4ma7uvupBG4TkioAlcVFlP6PjRQonyVYvXbmzLY0VM3l0AjwW5UHhRJc8XfaOzIhcA_cz1cXglxTOCxGRqgJ7GEP7vJGOMIWYfFxz_7W9kE8pRuLVtY6b47O4sGxrqbdeLx6puBTzse-WftKg3wGaCxTAFdArazjbpVnPjGVaKdXTAgVj2_G0vw9dc", "state"=>"383af42da355333ba89a904ddcc0d0e6d52d4f19bad1d9fe", "provider"=>"facebook"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10207616039707338"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/users/new
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-11-07 18:54:03 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (1.0ms)
+  Rendered users/_form.html.erb (201.1ms)
+  Rendered users/new.html.erb within layouts/application (263.2ms)
+Completed 200 OK in 509ms (Views: 462.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:54:08 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 168ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 18:54:12 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hzRPQy8A2qmrDlD89bcrOGLsdP9B1YZ6uId1zvmeNdh2CZsGYkaP75CbY03QfqM2xfljrOtrxdqtfOH8aZGbMA==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "admin"], ["password", "adasdf"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/sessions/login
+Completed 302 Found in 44ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:54:12 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 143ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 18:54:15 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jinob09hJ7CTWqNvN2qvAK0j/Eg0vpCbPZvW9VgZw85/FDwqAidy9qjPkN4SoycOCjbrG54A0zsoYELHyBZtJg==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:54:15 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 141ms (Views: 126.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2016-11-07 18:54:18 -0800
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered application/_error_messages_recipes.html.erb (1.0ms)
+  Rendered recipes/_form.html.erb (64.1ms)
+  Rendered recipes/new.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 362ms (Views: 270.6ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2016-11-07 18:54:22 -0800
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (23.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (27.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 201ms (Views: 132.5ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-11-07 18:54:23 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 195ms (Views: 149.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-11-07 18:54:24 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 138ms (Views: 121.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/about" for 127.0.0.1 at 2016-11-07 18:54:24 -0800
+Processing by WelcomeController#about as HTML
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 139ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/about" for 127.0.0.1 at 2016-11-07 18:54:25 -0800
+Processing by WelcomeController#about as HTML
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 116.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/about" for 127.0.0.1 at 2016-11-07 18:54:25 -0800
+Processing by WelcomeController#about as HTML
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 130.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 18:54:27 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (13.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 266ms (Views: 186.8ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:54:28 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 18:54:31 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:54:31 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 138ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:56:26 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 169ms (Views: 156.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:56:27 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 134ms (Views: 118.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 18:56:31 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FA1FrjqBbu+Tj2+EfR+HmYifAUz9FzxmR+XiQGKsJEflMJHrd8c7qagaXDVY1g+XL4oWH1epf8ZSHnZy8qOKrw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 19ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:56:31 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 153.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 18:56:33 -0800
+Processing by SessionsController#destroy as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `user_name' for :user_id:Symbol):
+  
+app/controllers/sessions_controller.rb:17:in `destroy'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (930.7ms)
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:57:20 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 163ms (Views: 147.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:57:22 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 144ms (Views: 127.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 18:57:23 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:57:23 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 132ms (Views: 119.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:57:26 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 152ms (Views: 136.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:58:20 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 246ms (Views: 220.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:58:21 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 152ms (Views: 135.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 18:58:24 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S+ftmYY+AU8mqZg5Vxdikxv9yNNKnP4x1Tma4eG99le62jncy3hUCR08q4hy3uqdvOjfgOAivZHAwg7TcbJYvw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:58:24 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 18:58:26 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:58:26 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 138ms (Views: 125.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:58:49 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 136ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:58:50 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 143ms (Views: 126.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/attempt_login" for 127.0.0.1 at 2016-11-07 18:58:58 -0800
+Processing by SessionsController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P3v7LU7JsJR96gc740vGb8LKm0ZO/kaUCKrsw4FK/xjORi9oA4/l0kZ/NIrGgk5hZd+MFeRABTQdUXjxEUVR8A==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 AND "users"."password" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["user_name", "admin"], ["password", "admin"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:58:58 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 138ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 18:59:00 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:59:00 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 135ms (Views: 122.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-11-07 18:59:03 -0800
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-11-07 18:59:03 -0800
+Started GET "/auth/facebook/callback?code=AQAhmkwMR3T0hjCI7xcqOk9Xd7yxIskBO5mZoMQUKiARynW1Fd_o6qKt4Z9qANDSz4mDBDNMc7dv8_4nOUzWKRaZsZ-hGUrgmwliV3WuwpyFFu4TpCRvxAx6R70CBmCyh4aDgZsmVatJqfwjbj5wq_VoVkcRo0CxABsUHMjSdvpoZaAsmeTe-EYOGINMbnQupnXySnJq9yESS9_lvK0HlmLrwT-qqZvOh1vUO_wOWrsvs_RhUt5-JqP2IPxwQp4bO0iBx853XZwXhFBkspCcH55mGQuxZcJme5skKwCsaW9b__Rp0sKFGj2IiN8hXFVndGwTdA2gjrm33vuDDF8vfrmb&state=0e8a467553c9bb3aa576c44000133650f5f7cbcc259c5354" for 127.0.0.1 at 2016-11-07 18:59:04 -0800
+Processing by SessionsController#new as HTML
+  Parameters: {"code"=>"AQAhmkwMR3T0hjCI7xcqOk9Xd7yxIskBO5mZoMQUKiARynW1Fd_o6qKt4Z9qANDSz4mDBDNMc7dv8_4nOUzWKRaZsZ-hGUrgmwliV3WuwpyFFu4TpCRvxAx6R70CBmCyh4aDgZsmVatJqfwjbj5wq_VoVkcRo0CxABsUHMjSdvpoZaAsmeTe-EYOGINMbnQupnXySnJq9yESS9_lvK0HlmLrwT-qqZvOh1vUO_wOWrsvs_RhUt5-JqP2IPxwQp4bO0iBx853XZwXhFBkspCcH55mGQuxZcJme5skKwCsaW9b__Rp0sKFGj2IiN8hXFVndGwTdA2gjrm33vuDDF8vfrmb", "state"=>"0e8a467553c9bb3aa576c44000133650f5f7cbcc259c5354", "provider"=>"facebook"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10207616039707338"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/users/new
+Completed 302 Found in 1ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-11-07 18:59:04 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (1.0ms)
+  Rendered users/_form.html.erb (21.0ms)
+  Rendered users/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 199ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-11-07 18:59:16 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPYRUi03P69bznlt7UxzsoNp7OXbh9SUO14fTYPb8lmZy8UXYHFq6WBbStzIhfu8JHz7tnE5lzQupYt/E9RcsQ==", "user"=>{"user_name"=>"DongCena", "password"=>"[FILTERED]", "email"=>"psanjuan06.sj@gmail.com", "first_name"=>"Patrick", "last_name"=>"Juan", "privileges"=>"", "user_level"=>"", "points"=>"", "provider"=>"facebook", "uid"=>"10207616039707338"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = $1 LIMIT $2[0m  [["user_name", "DongCena"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "psanjuan06.sj@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (24.0ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password", "first_name", "last_name", "email", "privileges", "user_level", "points", "created_at", "updated_at", "uid", "provider") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["user_name", "DongCena"], ["password", "askdh"], ["first_name", "Patrick"], ["last_name", "Juan"], ["email", "psanjuan06.sj@gmail.com"], ["privileges", 0], ["user_level", 1], ["points", 0], ["created_at", 2016-11-08 02:59:16 UTC], ["updated_at", 2016-11-08 02:59:16 UTC], ["uid", "10207616039707338"], ["provider", "facebook"]]
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 64ms (ActiveRecord: 54.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-11-07 18:59:16 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 416ms (Views: 209.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-11-07 18:59:28 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 234ms (Views: 215.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:59:31 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 161ms (Views: 144.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2016-11-07 18:59:33 -0800
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 129ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-11-07 18:59:33 -0800
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-11-07 18:59:34 -0800
+Started GET "/auth/facebook/callback?code=AQBcR8At0bdvrGkOdLMJ0lUh1zZ1dBZ5flHDhDleQR5QDpBaDp3OhR90vjx66uADvziKGKmaXexm_jvhtXfLc_D9pgXnNFfUHkKUIoBrDRu9Cx55dZ09ZL1iwoM1Ggluuq3jz92Oyg8jcQQejMLZtFKLyHpIqBnTCn38W3xFtG87BVL4VzmIWYNP6MG90c86t_WKTVJ9ZbMaQ4SnavKym19I-qIF81HAtOhQnLZ81BSXj0F-SBuHCDdOwuXoBNKok2yvnc7_LfCNp4CGdycsBosytzrAN2ydwYTKRTsNysOpAISQVZla-FhQX5_bC2MSnZlAzuJ0PaDOIg2vpoO3OOgP&state=4bd72d7b198b5ce5a306143b49a5b49d894d9fd2d83c31b3" for 127.0.0.1 at 2016-11-07 18:59:34 -0800
+Processing by SessionsController#new as HTML
+  Parameters: {"code"=>"AQBcR8At0bdvrGkOdLMJ0lUh1zZ1dBZ5flHDhDleQR5QDpBaDp3OhR90vjx66uADvziKGKmaXexm_jvhtXfLc_D9pgXnNFfUHkKUIoBrDRu9Cx55dZ09ZL1iwoM1Ggluuq3jz92Oyg8jcQQejMLZtFKLyHpIqBnTCn38W3xFtG87BVL4VzmIWYNP6MG90c86t_WKTVJ9ZbMaQ4SnavKym19I-qIF81HAtOhQnLZ81BSXj0F-SBuHCDdOwuXoBNKok2yvnc7_LfCNp4CGdycsBosytzrAN2ydwYTKRTsNysOpAISQVZla-FhQX5_bC2MSnZlAzuJ0PaDOIg2vpoO3OOgP", "state"=>"4bd72d7b198b5ce5a306143b49a5b49d894d9fd2d83c31b3", "provider"=>"facebook"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10207616039707338"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10207616039707338"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:59:34 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 127.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-11-07 18:59:37 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  Rendered application/_error_messages.html.erb (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (115.1ms)
+Completed 200 OK in 262ms (Views: 242.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 18:59:39 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 119.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:00:03 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 144ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:00:04 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 141ms (Views: 123.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/about" for 127.0.0.1 at 2016-11-07 19:00:04 -0800
+Processing by WelcomeController#about as HTML
+  Rendering welcome/about.html.erb within layouts/application
+  Rendered welcome/about.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 120.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 19:00:05 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 132ms (Views: 114.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:00:05 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 125.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2016-11-07 19:00:06 -0800
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-07 19:00:06 -0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 127ms (Views: 111.6ms | ActiveRecord: 0.0ms)
+
+

@@ -6,6 +6,14 @@
     </div>
 <% end %>
 
+<% if !flash[:sign_out_message].blank? %>
+    <div class="container">
+      <div class="alert alert-warning alert-dismissable">
+        <strong><%= flash[:sign_out_message]%></strong>
+      </div>
+    </div>
+<% end %>
+
 <div class="container">
   <div class="jumbotron">
     <h1> Welcome To MasterChef</h1>
