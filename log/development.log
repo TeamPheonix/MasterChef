@@ -18698,3 +18698,23 @@ Processing by TagsRecipesController#index as HTML
 Completed 200 OK in 146ms (Views: 128.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/tags_recipes/new" for 127.0.0.1 at 2016-11-07 17:28:53 -0800
+Processing by TagsRecipesController#new as HTML
+  Rendering tags_recipes/new.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."approved" = $1[0m  [["approved", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered tags_recipes/_form.html.erb (8.0ms)
+  Rendered tags_recipes/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 263ms (Views: 228.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-11-07 17:28:54 -0800
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 203ms (Views: 187.4ms | ActiveRecord: 0.0ms)
+
+
