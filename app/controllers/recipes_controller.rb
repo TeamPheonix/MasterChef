@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+  #   implicit @recipe created because of link
   end
 
   # POST /recipes

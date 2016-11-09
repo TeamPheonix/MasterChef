@@ -10,7 +10,7 @@
 
       <div class="field form-group">
         <%= f.label :password, "*Password" %>
-        <%= f.password_field :password ,{class: 'form-control'}%>
+        <%= f.text_field :password ,{class: 'form-control'}%>
       </div>
 
       <div class="field form-group ">
@@ -28,14 +28,28 @@
         <%= f.text_field :last_name,{class: 'form-control'} %>
       </div>
 
+
+      <% if user.id == current_user.id || is_admin%>
+          <div class="field form-group">
+            <%= f.label :bio%>
+            <%= f.text_area :bio, {class: 'form-control'} %>
+          </div>
+      <% end %>
+
       <%= f.hidden_field :privileges %>
       <%= f.hidden_field :user_level %>
       <%= f.hidden_field :points %>
       <%= f.hidden_field :provider %>
       <%= f.hidden_field :uid %>
 
+
       <div class="actions">
-        <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
+        <% if user.id == nil %>
+            <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
+        <% else %>
+            <%= f.submit 'Save',{class: 'btn btn-primary'}   %>
+        <% end %>
+
       </div>
 
 <% end %>

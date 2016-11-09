@@ -33,6 +33,7 @@ gem "kaminari", github: "amatsuda/kaminari"
 gem 'omniauth-facebook'
 gem 'coffee-script-source', '1.8.0'
 gem 'rails-controller-testing'
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

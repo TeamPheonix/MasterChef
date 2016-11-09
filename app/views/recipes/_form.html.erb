@@ -17,7 +17,11 @@
   </div>
 
   <div class="field form-group">
-    <%= f.submit'Create', {class: 'btn btn-primary'} %>
+    <% if recipe.user == nil %>
+      <%= f.submit 'Create', {class: 'btn btn-primary'} %>
+    <% else %>
+      <%= f.submit 'Save', {class: 'btn btn-primary'} %>
+    <% end %>
   </div>
 
 <% end %>
