@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create tags
-Tags.create(tag_name:'Vegan',approved:1)
-Tags.create(tag_name:'Breakfast',approved:1)
-Tags.create(tag_name:'Lunch',approved:1)
-Tags.create(tag_name:'Dinner',approved:1)
-Tags.create(tag_name:'Desert',approved:1)
-Tags.create(tag_name:'Sweet',approved:1)
-Tags.create(tag_name:'American',approved:1)
-Tags.create(tag_name:'Mexian',approved:1)
+Tag.create(tag_name:'Vegan',approved:1)
+Tag.create(tag_name:'Breakfast',approved:1)
+Tag.create(tag_name:'Lunch',approved:1)
+Tag.create(tag_name:'Dinner',approved:1)
+Tag.create(tag_name:'Desert',approved:1)
+Tag.create(tag_name:'Sweet',approved:1)
+Tag.create(tag_name:'American',approved:1)
+Tag.create(tag_name:'Mexian',approved:1)
 
 # Create admin
 User.create(user_name: 'admin', password: 'admin', email: 'admin@admin.com', first_name: 'admin', last_name:'admin', privileges:1)
