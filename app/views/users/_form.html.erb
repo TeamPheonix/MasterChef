@@ -1,7 +1,11 @@
-<%= form_for(user) do |f| %>
+<%= form_for(user, :html => {:multipart => true}) do |f| %>
       <%= error_messages_for_users(f.object)%>
 
       <%= f.label "* fields are required" %>
+
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
 
       <div class="field form-group">
         <%= f.label :user_name, "*User name" %>
@@ -29,7 +33,7 @@
       </div>
 
 
-      <% if user.id == current_user.id || is_admin%>
+      <% if user.id == current_user.id || is_admin %>
           <div class="field form-group">
             <%= f.label :bio%>
             <%= f.text_area :bio, {class: 'form-control'} %>
