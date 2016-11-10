@@ -1,29 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Recipe:</strong>
-  <%= @recipe.id %>
-</p>
+<div class="container">
+  <div class="thumbnail">
+    <%= image_tag @recipe.image_url(:medium).to_s %>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user.user_name %>
-</p>
-
-<p>
-  <strong>Recipe name:</strong>
-  <%= @recipe.recipe_name %>
-</p>
-
-<p>
-  <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
-</p>
-
-<p>
-  <strong>Complexity:</strong>
-  <%= @recipe.complexity %>
-</p>
+  <ul class="list-group">
+    <li class="list-group-item"> <strong>Recipe:</strong> <%= @recipe.id %></li>
+    <li class="list-group-item"> <strong>User:</strong> <%= @recipe.user.user_name %></li>
+    <li class="list-group-item"> <strong>Recipe name:</strong>  <%= @recipe.recipe_name %> </li>
+    <li class="list-group-item"> <strong>Instructions:</strong> <%= @recipe.instructions %></li>
+    <li class="list-group-item"> <strong>Complexity:</strong> <%= @recipe.complexity %></li>
+  </ul>
+</div>
 
 <p>
   <strong>Tags:</strong>

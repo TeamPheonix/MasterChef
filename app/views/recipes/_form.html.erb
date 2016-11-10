@@ -1,27 +1,31 @@
-<%= form_for(recipe) do |f| %>
+<%= form_for(recipe, html: {multipart: true}) do |f| %>
     <%= error_messages_for_recipes(f.object)%>
 
-  <div class="field form-group">
-    <%= f.label :recipe_name %>
-    <%= f.text_field :recipe_name,{class: 'form-control'} %>
-  </div>
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
 
-  <div class="field form-group">
-    <%= f.label :instructions %>
-    <%= f.text_field :instructions,{class: 'form-control'} %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :recipe_name %>
+      <%= f.text_field :recipe_name,{class: 'form-control'} %>
+     </div>
 
-  <div class="field form-group">
-    <%= f.label :complexity %>
-    <%= f.number_field :complexity,{class: 'form-control'} %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :instructions %>
+      <%= f.text_field :instructions,{class: 'form-control'} %>
+    </div>
 
-  <div class="field form-group">
-    <% if recipe.user == nil %>
-      <%= f.submit 'Create', {class: 'btn btn-primary'} %>
-    <% else %>
-      <%= f.submit 'Save', {class: 'btn btn-primary'} %>
-    <% end %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :complexity %>
+      <%= f.number_field :complexity,{class: 'form-control'} %>
+    </div>
+
+    <div class="field form-group">
+      <% if recipe.user == nil %>
+        <%= f.submit 'Create', {class: 'btn btn-primary'} %>
+      <% else %>
+        <%= f.submit 'Save', {class: 'btn btn-primary'} %>
+      <% end %>
+    </div>
 
 <% end %>

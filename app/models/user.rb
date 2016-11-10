@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	#image uploading
 	mount_uploader :image, ImageUploader
 	# Associations
 	has_many :recipes
