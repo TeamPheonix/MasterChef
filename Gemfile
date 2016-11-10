@@ -38,8 +38,9 @@ gem 'rails-controller-testing'
 # used in image uploading
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'carrierwave'
-gem 'paperclip', '~> 5.1'
+# gem 'paperclip', '~> 5.1'
 gem 'fog'
+gem 'figaro'
 # AWS
 gem 'aws-sdk', '~> 2.6', '>= 2.6.18'
 
