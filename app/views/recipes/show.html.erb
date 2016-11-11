@@ -33,8 +33,11 @@
     <% end %>
 </p>
 
+<% if current_user && (current_user == @recipe.user) %>
+    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %>
+<% end %>
 <!--Add new recipe image-->
-<%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %>
+
 <!--pass the recipe.id-->
 
 

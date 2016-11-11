@@ -2,6 +2,10 @@ class RecipeImagesController < ApplicationController
   def new
     @recipe_image = RecipeImage.new
     @recipe_id = params[:recipe_id]
+
+    if current_user != Recipe.find(@recipe_id).user
+      redirect_to recipe_path(@recipe_id)
+    end
   end
 
   def create
