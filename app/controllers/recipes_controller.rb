@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
 	  @tags_recipes = TagsRecipe.all
+    @recipe_images = @recipe.recipe_images #returns an array of images for the current recipe
   end
 
   # GET /recipes/new

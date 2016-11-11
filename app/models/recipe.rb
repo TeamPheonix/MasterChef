@@ -5,6 +5,7 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :tags_recipes
   has_many :tags, :through => :tags_recipes
+  has_many :recipe_images
   # Validations
   validates_presence_of :user_id
   validates_presence_of :recipe_name

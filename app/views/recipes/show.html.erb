@@ -14,6 +14,16 @@
   </ul>
 </div>
 
+<div class="container">
+  <% if @recipe_images.empty? %>
+    <p> No images to display</p>
+  <% end %>
+
+  <% @recipe_images.each do |image|%>
+    <%= image_tag image.image_url(:medium).to_s %>
+  <% end %>
+</div>
+
 <p>
   <strong>Tags:</strong>
     <% @tags_recipes.each do |tags_recipe| %>
@@ -22,6 +32,11 @@
     <% end %>
     <% end %>
 </p>
+
+<!--Add new recipe image-->
+<%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %>
+<!--pass the recipe.id-->
+
 
 <% if (current_user && @recipe.user.id == current_user.id )|| is_admin %>
     <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
