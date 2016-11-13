@@ -32,6 +32,7 @@
       <ul class="list-group">
         <% @recipes.each do |recipe|%>
             <li class="list-group-item"><%= recipe.recipe_name %></li>
+            <li><%= link_to 'View',recipe_path(recipe) %></li>
         <% end %>
         <%= paginate @recipes%>
       </ul>
