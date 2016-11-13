@@ -4,6 +4,7 @@
       <%= f.label "* fields are required" %>
 
     <div class="form-group">
+      <%= f.label :image, "Profile Picture" %>
       <%= f.file_field :image %>
     </div>
 
@@ -12,10 +13,17 @@
       <%= f.text_field :user_name ,{class: 'form-control'}%>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :password, "*Password" %>
-      <%= f.text_field :password ,{class: 'form-control'}%>
-    </div>
+    <% if current_user %>
+      <div class="field form-group">
+        <%= f.label :password, "*Password" %>
+        <%= f.text_field :password ,{class: 'form-control'}%>
+      </div>
+    <% else %>
+        <div class="field form-group">
+          <%= f.label :password, "*Password" %>
+          <%= f.password_field :password ,{class: 'form-control'}%>
+        </div>
+    <% end %>
 
     <div class="field form-group ">
       <%= f.label :email, "*Email" %>

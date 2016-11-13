@@ -14,6 +14,15 @@
     </div>
 <% end %>
 
+<% if !notice.nil? %>
+    <div class="container">
+      <div class="alert alert-info">
+        <p id="notice"><%= notice %></p>
+      </div>
+    </div>
+<% end %>
+
+
 <div class="container">
   <div class="jumbotron">
     <h1> Welcome To MasterChef</h1>
