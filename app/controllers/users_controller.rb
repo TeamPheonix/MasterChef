@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :confirm_logged_in, only: [:edit, :update, :destroy]#this line goes last!!!
-  
+
 
   # GET /users
   # GET /users.json
@@ -41,6 +41,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        # Deliver the signup email
+        UserNotifierMailer.send_signup_email(@user).Deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
