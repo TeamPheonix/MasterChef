@@ -33,7 +33,7 @@
     </div>
 
 
-    <% if user.id == current_user.id || is_admin %>
+    <% if (current_user && current_user.id = user.id)|| is_admin %>
         <div class="field form-group">
           <%= f.label :bio%>
           <%= f.text_area :bio, {class: 'form-control'} %>
