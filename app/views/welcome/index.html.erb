@@ -1,23 +1,7 @@
-<% if !flash[:loginmessage].blank? %>
-    <div class="container">
-      <div class="alert alert-warning alert-dismissable">
-        <strong><%= flash[:loginmessage]%></strong>
-      </div>
-    </div>
-<% end %>
-
-<% if !flash[:sign_out_message].blank? %>
-    <div class="container">
-      <div class="alert alert-warning alert-dismissable">
-        <strong><%= flash[:sign_out_message]%></strong>
-      </div>
-    </div>
-<% end %>
-
 <% if !notice.nil? %>
     <div class="container">
       <div class="alert alert-info">
-        <p id="notice"><%= notice %></p>
+        <strong id="notice"><%= notice %></strong>
       </div>
     </div>
 <% end %>
