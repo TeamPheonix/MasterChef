@@ -45,6 +45,8 @@ class SessionsController < ApplicationController
       redirect_to(root_path)
     else
       flash[:loginmessage] = "Login failed."
+      # when the login failed, send out alert email
+      UserNotifierMailer.send_loginerror_email(@user).deliver_now
       redirect_to(sessions_login_path)
     end
   end

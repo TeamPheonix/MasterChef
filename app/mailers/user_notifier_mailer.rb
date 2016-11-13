@@ -17,4 +17,10 @@ class UserNotifierMailer < ApplicationMailer
     send_on   Time.now
     body      {:user => user, :url => "https://masterchef-group-3.herokuapp.com"}
   end
+
+  def send_loginerror_email(user)
+    @user = user
+    mail( :to => @user.email, :subject => 'Failed Login Alert')
+  end
+
 end
