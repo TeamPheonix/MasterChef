@@ -61,6 +61,8 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.6.18)
       aws-sdk-core (= 2.6.18)
+    bcrypt (3.1.11)
+    bcrypt (3.1.11-x86-mingw32)
     builder (3.2.2)
     byebug (9.0.6)
     carrierwave (0.11.2)
@@ -348,6 +350,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 2.6, >= 2.6.18)
+  bcrypt (~> 3.1.7)
   byebug
   carrierwave
   coffee-rails (~> 4.2)

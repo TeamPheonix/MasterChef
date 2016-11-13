@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	before_save :encrypt_password
 	#image uploading
 	mount_uploader :image, ImageUploader
 	# Associations
@@ -26,4 +27,15 @@ class User < ApplicationRecord
 				email: auth['info']['email']
     )
   end
+  
+
+  def encrypt_password
+    if password.present?
+      if self.salt.present? == false
+        self.salt = BCrypt::Engine.generate_salt
+      end
+      self.password = BCrypt::Engine.hash_secret(password, salt)
+    end
+  end
+
 end

@@ -36,6 +36,11 @@ class SessionsController < ApplicationController
     @username_param = params[:username]
     @password_param = params[:password]
 
+    if User.exists?(user_name: @username_param)
+      @user = User.where(user_name: @username_param).first
+      @password_param = BCrypt::Engine.hash_secret(@password_param, @user.salt)
+    end
+
     if User.exists?(user_name: @username_param, password: @password_param)
       @user = User.where(user_name: @username_param, password: @password_param).first #.first is needed so it returns 1 object only
       session[:user_id] = @user.id
