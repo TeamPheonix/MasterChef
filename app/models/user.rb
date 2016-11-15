@@ -1,11 +1,15 @@
 class User < ApplicationRecord
+	before_save :encrypt_password
+	#image uploading
+	mount_uploader :image, ImageUploader
+	# Associations
 	has_many :recipes
-
+	# Validations
 	validates :user_name, presence: true, uniqueness: true
 	validates :password, presence: true
 	validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 	validates :email, uniqueness: true
-
+  # Methods
   def self.exists_from_omniauth(auth)
     find_by(provider: auth['provider'], uid: auth['uid']).present?
   end
@@ -23,4 +27,18 @@ class User < ApplicationRecord
 				email: auth['info']['email']
     )
   end
+  
+
+  def encrypt_password
+
+    if password.present?
+      if self.salt.present? == false
+        self.salt = BCrypt::Engine.generate_salt
+        self.password = BCrypt::Engine.hash_secret(password, salt)
+      elsif password != self.password
+        self.password = BCrypt::Engine.hash_secret(password, salt)
+      end
+    end
+  end
+
 end

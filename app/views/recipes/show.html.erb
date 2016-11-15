@@ -1,29 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Recipe:</strong>
-  <%= @recipe.id %>
-</p>
+<div class="container">
+  <div class="thumbnail">
+    <%= image_tag @recipe.image_url(:medium).to_s %>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user.user_name %>
-</p>
+  <ul class="list-group">
+    <li class="list-group-item"> <strong>Recipe:</strong> <%= @recipe.id %></li>
+    <li class="list-group-item"> <strong>User:</strong> <%= @recipe.user.user_name %></li>
+    <li class="list-group-item"> <strong>Recipe name:</strong>  <%= @recipe.recipe_name %> </li>
+    <li class="list-group-item"> <strong>Instructions:</strong> <%= @recipe.instructions %></li>
+    <li class="list-group-item"> <strong>Complexity:</strong> <%= @recipe.complexity %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Recipe name:</strong>
-  <%= @recipe.recipe_name %>
-</p>
+<div class="container">
+  <% if @recipe_images.empty? %>
+    <p> No images to display</p>
+  <% end %>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
-</p>
-
-<p>
-  <strong>Complexity:</strong>
-  <%= @recipe.complexity %>
-</p>
+  <% @recipe_images.each do |image|%>
+    <%= image_tag image.image_url(:medium).to_s %>
+  <% end %>
+</div>
 
 <p>
   <strong>Tags:</strong>
@@ -33,6 +32,14 @@
     <% end %>
     <% end %>
 </p>
+
+<% if current_user && (current_user == @recipe.user) %>
+    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %>
+<% end %>
+<!--Add new recipe image-->
+
+<!--pass the recipe.id-->
+
 
 <% if (current_user && @recipe.user.id == current_user.id )|| is_admin %>
     <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
     if User.exists_from_omniauth(auth)
       @user = User.sign_in_from_omniauth(auth)
       session[:user_id] = @user.id
-      flash[:loginmessage] = "Login successful #{@user.user_name}."
-      redirect_to root_path
+      redirect_to root_path, notice: "Login successful #{@user.user_name}."
     else # user has no account with us yet
       redirect_to (new_user_path)
     end
@@ -15,11 +14,10 @@ class SessionsController < ApplicationController
 
   def destroy
     current_user
-    flash[:sign_out_message] = "#{current_user.user_name} logged out"
     session[:omniauth] = nil
     session[:user_id] = nil
 
-    redirect_to root_path, notice: 'Signed Out'
+    redirect_to root_path, notice: "Signed out."
   end
 
   def psuedo_destroy
@@ -38,11 +36,15 @@ class SessionsController < ApplicationController
     @username_param = params[:username]
     @password_param = params[:password]
 
+    if User.exists?(user_name: @username_param)
+      @user = User.where(user_name: @username_param).first
+      @password_param = BCrypt::Engine.hash_secret(@password_param, @user.salt)
+    end
+
     if User.exists?(user_name: @username_param, password: @password_param)
       @user = User.where(user_name: @username_param, password: @password_param).first #.first is needed so it returns 1 object only
       session[:user_id] = @user.id
-      flash[:loginmessage] = "Login successful #{@user.user_name}."
-      redirect_to(root_path)
+      redirect_to root_path, notice: "Login successful #{@user.user_name}."
     else
       flash[:loginmessage] = "Login failed."
       # when the login failed, send out alert email
