@@ -14,7 +14,7 @@ Tag.create(tag_name:'Dinner',approved:1)
 Tag.create(tag_name:'Desert',approved:1)
 Tag.create(tag_name:'Sweet',approved:1)
 Tag.create(tag_name:'American',approved:1)
-Tag.create(tag_name:'Mexian',approved:1)
+Tag.create(tag_name:'Mexican',approved:1)
 
 # Create admin
 User.create(user_name: 'admin', password: 'admin', email: 'admin@admin.com', first_name: 'admin', last_name:'admin', privileges:1)
@@ -33,6 +33,3 @@ User.find_by_user_name('Extreme112').recipes << Recipe.create(recipe_name: 'Extr
 User.find_by_user_name('Batman').recipes << Recipe.create(recipe_name: 'Batmans Chili',instructions: '1. Combine beans and franks red hot sauce 2.Simmer for 30 mins 3. Add beef and simmer for another 30 mins 4.Wait 30 mins before serving',complexity:1)
 User.find_by_user_name('Batman').recipes << Recipe.create(recipe_name: 'Batmans Super Cake',instructions: '1. Buy pound cake 2. Buy icing 3. Spread icing over cake',complexity:1)
 User.find_by_user_name('Batman').recipes << Recipe.create(recipe_name: 'Batmans Supreme Burger',instructions: '1. buy hamburger from wendys 2. Wait for order',complexity:1)
-
-
-
