@@ -20,8 +20,14 @@ class RecipeImagesController < ApplicationController
     # need something like current_user
   end
 
-  def delete
-
+  def destroy
+    @recipe_image = RecipeImage.find(params[:id])
+    @recipe = @recipe_image.recipe
+    if @recipe_image.destroy
+      # redirect back to the recipe
+      redirect_to recipe_path(@recipe), notice: 'Image deleted.'
+    else
+    end
   end
 
   private

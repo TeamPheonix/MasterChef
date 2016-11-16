@@ -9,6 +9,7 @@
     <thead>
       <tr>
         <th>Recipe</th>
+        <th>Image</th>
         <th>User</th>
         <th>Recipe name</th>
         <th>Instructions</th>
@@ -20,6 +21,15 @@
     <% @recipes.each do |recipe| %>
             <tr>
               <td><%= recipe.id %></td>
+              <td>
+                <%= link_to recipe do %>
+                  <% if !recipe.image.blank? %>
+                      <%= image_tag recipe.image_url(:thumb).to_s %>
+                  <% else %>
+                      <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+                  <% end %>
+                <% end %>
+              </td>
               <td><%= recipe.user.user_name %></td>
               <td><%= recipe.recipe_name %></td>
               <td><%= recipe.instructions %></td>

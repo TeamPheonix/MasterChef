@@ -194,14 +194,26 @@
   </div>
 
   <!--Display Recipes-->
-  <ul class="list-group">
 
+
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">Recipes</div>
+  <div class="panel-body">
     <% @recipes.each do |recipe|%>
-        <li class="list-group-item"><%= recipe.recipe_name %></li>
+        <p>
+          <%= link_to recipe, class:'doNotHover' do %>
+            <% if !recipe.image.blank? %>
+              <%= image_tag recipe.image_url(:thumb).to_s %>
+            <% else %>
+              <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+          <% end %>
+          <%= recipe.recipe_name %>
+        </p>
     <% end %>
-    <%= paginate @recipes%>
-  </ul>
-
+  </div>
+  <%= paginate @recipes%>
 </div>
 </body>
 </html>
