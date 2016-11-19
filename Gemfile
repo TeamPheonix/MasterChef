@@ -25,14 +25,25 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem "kaminari", github: "amatsuda/kaminari"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# use for facebook authentication
 gem 'omniauth-facebook'
+#used to fix pipeline errors in Windows
 gem 'coffee-script-source', '1.8.0'
 gem 'rails-controller-testing'
+
+# used in image uploading
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'carrierwave'
+# gem 'paperclip', '~> 5.1'
+gem 'fog'
+gem 'figaro'
+# AWS
+gem 'aws-sdk', '~> 2.6', '>= 2.6.18'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

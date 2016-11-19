@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'recipe_image/new'
+
+  get 'recipe_image/delete'
+
   get 'recipes/success'
   get 'recipes/failed'
   get 'recipes/index'
@@ -16,7 +20,8 @@ Rails.application.routes.draw do
   resources :tags
   resources :tags_recipes
   resources :measurements
-  resources :recipe_ratings
   resources :recipes
+  resources :recipe_images
+  resources :recipe_ratings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

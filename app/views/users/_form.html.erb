@@ -1,41 +1,67 @@
-<%= form_for(user) do |f| %>
+<%= form_for(user, :html => {:multipart => true}) do |f| %>
       <%= error_messages_for_users(f.object)%>
 
       <%= f.label "* fields are required" %>
 
-      <div class="field form-group">
-        <%= f.label :user_name, "*User name" %>
-        <%= f.text_field :user_name ,{class: 'form-control'}%>
-      </div>
+    <div class="form-group">
+      <%= f.label :image, "Profile Picture" %>
+      <%= f.file_field :image %>
+    </div>
 
+    <div class="field form-group">
+      <%= f.label :user_name, "*User name" %>
+      <%= f.text_field :user_name ,{class: 'form-control'}%>
+    </div>
+
+    <% if current_user %>
       <div class="field form-group">
         <%= f.label :password, "*Password" %>
-        <%= f.password_field :password ,{class: 'form-control'}%>
+        <%= f.text_field :password ,{class: 'form-control'}%>
       </div>
+    <% else %>
+        <div class="field form-group">
+          <%= f.label :password, "*Password" %>
+          <%= f.password_field :password ,{class: 'form-control'}%>
+        </div>
+    <% end %>
 
-      <div class="field form-group ">
-        <%= f.label :email, "*Email" %>
-        <%= f.text_field :email ,{class: 'form-control'}%>
-      </div>
+    <div class="field form-group ">
+      <%= f.label :email, "*Email" %>
+      <%= f.text_field :email ,{class: 'form-control'}%>
+    </div>
 
-      <div class="field form-group">
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name ,{class: 'form-control'}%>
-      </div>
+    <div class="field form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name ,{class: 'form-control'}%>
+    </div>
 
-      <div class="field form-group">
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name,{class: 'form-control'} %>
-      </div>
+    <div class="field form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name,{class: 'form-control'} %>
+    </div>
 
-      <%= f.hidden_field :privileges %>
-      <%= f.hidden_field :user_level %>
-      <%= f.hidden_field :points %>
-      <%= f.hidden_field :provider %>
-      <%= f.hidden_field :uid %>
 
-      <div class="actions">
-        <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
-      </div>
+    <% if (current_user && current_user.id = user.id)|| is_admin %>
+        <div class="field form-group">
+          <%= f.label :bio%>
+          <%= f.text_area :bio, {class: 'form-control'} %>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :privileges %>
+    <%= f.hidden_field :user_level %>
+    <%= f.hidden_field :points %>
+    <%= f.hidden_field :provider %>
+    <%= f.hidden_field :uid %>
+
+
+    <div class="actions">
+      <% if user.id == nil %>
+          <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
+      <% else %>
+          <%= f.submit 'Save',{class: 'btn btn-primary'}   %>
+      <% end %>
+
+    </div>
 
 <% end %>

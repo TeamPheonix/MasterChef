@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
 	  @tags_recipes = TagsRecipe.all
+    @recipe_images = @recipe.recipe_images #returns an array of images for the current recipe
   end
 
   # GET /recipes/new
@@ -21,6 +22,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+  #   implicit @recipe created because of link
   end
 
   # POST /recipes
@@ -71,7 +73,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:recipe_name, :instructions, :complexity)
+      params.require(:recipe).permit(:recipe_name, :instructions, :complexity, :image)
     end
 end
 
