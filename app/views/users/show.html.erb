@@ -7,55 +7,48 @@
 
 <div class="container">
   <p id="notice"><%= notice %></p>
-  
-
-  <div class="container">
-
-    <!--User Image-->
-    <div class="row">
-      <div class="col-md-3">
-        <!--Display user image-->
-        <div class="thumbnail" id="img-display">
-          <%= image_tag @user.image_url(:medium).to_s %>
-        </div>
-        <!--Form to edit user image-->
-        <div id="img-edit">
-          <% if have_permission %>
-              <%= form_for(@user, :html => {:multipart => true,:class => "form-inline"}) do |f| %>
-                  <%= error_messages_for_users(f.object)%>
-                  <div class="field form-group">
-                    <%= f.file_field :image,{class: 'form-control'}%>
-                  </div>
-                  <%= f.submit 'Change image',{class: 'btn btn-primary'}   %>
-              <% end %>
-          <% end %>
-        </div>
-        <!--Button to hide/show form-->
+  <!--User Image-->
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail">
+      <!--Display user image-->
+      <div id="img-display">
+        <%= image_tag @user.image_url(:medium).to_s %>
+      </div>
+      <!--Form to edit user image-->
+      <div id="img-edit">
         <% if have_permission %>
-          <p class="btn btn-default" id="img-edit-button"> change </p>
+            <%= form_for(@user, :html => {:multipart => true,:class => "form-inline"}) do |f| %>
+                <%= error_messages_for_users(f.object)%>
+                <div class="field form-group">
+                  <%= f.file_field :image,{class: 'form-control'}%>
+                </div>
+                <%= f.submit 'Change image',{class: 'btn btn-primary'}   %>
+            <% end %>
         <% end %>
       </div>
-
-      <div class="col-md-9">
-        <!--Page header-->
-        <div class="page-header">
-          <h1>
-            <strong><%= @user.user_name %></strong> <small><strong>| Level:</strong> <%= @user.user_level %>
-            <strong>| Privileges:</strong> <%= @user.privileges %>
-            <strong>| Points:</strong> <%= @user.points %></small>
-          </h1>
-        </div>
+      <!--Button to hide/show form-->
+      <% if have_permission %>
+        <p class="btn btn-default" id="img-edit-button"> change </p>
+      <% end %>
       </div>
+    </div>
 
-    </div> 
+    <div class="col-md-9">
+      <!--Page header-->
+      <div class="page-header">
+        <h1>
+          <strong><%= @user.user_name %></strong> <small><strong>| Level:</strong> <%= @user.user_level %>
+          <strong>| Privileges:</strong> <%= @user.privileges %>
+          <strong>| Points:</strong> <%= @user.points %></small>
+        </h1>
+      </div>
+    </div>
   </div>
 
-  
   <div class="row">
-
     <!--Account Info COLUMN-->
     <div class="col-md-3">
-
       <!--User Name-->
       <div class="row">
         <div class="col-xs-8">
