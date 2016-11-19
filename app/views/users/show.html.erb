@@ -15,29 +15,37 @@
       <strong>| Points:</strong> <%= @user.points %></small>
     </h1>
   </div>
-  <!--Display user image-->
+
+  
   <div class="container">
     <div class="col-md-3">
-      <div class="thumbnail">
+
+      <!--Display user image-->
+      <div class="thumbnail" id="img-display">
         <%= image_tag @user.image_url(:medium).to_s %>
       </div>
-    </div>
-    <!--Form to edit user image-->
-    <div class="col-md-4">
-      <% if session[:user_id] == @user.id || is_admin %>
-          <%= form_for(@user, :html => {:multipart => true,:class => "form-inline"}) do |f| %>
-              <%= error_messages_for_users(f.object)%>
-              <div class="field form-group">
-                <%= f.file_field :image,{class: 'form-control'}%>
-              </div>
-              <%= f.submit 'Change image',{class: 'btn btn-primary'}   %>
-          <% end %>
-      <% end %>
-    </div>
+
+      <!--Form to edit user image-->
+      <div id="img-edit">
+        <% if have_permission %>
+            <%= form_for(@user, :html => {:multipart => true,:class => "form-inline"}) do |f| %>
+                <%= error_messages_for_users(f.object)%>
+                <div class="field form-group">
+                  <%= f.file_field :image,{class: 'form-control'}%>
+                </div>
+                <%= f.submit 'Change image',{class: 'btn btn-primary'}   %>
+            <% end %>
+        <% end %>
+      </div>
+
+      <!--Button to hide/show form-->
+      <p class="btn btn-default" id="img-edit-button"> EDIT-IMG </p>
+
+    </div> 
   </div>
 
   <!--About me -->
-  <% if session[:user_id] == @user.id || is_admin %>
+  <% if have_permission %>
       <div class="row">
         <div class="col-md-12">
           <p>About Me:</p>
@@ -72,7 +80,7 @@
     </div>
 
     <div class="col-md-4">
-      <% if session[:user_id] == @user.id || is_admin %>
+      <% if have_permission %>
           <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
               <%= error_messages_for_users(f.object)%>
               <div class="field form-group">
@@ -84,7 +92,7 @@
     </div>
   </div>
 
-  <% if session[:user_id] == @user.id || is_admin %>
+  <% if have_permission %>
       <div class="row">
         <div class="col-sm-2">
           <p>
@@ -115,7 +123,7 @@
     </div>
 
     <div class="col-md-4">
-      <% if session[:user_id] == @user.id || is_admin %>
+      <% if have_permission %>
           <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
               <%= error_messages_for_users(f.object)%>
               <div class="field form-group">
@@ -136,7 +144,7 @@
     </div>
 
     <div class="col-md-4">
-      <% if session[:user_id] == @user.id || is_admin %>
+      <% if have_permission %>
           <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
               <%= error_messages_for_users(f.object)%>
               <div class="field form-group">
@@ -157,7 +165,7 @@
     </div>
 
     <div class="col-md-4">
-      <% if session[:user_id] == @user.id || is_admin %>
+      <% if have_permission %>
           <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
               <%= error_messages_for_users(f.object)%>
               <div class="field form-group">
