@@ -16,60 +16,61 @@
     </h1>
   </div>
 
-  
   <div class="container">
-    <div class="col-md-3">
 
-      <!--Display user image-->
-      <div class="thumbnail" id="img-display">
-        <%= image_tag @user.image_url(:medium).to_s %>
-      </div>
-
-      <!--Form to edit user image-->
-      <div id="img-edit">
+    <!--User Image-->
+    <div class="row">
+      <div class="col-md-3">
+        <!--Display user image-->
+        <div class="thumbnail" id="img-display">
+          <%= image_tag @user.image_url(:medium).to_s %>
+        </div>
+        <!--Form to edit user image-->
+        <div id="img-edit">
+          <% if have_permission %>
+              <%= form_for(@user, :html => {:multipart => true,:class => "form-inline"}) do |f| %>
+                  <%= error_messages_for_users(f.object)%>
+                  <div class="field form-group">
+                    <%= f.file_field :image,{class: 'form-control'}%>
+                  </div>
+                  <%= f.submit 'Change image',{class: 'btn btn-primary'}   %>
+              <% end %>
+          <% end %>
+        </div>
+        <!--Button to hide/show form-->
         <% if have_permission %>
-            <%= form_for(@user, :html => {:multipart => true,:class => "form-inline"}) do |f| %>
-                <%= error_messages_for_users(f.object)%>
-                <div class="field form-group">
-                  <%= f.file_field :image,{class: 'form-control'}%>
-                </div>
-                <%= f.submit 'Change image',{class: 'btn btn-primary'}   %>
-            <% end %>
+          <p class="btn btn-default" id="img-edit-button"> EDIT-IMG </p>
         <% end %>
       </div>
-
-      <!--Button to hide/show form-->
-      <p class="btn btn-default" id="img-edit-button"> EDIT-IMG </p>
-
     </div> 
   </div>
 
-  <!--About me -->
-  <% if have_permission %>
-      <div class="row">
-        <div class="col-md-12">
-          <p>About Me:</p>
-          <div class="jumbotron">
-            <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
-                <%= error_messages_for_users(f.object)%>
-                <div class="field form-group">
-                  <%= f.text_area :bio ,{class: 'form-control'}%>
-                </div>
-                <%= f.submit 'Update bio',{class: 'btn btn-primary'}   %>
-            <% end %>
-          </div>
-        </div>
+  <!--User Biography-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+      <!--Display user bio-->
+      <div id="bio-display">
+        <p><%= simple_format(@user.bio) %></p>
       </div>
-  <% else %>
-      <div class="row">
-        <div class="col-md-12">
-          <p>About Me:</p>
-          <div class="jumbotron">
-            <p><%= simple_format(@user.bio) %></p>
-          </div>
-        </div>
+      <!--Form for user bio-->
+      <div id="bio-edit">
+        <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+            <%= error_messages_for_users(f.object)%>
+            <div class="field form-group">
+              <%= f.text_area :bio ,{class: 'form-control'}%>
+            </div>
+            <%= f.submit 'Update bio',{class: 'btn btn-primary'}   %>
+        <% end %>
       </div>
-  <% end %>
+      <!--Button to hide/show form-->
+      <% if have_permission %>
+        <p class="btn btn-default" id="bio-edit-button"> EDIT-BIO </p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
 
   <div class="row">
     <div class="col-sm-2">
