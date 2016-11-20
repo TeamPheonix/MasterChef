@@ -87,5 +87,7 @@ test:
 production:
   <<: *default
   database: MasterChef_production
-  username: MasterChef
-  password: <%= ENV['MASTERCHEF_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: 660715
+#  username: MasterChef
+#  password: <%= ENV['MASTERCHEF_DATABASE_PASSWORD'] %>

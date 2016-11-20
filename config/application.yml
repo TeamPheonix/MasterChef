@@ -13,7 +13,7 @@
 S3_KEY: AKIAI7LSUWJDGCUCBCCA
 S3_SECRET: 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
 development:
-  S3_BUCKET_NAME: 'group3-railsdevelopment'   # Change this if you decide to create new bucket for development
+  S3_BUCKET_NAME: 'william-bucket'   # Change this if you decide to create new bucket for development
 #  S3_REGION: ''
 production:
   S3_BUCKET_NAME: 'group3-railsproduction'
