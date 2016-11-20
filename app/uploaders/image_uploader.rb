@@ -46,6 +46,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [100, 100]
   end
 
+  version :fb do
+    process resize_to_fit: [200,200]
+  end
+
   version :square do
     process :resize_to_fill => [500, 500]
   end
