@@ -40,9 +40,13 @@
 <p>
   <strong>Tags:</strong>
     <% @tags_recipes.each do |tags_recipe| %>
-      <% if tags_recipe.recipe_id == @recipe.id || is_admin %>
-          <td><%= tags_recipe.tag.tag_name %></td>
+      <% if tags_recipe.recipe_id == @recipe.id%>
+          <a href="/recipes?tag[]=<%= tags_recipe.tag.id %>"><%= tags_recipe.tag.tag_name %></a>
       <% end %>
+    <% end %>
+    <% if current_user && (current_user == @recipe.user) || is_admin %>
+	//buton for adding
+
     <% end %>
 </p>
 
