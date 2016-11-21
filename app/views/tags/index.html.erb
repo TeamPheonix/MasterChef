@@ -4,8 +4,8 @@
 <h1>Tag Search</h1>
 Check all the tags you want to search.
 <form action="recipes" method="GET">
-<% @tags.each do |tag| %>
-  <input type ="checkbox" name="tag[]" value="<%= tag.id %>" ><font size="3px"><%= tag.tag_name %> </font></input>
+<% @tags.order(:tag_name).each do |tag| %>
+  <input type ="checkbox" name="tag[]" value="<%= tag.id %>" ><font size="3px"><%= tag.tag_name %>&nbsp</font></input>
 <% end %>
 <br><br>
 <input type="submit" value="Search" class="btn btn-default">
