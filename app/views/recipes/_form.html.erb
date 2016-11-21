@@ -2,7 +2,12 @@
     <%= error_messages_for_recipes(f.object)%>
 
     <div class="form-group">
+      <%= f.label 'Main Recipe Image' %>
       <%= f.file_field :image %>
+      <small>
+        This image will be the image that identifies your recipe. <br>
+        You can add more images to this recipe via the edit page.
+      </small>
     </div>
 
     <div class="field form-group">
