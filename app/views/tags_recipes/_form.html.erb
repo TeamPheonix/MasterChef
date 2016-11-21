@@ -11,14 +11,20 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :recipe_id %>
+    
+    <% if params[:recipe_id].present? %>
+      <%= f.hidden_field :recipe_id, :value => params[:recipe_id] %>
+      <%= Recipe.find(params[:recipe_id]).recipe_name %>
+    <%else%>
+      <%= f.collection_select :recipe_id, Recipe.where( :user_id => current_user.id ), :id, :recipe_name %>
+    <%end%>
+  </div>
+
   <div class="field form-group">
     <%= f.label :tag_id, {for: 'tags_recipe_tag_id'} %>
     <%= f.collection_select :tag_id, Tag.where( :approved => 1 ) , :id, :tag_name, {:class => 'form-control'} %>
-  </div>
-
-  <div class="field">
-    <%= f.label :recipe_id %>
-    <%= f.collection_select :recipe_id, Recipe.where( :user_id => current_user.id ), :id, :recipe_name %>
   </div>
 
   <div class="actions">

@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
   # Associations
   belongs_to :user
   has_many :tags_recipes, :dependent => :delete_all
-  has_many :tags, :through => :tags_recipes
+  has_many :tags, -> {uniq}, :through => :tags_recipes
   has_many :recipe_images
   # Validations
   validates_presence_of :user_id
