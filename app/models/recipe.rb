@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   mount_uploader :image, ImageUploader
   # Associations
   belongs_to :user
-  has_many :tags_recipes
+  has_many :tags_recipes, :dependent => :delete_all
   has_many :tags, :through => :tags_recipes
   has_many :recipe_images
   # Validations

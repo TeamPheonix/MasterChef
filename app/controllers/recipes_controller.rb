@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    #finding recipes with specific tags
+    #finding recipes by clicking tags
     if params[:tag]
       @tagged_id = TagsRecipe.where(tag_id: params[:tag])
       i = 0
@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
         i = i+1
       end
       @recipes = Recipe.where(id: recipeid)
-
     else
       @recipes = Recipe.all
     end

@@ -13,7 +13,7 @@
 
   <tbody>
     <% @tags_recipes.each do |tags_recipe| %>
-    <% if tags_recipe.recipe.user_id == current_user.id || is_admin %>
+    <% if is_admin %>
       <tr>
         <td><%= tags_recipe.tag.tag_name %></td>
         <td><%= tags_recipe.recipe.recipe_name %></td>
