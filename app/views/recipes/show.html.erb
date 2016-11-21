@@ -42,17 +42,18 @@
     <% @tags_recipes.each do |tags_recipe| %>
       <% if tags_recipe.recipe_id == @recipe.id%>
           <a href="/recipes?tag[]=<%= tags_recipe.tag.id %>"><%= tags_recipe.tag.tag_name %></a>
+          <%= link_to 'Destroy', tags_recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     <% end %>
     <% if current_user && (current_user == @recipe.user) || is_admin %>
-	//buton for adding
-
+	
+	//edit
     <% end %>
 </p>
 
 
 <% if current_user && (current_user == @recipe.user) %>
-    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %>
+    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %> 
 <% end %>
 
 <% if (current_user && @recipe.user.id == current_user.id )|| is_admin %>

@@ -24,11 +24,15 @@ class RecipesController < ApplicationController
   def show
     @tags_recipes = TagsRecipe.all
     @recipe_images = @recipe.recipe_images #returns an array of images for the current recipe
+    @tags_recipe = TagsRecipe.new
+    @tag = Tag.all
   end
 
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @tags_recipe = TagsRecipe.new
+    @tag = Tag.all
     current_user
   end
 
