@@ -10,6 +10,7 @@ $(document).on('turbolinks:load', function(){
 	$('#first-edit').hide();
 	$('#last-edit').hide();
 	$('#email-edit').hide();
+	$('#pswd-edit').hide();
 
 	$('#img-edit-button').on('click', function(){
 		$('#img-edit').slideToggle(150);
@@ -34,6 +35,10 @@ $(document).on('turbolinks:load', function(){
 	$('#email-edit-button').on('click', function(){
 		$('#email-edit').slideToggle(150);
 		$('#email-display').slideToggle(150);
+	});
+	$('#pswd-edit-button').on('click', function(){
+		$('#pswd-edit').slideToggle(150);
+		$('#pswd-display').slideToggle(150);
 	});
 
 });

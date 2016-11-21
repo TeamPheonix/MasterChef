@@ -173,6 +173,35 @@
         </div>
       </div>
 
+      <!--Password-->
+      <% if have_permission %>
+        <div class="row">
+          <div class="col-sm-8">
+            <!--display Password-->
+            <div id="pswd-display">
+              <p>
+                <strong>Password:</strong><br>
+                <%= @user.password %>
+              </p>
+            </div>
+            <!--edit Password-->
+            <div id="pswd-edit">
+              <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+                <%= error_messages_for_users(f.object)%>
+                <div class="field form-group">
+                  <%= f.text_field :password ,{class: 'form-control'}%>
+                </div>
+                <%= f.submit 'Edit Password',{class: 'btn btn-primary'}   %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <!--Button to hide/show form-->
+            <p class="btn btn-default" id="pswd-edit-button"> change </p>
+          </div>
+        </div>
+      <% end %>
+
     </div>  <!--close first column-->
 
     <!--new column-->
@@ -201,82 +230,53 @@
     </div>
   </div>
 
-  <% if have_permission %>
-      <div class="row">
-        <div class="col-sm-2">
-          <p>
-            <strong>Password:</strong>
-            <%= @user.password %>
-          </p>
+  <!--Make Admin buttons-->
+  <% if is_admin %>
+    <div class="row">
+      <br>
+      <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+        <%= error_messages_for_users(f.object)%>
+        <div class="field form-group">
+          <%= f.hidden_field :privileges, :value => 1 %>
         </div>
-
-        <div class="col-md-4">
-          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
-              <%= error_messages_for_users(f.object)%>
-              <div class="field form-group">
-                <%= f.text_field :password ,{class: 'form-control'}%>
-              </div>
-              <%= f.submit 'Edit Password',{class: 'btn btn-primary'}   %>
-          <% end %>
+        <%= f.submit 'Grant Admin',{class: 'btn btn-primary'}   %>
+      <% end %> 
+    </div>
+    <div class="row">
+      <br>
+      <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
+        <%= error_messages_for_users(f.object)%>
+        <div class="field form-group">
+          <%= f.hidden_field :privileges, :value => 0 %>
         </div>
-
-      </div>
+        <%= f.submit 'Make Normal',{class: 'btn btn-primary'}   %>
+      <% end %>
+    </div>
   <% end %>
 
-
-  
-
+<!--Display Recipes-->
   <div class="row">
-    <% if is_admin %>
-        <div class="col-xs-1">
-          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
-              <%= error_messages_for_users(f.object)%>
-              <div class="field form-group">
-                <%= f.hidden_field :privileges, :value => 1 %>
-              </div>
-              <%= f.submit 'MakeAdmin',{class: 'btn btn-primary'}   %>
-          <% end %>
-        </div>
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Recipes</div>
+      <div class="panel-body">
+        <% @recipes.each do |recipe|%>
+            <p>
+              <%= link_to recipe, class:'doNotHover' do %>
+                <% if !recipe.image.blank? %>
+                  <%= image_tag recipe.image_url(:thumb).to_s %>
+                <% else %>
+                  <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+                <% end %>
+              <% end %>
+              <%= recipe.recipe_name %>
+            </p>
+        <% end %>
+      </div>
+      <%= paginate @recipes%>
+    </div>
 
-        <div class="col-xs-1">
-          <%= form_for(@user, :html => {:class => "form-inline"}) do |f| %>
-              <%= error_messages_for_users(f.object)%>
-              <div class="field form-group">
-                <%= f.hidden_field :privileges, :value => 0 %>
-              </div>
-              <%= f.submit 'MakeNormal',{class: 'btn btn-primary'}   %>
-          <% end %>
-        </div>
-    <% end %>
   </div>
-
-  <!--Display Recipes-->
-
-
-
-
-<div class="row">
-
-<div class="panel panel-primary">
-  <div class="panel-heading">Recipes</div>
-  <div class="panel-body">
-    <% @recipes.each do |recipe|%>
-        <p>
-          <%= link_to recipe, class:'doNotHover' do %>
-            <% if !recipe.image.blank? %>
-              <%= image_tag recipe.image_url(:thumb).to_s %>
-            <% else %>
-              <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
-            <% end %>
-          <% end %>
-          <%= recipe.recipe_name %>
-        </p>
-    <% end %>
-  </div>
-  <%= paginate @recipes%>
-</div>
-
-</div>
 
 </div>
 </body>
