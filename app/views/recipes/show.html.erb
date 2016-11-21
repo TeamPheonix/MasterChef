@@ -42,12 +42,11 @@
     <% @tags_recipes.each do |tags_recipe| %>
       <% if tags_recipe.recipe_id == @recipe.id%>
           <a href="/recipes?tag[]=<%= tags_recipe.tag.id %>"><%= tags_recipe.tag.tag_name %></a>
-          <%= link_to 'Destroy', tags_recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '[X]', tags_recipe, method: :delete, data: { confirm: 'Are you sure?' } %> |
       <% end %>
     <% end %>
     <% if current_user && (current_user == @recipe.user) || is_admin %>
-	
-	//edit
+
     <% end %>
 </p>
 
