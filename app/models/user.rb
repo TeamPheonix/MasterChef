@@ -1,13 +1,12 @@
 class User < ApplicationRecord
 	before_save :encrypt_password
-  after_save :clear_password
 	#image uploading
 	mount_uploader :image, ImageUploader
 	# Associations
 	has_many :recipes
 	# Validations
 	validates :user_name, presence: true, uniqueness: true
-	validates :encrypted_password, presence: true
+	validates :password, presence: true
 	validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 	validates :email, uniqueness: true
   # Methods
@@ -29,17 +28,17 @@ class User < ApplicationRecord
     )
   end
   
-  def clear_password
-    self.password = nil
-  end
 
   def encrypt_password
+
     if password.present?
-      self.salt = BCrypt::Engine.generate_salt
-      self.encrypted_password = BCrypt::Engine.hash_secret(password, salt)
+      if self.salt.present? == false
+        self.salt = BCrypt::Engine.generate_salt
+        self.password = BCrypt::Engine.hash_secret(password, salt)
+      elsif password != self.password
+        self.password = BCrypt::Engine.hash_secret(password, salt)
+      end
     end
-    # For some reason after_save call back doesnt work, so I'm clearing password here
-    clear_password
   end
 
 end

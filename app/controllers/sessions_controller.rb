@@ -41,8 +41,8 @@ class SessionsController < ApplicationController
       @password_param = BCrypt::Engine.hash_secret(@password_param, @user.salt)
     end
 
-    if User.exists?(user_name: @username_param, encrypted_password: @password_param)
-      @user = User.where(user_name: @username_param, encrypted_password: @password_param).first #.first is needed so it returns 1 object only
+    if User.exists?(user_name: @username_param, password: @password_param)
+      @user = User.where(user_name: @username_param, password: @password_param).first #.first is needed so it returns 1 object only
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Login successful #{@user.user_name}."
     else
