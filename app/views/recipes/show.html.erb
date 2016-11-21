@@ -27,37 +27,7 @@
     </div>
 <% end %>
 
-<div class="container">
-  <!--Recipe's main image-->
-  <% if !@recipe.image.blank? %>
-    <div class="thumbnail">
-      <%= image_tag @recipe.image_url(:medium).to_s %>
-    </div>
-  <% end %>
-
-  <!-- About the recipe-->
-  <ul class="list-group">
-    <li class="list-group-item"> <strong>Recipe:</strong> <%= @recipe.id %></li>
-    <li class="list-group-item"> <strong>User:</strong> <%= @recipe.user.user_name %></li>
-    <li class="list-group-item"> <strong>Recipe name:</strong>  <%= @recipe.recipe_name %> </li>
-    <li class="list-group-item"> <strong>Instructions:</strong> <%= @recipe.instructions %></li>
-    <li class="list-group-item"> <strong>Complexity:</strong> <%= @recipe.complexity %></li>
-  </ul>
-</div>
-
-<div class="container">
-  <% if @recipe_images.empty? %>
-    <p> No images to display</p>
-  <% end %>
-<!--Recipes other images-->
-  <% @recipe_images.each do |image|%>
-      <div class="thumbnail">
-        <%= image_tag image.image_url(:medium).to_s %>
-        <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'%>
-      </div>
-  <% end %>
-</div>
-<!--Share buttons-->
+<!--Twitter and Facebook JS intializers-->
 <!--Facebook-->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -67,7 +37,6 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=519903674872413";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-like" data-href="<% request.original_url %>" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 <!--Twitter-->
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -84,18 +53,58 @@
   };
   return t;
 }(document, "script", "twitter-wjs"));</script>
-<a class="twitter-share-button"
-   href="https://twitter.com/share"
-   data-text="Recipe: <%= @recipe.recipe_name %> @MasterChef.com"
-   data-url="<%= Bitly.client.shorten('http://www.google.com').short_url %>"
-   data-hashtags="MasterChef,Recipe"
->
-  Tweet
-</a>
+<!--End of initializers-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <!--Recipe's main image-->
+      <% if !@recipe.image.blank? %>
+          <div class="thumbnail">
+            <%= image_tag @recipe.image_url(:medium).to_s %>
+            <div class="caption">
+                <!--Share buttons-->
+              <div class="fb-like" data-href="<%= request.original_url %>" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br>
+
+              <a class="twitter-share-button"
+                 href="https://twitter.com/share"
+                 data-size="small"
+                 data-text="Recipe: <%= @recipe.recipe_name %> @MasterChef.com"
+                 data-url="<%= Bitly.client.shorten(request.original_url.to_s).short_url %>"
+                 data-hashtags="MasterChef,Recipe">
+                Tweet
+              </a>
+              <!--End of share buttons-->
+            </div>
+          </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- About the recipe-->
+  <ul class="list-group">
+    <li class="list-group-item"> <strong>Recipe:</strong> <%= @recipe.id %></li>
+    <li class="list-group-item"> <strong>User:</strong> <%= @recipe.user.user_name %></li>
+    <li class="list-group-item"> <strong>Recipe name:</strong>  <%= @recipe.recipe_name %> </li>
+    <li class="list-group-item"> <strong>Instructions:</strong> <%= @recipe.instructions %></li>
+    <li class="list-group-item"> <strong>Complexity:</strong> <%= @recipe.complexity %></li>
+  </ul>
+</div>
 
 
-<p>BITLY LINK <%= Bitly.client.shorten('http://www.google.com').short_url %></p>
-<!---->
+
+<div class="container">
+  <% if @recipe_images.empty? %>
+      <p> No images to display</p>
+  <% end %>
+  <!--Recipes other images-->
+  <% @recipe_images.each do |image|%>
+      <div class="thumbnail">
+        <%= image_tag image.image_url(:medium).to_s %>
+        <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'%>
+      </div>
+  <% end %>
+</div>
 <p>
   <strong>Tags:</strong>
     <% @tags_recipes.each do |tags_recipe| %>
