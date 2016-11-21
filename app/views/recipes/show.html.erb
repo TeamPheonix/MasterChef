@@ -57,7 +57,8 @@
       </div>
   <% end %>
 </div>
-<!--Share button-->
+<!--Share buttons-->
+<!--Facebook-->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -66,9 +67,34 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=519903674872413";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<!--<div class="fb-share-button" data-href="<% request.original_url %>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.freesound.org%2F&amp;src=sdkpreparse">Share</a></div>-->
-
 <div class="fb-like" data-href="<% request.original_url %>" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+<!--Twitter-->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<a class="twitter-share-button"
+   href="https://twitter.com/share"
+   data-text="Recipe: <%= @recipe.recipe_name %> @MasterChef.com"
+   data-url="<%= Bitly.client.shorten('http://www.google.com').short_url %>"
+   data-hashtags="MasterChef,Recipe"
+>
+  Tweet
+</a>
+
+
+<p>BITLY LINK <%= Bitly.client.shorten('http://www.google.com').short_url %></p>
 <!---->
 <p>
   <strong>Tags:</strong>
