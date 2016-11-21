@@ -44,6 +44,8 @@ gem 'fog'
 gem 'figaro'
 # AWS
 gem 'aws-sdk', '~> 2.6', '>= 2.6.18'
+#Bit.ly
+gem 'bitly'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
