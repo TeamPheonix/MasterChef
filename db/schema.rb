@@ -79,14 +79,8 @@ ActiveRecord::Schema.define(version: 20161121080913) do
     t.integer  "privileges"
     t.integer  "user_level"
     t.integer  "points"
-<<<<<<< HEAD
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "bio"
->>>>>>> c2e8d1c82dcda624a3138ff5b6d38b6fa8ac658a
     t.string   "uid"
     t.string   "provider"
     t.text     "bio"
