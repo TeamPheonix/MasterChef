@@ -67,8 +67,9 @@ Rails.application.configure do
    :port                 => 587,
    :user_name            => ENV['masterchefgroup3'],
    :password             => ENV['cmpt276phoenix'],
+   #:openssl_verify_mode  => 'none'
    :authentication       => "plain",
-  :enable_starttls_auto => true
+   :enable_starttls_auto => true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

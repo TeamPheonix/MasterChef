@@ -15,4 +15,77 @@ ActiveRecord::Schema.define(version: 20161113062237) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "ingredients", force: :cascade do |t|
+    t.integer  "ingredient_id"
+    t.integer  "recipe_id"
+    t.string   "ingredient_name"
+    t.string   "web_link"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.string   "measurement_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "recipe_images", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipe_ratings", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.string   "comment"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "recipe_name"
+    t.string   "instructions"
+    t.integer  "complexity"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "image"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "tag_name"
+    t.integer  "approved"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_recipes", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.integer  "privileges"
+    t.integer  "user_level"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "uid"
+    t.string   "provider"
+    t.text     "bio"
+    t.string   "image"
+    t.string   "salt"
+  end
+
 end
