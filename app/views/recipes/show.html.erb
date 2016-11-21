@@ -1,3 +1,24 @@
+<% content_for :for_head do %>
+    <meta property="fb:app_id" content="519903674872413">
+    <meta property="og:title" content="<%= @recipe.recipe_name %> - MasterChef">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<%= @recipe.image_url(:fb_small).to_s %>">
+    <meta property="og:image:secure_url" content="<%= @recipe.image_url(:fb_small).to_s %>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:image" content="<%= @recipe.image_url(:fb_medium).to_s %>">
+    <meta property="og:image:secure_url" content="<%= @recipe.image_url(:fb_medium).to_s %>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:image" content="<%= @recipe.image_url(:fb_large).to_s %>">
+    <meta property="og:image:secure_url" content="<%= @recipe.image_url(:fb_large).to_s %>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
 <% if notice %>
     <div class="container">
       <div class="alert alert-info">
@@ -6,13 +27,59 @@
     </div>
 <% end %>
 
+<!--Twitter and Facebook JS intializers-->
+<!--Facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=519903674872413";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--Twitter-->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<!--End of initializers-->
 <div class="container">
-  <!--Recipe's main image-->
-  <% if !@recipe.image.blank? %>
-    <div class="thumbnail">
-      <%= image_tag @recipe.image_url(:medium).to_s %>
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <!--Recipe's main image-->
+      <% if !@recipe.image.blank? %>
+          <div class="thumbnail">
+            <%= image_tag @recipe.image_url(:medium).to_s %>
+            <div class="caption">
+                <!--Share buttons-->
+              <div class="fb-like" data-href="<%= request.original_url %>" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br>
+
+              <a class="twitter-share-button"
+                 href="https://twitter.com/share"
+                 data-size="small"
+                 data-text="Recipe: <%= @recipe.recipe_name %> @MasterChef.com"
+                 data-url="<%= Bitly.client.shorten(request.original_url.to_s).short_url %>"
+                 data-hashtags="MasterChef,Recipe">
+                Tweet
+              </a>
+              <!--End of share buttons-->
+            </div>
+          </div>
+      <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
 
   <!-- About the recipe-->
   <ul class="list-group">
@@ -24,11 +91,13 @@
   </ul>
 </div>
 
+
+
 <div class="container">
   <% if @recipe_images.empty? %>
-    <p> No images to display</p>
+      <p> No images to display</p>
   <% end %>
-<!--Recipes other images-->
+  <!--Recipes other images-->
   <% @recipe_images.each do |image|%>
       <div class="thumbnail">
         <%= image_tag image.image_url(:medium).to_s %>
@@ -36,7 +105,6 @@
       </div>
   <% end %>
 </div>
-
 <p>
   <strong>Tags:</strong>
     <% @tags_recipes.each do |tags_recipe| %>
