@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         # Tell the UserNotifierMailer to send a welcome email when user is created
-        UserNotifierMailer.send_signup_email(@user).deliver
+        UserNotifierMailer.send_signup_email(@user).deliver_now
 
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
