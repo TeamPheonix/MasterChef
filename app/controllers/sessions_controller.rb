@@ -46,15 +46,12 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Login successful #{@user.user_name}."
     else
-<<<<<<< HEAD
       redirect_to sessions_login_path, notice: "LOGIN FAILED"
       flash[:notice]
-=======
       flash[:loginmessage] = "Login failed."
       # when the login failed, send out alert email
-      UserNotifierMailer.send_loginerror_email(@user).deliver_now
-      redirect_to(sessions_login_path)
->>>>>>> 89d9896514580ab8863c155448271335660b99d1
+      #UserNotifierMailer.send_loginerror_email(@user).deliver_now
+      #redirect_to(sessions_login_path)
     end
   end
 end
