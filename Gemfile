@@ -35,6 +35,7 @@ gem 'omniauth-facebook'
 #used to fix pipeline errors in Windows
 gem 'coffee-script-source', '1.8.0'
 gem 'rails-controller-testing'
+
 # used in image uploading
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'carrierwave'

@@ -88,4 +88,6 @@ production:
   <<: *default
   database: MasterChef_production
   username: MasterChef
-  password: <%= ENV['MASTERCHEF_DATABASE_PASSWORD'] %>
+  password: masterchef
+ # username: MasterChef
+ # password: <%= ENV['MASTERCHEF_DATABASE_PASSWORD'] %>
