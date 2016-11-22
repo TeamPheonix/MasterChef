@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102231255) do
+ActiveRecord::Schema.define(version: 20161121080913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20161102231255) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "recipe_images", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "recipe_ratings", force: :cascade do |t|
     t.integer  "recipe_id"
     t.integer  "user_id"
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 20161102231255) do
     t.integer  "complexity"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "image"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -71,11 +79,14 @@ ActiveRecord::Schema.define(version: 20161102231255) do
     t.integer  "privileges"
     t.integer  "user_level"
     t.integer  "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "uid"
     t.string   "provider"
     t.text     "bio"
+    t.string   "image"
+    t.string   "salt"
+    t.string   "encrypted_password"
   end
 
 end

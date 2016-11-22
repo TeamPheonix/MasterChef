@@ -1,38 +1,127 @@
-<p id="notice"><%= notice %></p>
+<% content_for :for_head do %>
+    <meta property="fb:app_id" content="519903674872413">
+    <meta property="og:title" content="<%= @recipe.recipe_name %> - MasterChef">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<%= @recipe.image_url(:fb_small).to_s %>">
+    <meta property="og:image:secure_url" content="<%= @recipe.image_url(:fb_small).to_s %>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:image" content="<%= @recipe.image_url(:fb_medium).to_s %>">
+    <meta property="og:image:secure_url" content="<%= @recipe.image_url(:fb_medium).to_s %>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:image" content="<%= @recipe.image_url(:fb_large).to_s %>">
+    <meta property="og:image:secure_url" content="<%= @recipe.image_url(:fb_large).to_s %>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+<% if notice %>
+    <div class="container">
+      <div class="alert alert-info">
+        <strong id="notice"><%= notice %></strong>
+      </div>
+    </div>
+<% end %>
 
-<p>
-  <strong>Recipe:</strong>
-  <%= @recipe.id %>
-</p>
+<!--Twitter and Facebook JS intializers-->
+<!--Facebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=519903674872413";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--Twitter-->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
 
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user.user_name %>
-</p>
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<!--End of initializers-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <!--Recipe's main image-->
+      <% if !@recipe.image.blank? %>
+          <div class="thumbnail">
+            <%= image_tag @recipe.image_url(:medium).to_s %>
+            <div class="caption">
+                <!--Share buttons-->
+              <div class="fb-like" data-href="<%= request.original_url %>" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br>
 
-<p>
-  <strong>Recipe name:</strong>
-  <%= @recipe.recipe_name %>
-</p>
+              <a class="twitter-share-button"
+                 href="https://twitter.com/share"
+                 data-size="small"
+                 data-text="Recipe: <%= @recipe.recipe_name %> @MasterChef.com"
+                 data-url="<%= Bitly.client.shorten(request.original_url.to_s).short_url %>"
+                 data-hashtags="MasterChef,Recipe">
+                Tweet
+              </a>
+              <!--End of share buttons-->
+            </div>
+          </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
-</p>
+  <!-- About the recipe-->
+  <ul class="list-group">
+    <li class="list-group-item"> <strong>Recipe:</strong> <%= @recipe.id %></li>
+    <li class="list-group-item"> <strong>User:</strong> <%= @recipe.user.user_name %></li>
+    <li class="list-group-item"> <strong>Recipe name:</strong>  <%= @recipe.recipe_name %> </li>
+    <li class="list-group-item"> <strong>Instructions:</strong> <%= @recipe.instructions %></li>
+    <li class="list-group-item"> <strong>Complexity:</strong> <%= @recipe.complexity %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Complexity:</strong>
-  <%= @recipe.complexity %>
-</p>
 
+
+<div class="container">
+  <% if @recipe_images.empty? %>
+      <p> No images to display</p>
+  <% end %>
+  <!--Recipes other images-->
+  <% @recipe_images.each do |image|%>
+      <div class="thumbnail">
+        <%= image_tag image.image_url(:medium).to_s %>
+        <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'%>
+      </div>
+  <% end %>
+</div>
 <p>
   <strong>Tags:</strong>
     <% @tags_recipes.each do |tags_recipe| %>
-    <% if tags_recipe.recipe_id == @recipe.id || is_admin %>
-        <td><%= tags_recipe.tag.tag_name %></td>
+      <% if tags_recipe.recipe_id == @recipe.id%>
+          <a href="/recipes?tag[]=<%= tags_recipe.tag.id %>"><%= tags_recipe.tag.tag_name %></a>
+          <%= link_to '[X]', tags_recipe, method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <% end %>
     <% end %>
+    <% if current_user && (current_user == @recipe.user) || is_admin %>
+	<%= link_to 'Add Tags', new_tags_recipe_path(:recipe_id => @recipe.id) %>
     <% end %>
 </p>
+
+
+<% if current_user && (current_user == @recipe.user) %>
+    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %> 
+<% end %>
 
 <% if (current_user && @recipe.user.id == current_user.id )|| is_admin %>
     <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
+
+<!-- it's a search page if you're not admin -->
+<h1>Tag Search</h1>
+Check all the tags you want to search.
+<form action="recipes" method="GET">
+<% @tags.order(:tag_name).each do |tag| %>
+  <input type ="checkbox" name="tag[]" value="<%= tag.id %>" ><font size="3px"><%= tag.tag_name %>&nbsp</font></input>
+<% end %>
+<br><br>
+<input type="submit" value="Search" class="btn btn-default">
+</form>
+
+<!-- otherwise it's a tag editing -->
+
+<% if is_admin %>
 <div class="page-header">
   <h1>Tags</h1>
 </div>
@@ -11,7 +26,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tags.each do |tag| %>
       <tr>
@@ -34,3 +48,6 @@
 <br>
 
 <%= link_to 'New Tag', new_tag_path, {class: 'btn btn-default'} %>
+<br><br>
+<% end %>
+

@@ -18,3 +18,8 @@
 
 # Ignore Rubmine Idea folder
 /.idea/*
+# Ignore application configuration
+/config/application.yml
+/config/secrets.yml
+public/uploads/
+/log/

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :confirm_logged_in, only: [:edit, :update, :destroy]#this line goes last!!!
-  
+
 
   # GET /users
   # GET /users.json
@@ -41,6 +41,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        # Tell the UserNotifierMailer to send a welcome email when user is created
+        UserNotifierMailer.send_signup_email(@user).deliver_now
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -48,6 +51,12 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+  end
+
+  # GET /users/1/edit
+  def edit
+    #implicit @user created because of link
   end
 
   # PATCH/PUT /users/1
@@ -82,7 +91,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points, :uid, :provider, :bio)
+      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email, :privileges, :user_level, :points, :uid, :provider, :bio, :image)
     end
 
     def confirm_logged_in
