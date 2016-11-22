@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/alexpeattie/heroku_secrets.git
+  revision: 717af8e0acf399bc88d2c8c1a7e230023942af0f
+  specs:
+    heroku_secrets (0.0.2)
+
+GIT
   remote: git://github.com/amatsuda/kaminari.git
   revision: 5c09979ee565e9580b8b84adb68cc12fb8f44e52
   specs:
@@ -364,6 +370,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   figaro
   fog
+  heroku_secrets!
   jbuilder (~> 2.5)
   jquery-rails
   kaminari!

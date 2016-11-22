@@ -46,6 +46,7 @@ gem 'figaro'
 gem 'aws-sdk', '~> 2.6', '>= 2.6.18'
 #Bit.ly
 gem 'bitly'
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
