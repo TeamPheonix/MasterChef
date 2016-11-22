@@ -16,6 +16,7 @@
     </div>
     <div class="col-md-offset-3 col-md-6">
       <%= form_tag(sessions_attempt_login_path) do %>
+      <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
 
           <div class="form-group">
             <label for="username">Username</label>

@@ -46,7 +46,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Login successful #{@user.user_name}."
     else
-      redirect_to sessions_login_path, notice: "Login failed ."
+      redirect_to sessions_login_path, notice: "LOGIN FAILED"
+      flash[:notice]
     end
   end
 end
