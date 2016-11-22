@@ -50,7 +50,7 @@ class SessionsController < ApplicationController
       flash[:notice]
       flash[:loginmessage] = "Login failed."
       # when the login failed, send out alert email
-      #UserNotifierMailer.send_loginerror_email(@user).deliver_now
+      UserNotifierMailer.send_loginerror_email(@user).deliver_now
       #redirect_to(sessions_login_path)
     end
   end

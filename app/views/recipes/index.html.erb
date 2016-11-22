@@ -30,7 +30,9 @@
                   <% end %>
                 <% end %>
               </td>
-              <td><%= recipe.user.user_name %></td>
+              <% if User.exists?(recipe.user_id) %>
+                <td><%= User.find(recipe.user_id).user_name %></td>
+              <% end %>
               <td><%= recipe.recipe_name %></td>
               <td><%= recipe.instructions %></td>
               <td><%= recipe.complexity %></td>
