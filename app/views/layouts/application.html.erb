@@ -16,11 +16,10 @@
 
     <div class="navbar-header">
       <div class="navbar-brand">
-        MasterChef
+        <%= link_to('MasterChef', root_path)%>
       </div>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to('Home',root_path)%></li>
       <li class="dropdown">
 	<li><%= link_to('Recipes', recipes_path)%></li>
 	<!--
@@ -33,12 +32,13 @@
         </ul>
 	-->
       </li>
-      <li><%= link_to('About',welcome_about_path)%></li>
       <li><%= link_to('Contact Us','#')%></li>
       <% if is_admin %>
       <li><%= link_to('UserList',users_path)%></li>
       <li><%= link_to('Tags', tags_path)%></li>
       <li><%= link_to('Tags-Recipe', tags_recipes_path)%></li>
+      <% else %>
+      <li><%= link_to('Tag Search', tags_path)%></li>
       <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">

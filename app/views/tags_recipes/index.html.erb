@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%if is_admin%>
 <h1>Tags Recipes</h1>
 
 <table>
@@ -13,7 +14,7 @@
 
   <tbody>
     <% @tags_recipes.each do |tags_recipe| %>
-    <% if tags_recipe.recipe.user_id == current_user.id || is_admin %>
+    <% if is_admin %>
       <tr>
         <td><%= tags_recipe.tag.tag_name %></td>
         <td><%= tags_recipe.recipe.recipe_name %></td>
@@ -28,4 +29,7 @@
 
 <br>
 
-<%= link_to 'New Tags Recipe', new_tags_recipe_path %>
+<%= link_to 'New Tags Recipe', new_tags_recipe_path %> |
+<%end%>
+
+<%= link_to 'Back to previous page', :back %>
