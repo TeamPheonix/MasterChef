@@ -7,7 +7,7 @@ class User < ApplicationRecord
 	has_many :recipes
 	# Validations
 	validates :user_name, presence: true, uniqueness: true
-	# validates :encrypted_password, presence: true, unless: self.password.present?
+	validates :encrypted_password, presence: true, unless: :password != nil
 	validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 	validates :email, uniqueness: true
   # Methods
