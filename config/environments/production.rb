@@ -67,7 +67,7 @@ Rails.application.configure do
    :port                 => 587,
    :user_name            => ENV['masterchefgroup3'],
    :password             => ENV['cmpt276phoenix'],
-   #:openssl_verify_mode  => 'none'
+   :openssl_verify_mode  => 'none',
    :authentication       => "plain",
    :enable_starttls_auto => true
   }
