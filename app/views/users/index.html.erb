@@ -24,14 +24,8 @@
                 <tr>
                   <th>User name</th>
                   <th>Encrypted Password</th>
-                  <th>First name</th>
-                  <th>Last name</th>
-                  <th>Email</th>
-                  <th>Privileges</th>
-                  <th>User level</th>
-                  <th>Points</th>
                   <th>View user</th>
-                  <th><%= link_to 'Create new user', new_user_path %></th>
+                  <th></th>
                 </tr>
                 </thead>
 
@@ -40,12 +34,6 @@
                     <tr>
                       <td><%= user.user_name %></td>
                       <td><%= user.encrypted_password %></td>
-                      <td><%= user.first_name %></td>
-                      <td><%= user.last_name %></td>
-                      <td><%= user.email %></td>
-                      <td><%= user.privileges %></td>
-                      <td><%= user.user_level %></td>
-                      <td><%= user.points %></td>
                       <td><%= link_to 'View user', user, {class: 'btn btn-default'} %></td>
                       <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     </tr>
