@@ -30,9 +30,8 @@
                   <% end %>
                 <% end %>
               </td>
-              <% if User.exists?(recipe.user_id) %>
-                <td><%= User.find(recipe.user_id).user_name %></td>
-              <% end %>
+              
+              <td><%= link_to recipe.user.user_name, recipe.user %></td>
               <td><%= recipe.recipe_name %></td>
               <td><%= recipe.instructions %></td>
               <td><%= recipe.complexity %></td>
