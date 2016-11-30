@@ -15,6 +15,12 @@ ActiveRecord::Schema.define(version: 20161121080913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "Measurements", force: :cascade do |t|
+    t.string   "measurement_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "ingredients", force: :cascade do |t|
     t.integer  "ingredient_id"
     t.integer  "recipe_id"
@@ -81,9 +87,9 @@ ActiveRecord::Schema.define(version: 20161121080913) do
     t.integer  "points"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "bio"
     t.string   "uid"
     t.string   "provider"
-    t.text     "bio"
     t.string   "image"
     t.string   "salt"
     t.string   "encrypted_password"

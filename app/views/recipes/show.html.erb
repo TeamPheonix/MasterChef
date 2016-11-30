@@ -84,8 +84,8 @@
   <!-- About the recipe-->
   <ul class="list-group">
     <li class="list-group-item"> <strong>Recipe:</strong> <%= @recipe.id %></li>
-    <li class="list-group-item"> <strong>User:</strong> <%= @recipe.user.user_name %></li>
-    <li class="list-group-item"> <strong>Recipe name:</strong>  <%= @recipe.recipe_name %> </li>
+    <li class="list-group-item"> <strong>User:</strong> <%= link_to @recipe.user.user_name, @recipe.user %></li>
+    <li class="list-group-item"> <strong>Recipe name:</strong> <%= @recipe.recipe_name %></li>
     <li class="list-group-item"> <strong>Instructions:</strong> <%= @recipe.instructions %></li>
     <li class="list-group-item"> <strong>Complexity:</strong> <%= @recipe.complexity %></li>
   </ul>
