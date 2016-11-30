@@ -6,8 +6,8 @@ class User < ApplicationRecord
 	# Associations
 	has_many :recipes
 	# Validations
+  validates :encrypted_password, presence: true, unless: ->(user){user.password.present?}
 	validates :user_name, presence: true, uniqueness: true
-	# validates :encrypted_password, presence: true, :if => (:password == nil)
 	validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 	validates :email, uniqueness: true
   # Methods

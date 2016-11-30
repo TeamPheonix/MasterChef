@@ -36,7 +36,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.user_level = 1
-    @user.privileges = 0 #0 is for basic user
+    if @user.privileges == nil
+      @user.privileges = 0 #0 is for basic user
+    end
     @user.points = 0
 
     respond_to do |format|
