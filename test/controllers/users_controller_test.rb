@@ -22,13 +22,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show user" do
-    get user_url(User.where(user_name: @user1.user_name).first.id)
+    get user_url(User.where(user_name: @user1.user_name).first)
     assert_response :success
   end
 
   test "should log in" do
     login(@user1.user_name, @user1.password)#one is admin
-    assert_redirect_to root_path
   end
 
   test "should redirect if not admin access user list" do
@@ -39,20 +38,20 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update user" do
     login(@user1.user_name, @user1.password)#one is admin
-    patch user_url(@user), params: { user: { first_name: "random"} }
+    patch user_url(User.where(user_name: @user1.user_name).first), params: { user: { first_name: "random"} }
     assert_redirected_to user_url(@user)
   end
 
   test "should destroy user if admin" do
     login(@user1.user_name, @user1.password)#one is admin
-    delete user_url(User.where(user_name: @user1.user_name).first.id)
+    delete user_url(User.where(user_name: @user1.user_name).first)
     assert_response :success
   end
 
   def login(user_name, password)
     # perform the actual login
     post sessions_attempt_login_path(:username => user_name, :password => password)
-    assert_redirect_to root_path
+    assert_redirected_to root_path
     # check the users's values in the session
     assert_not_nil session[:user_id]
     assert_equal session[:user_id], (User.where(user_name: user_name).first).id
