@@ -4,6 +4,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user1 = User.new(:email => "bob@b.b", :user_name => "admin", :password => "admin", :privileges => 1)
     @user2 = User.new(:email => "bob@bs.b", :user_name => "admfin", :password => "adfmin", :privileges => 0)
+    post users_url, params: { user: { :email => @user2.email, password: @user2.password, privileges: @user2.privileges, user_name: @user2.user_name} }
+    post users_url, params: { user: { :email => @user1.email, password: @user1.password, privileges: @user1.privileges, user_name: @user1.user_name} }
   end
 
   test "should get new" do
@@ -11,13 +13,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create two users" do
+  test "should create user" do
     assert_difference('User.count') do
-      post users_path, params: { user: { :email => @user1.email, password: @user1.password, privileges: @user1.privileges, user_name: @user1.user_name} }
-    end
-
-    assert_difference('User.count') do
-      post users_path, params: { user: { :email => @user2.email, password: @user2.password, privileges: @user2.privileges, user_name: @user2.user_name} }
+      post users_url, params: { user: { :email => "rando@r.r", password: "w/e", user_name: "meh"} }
     end
   end
 
@@ -37,15 +35,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    login(@user1.user_name, @user1.password)#one is admin
-    patch user_url(User.where(user_name: @user1.user_name).first), params: { user: { first_name: "random"} }
-    assert_redirected_to user_url(@user)
+    login(@user2.user_name, @user2.password)
+    patch user_url(User.find_by_user_name(@user2.user_name), params: { user: { first_name: "random"} })
+    assert_redirected_to user_url(User.find_by_user_name(@user2.user_name))
   end
 
   test "should destroy user if admin" do
     login(@user1.user_name, @user1.password)#one is admin
-    delete user_url(User.where(user_name: @user1.user_name).first)
-    assert_response :success
+    delete user_url(User.find_by_user_name(@user1.user_name))
+    assert_redirected_to root_path
   end
 
   def login(user_name, password)
