@@ -1,4 +1,6 @@
 class Recipe < ApplicationRecord
+  #Impressionist
+  is_impressionable :counter_cache => true
   #image uploading
   mount_uploader :image, ImageUploader
   # Associations
