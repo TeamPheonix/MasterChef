@@ -55,7 +55,7 @@
   <%= f.hidden_field :uid %>
 
   <div class="actions">
-    <% if current_page?('/users/new') %>
+    <% if request.fullpath.include? 'users' %>
         <div id="html_element"></div>
         <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
     <% else %>
