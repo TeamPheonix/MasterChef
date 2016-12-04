@@ -25,4 +25,14 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :have_permission
+
+  def verify_google_recptcha(response)
+    if Rails.env.production?
+      status = HTTParty.get("https://www.google.com/recaptcha/api/siteverify?secret=#{ENV['RECAPTCHA_SECRET_KEY']}&response=#{response}")
+    else
+      status = HTTParty.get("https://www.google.com/recaptcha/api/siteverify?secret=#{ENV['RECAPTCHA_SECRET_KEY']}&response=#{response}", :verify => false, format: :json)
+    end
+    status['success'] ? true : false
+  end
+  helper_method :verify_google_recptcha
 end
