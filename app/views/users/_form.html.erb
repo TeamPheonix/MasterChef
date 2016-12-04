@@ -56,8 +56,7 @@
 
   <div class="actions">
     <% if user.id == nil %>
-        <div class="g-recaptcha" data-sitekey="6Ld90QwUAAAAAHzSMFD28QaEzh2oIbrd_mgI-1q0"></div>
-
+        <div class="g-recaptcha" data-sitekey="<%= ENV['RECAPTCHA_SITE_KEY'] %>"></div>
         <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
     <% else %>
         <%= f.submit 'Save',{class: 'btn btn-primary'}   %>
