@@ -53,7 +53,18 @@
       <% end %>
     </div>
     <div class="col-lg-4">
-
+      <h2>Most Viewed</h2>
+      <% listOfRecipes = Recipe.limit(3).order('impressions_count').reverse %>
+      <% listOfRecipes.each do |recipe| %>
+          <a href="<%= recipe_path(recipe) %>" class="thumbnail">
+            <% if !recipe.image.blank? %>
+                <%= image_tag recipe.image_url(:thumb).to_s %>
+            <% else %>
+                <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+            <%= recipe.recipe_name %>
+          </a>
+      <% end %>
     </div>
   </div>
 </div>
