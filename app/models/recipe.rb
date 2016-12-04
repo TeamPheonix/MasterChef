@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
   #Impressionist
-  is_impressionable :counter_cache => true
+  is_impressionable :counter_cache => true, :unique => :request_hash
   #image uploading
   mount_uploader :image, ImageUploader
   # Associations
