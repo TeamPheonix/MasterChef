@@ -54,7 +54,7 @@
     </div>
     <div class="col-lg-4">
       <h2>Most Viewed</h2>
-      <% listOfRecipes = Recipe.limit(3).order('impressions_count') %>
+      <% listOfRecipes = Recipe.order('impressions_count DESC').limit(3) %>
       <% listOfRecipes.each do |recipe| %>
           <a href="<%= recipe_path(recipe) %>" class="thumbnail">
             <% if !recipe.image.blank? %>
