@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :confirm_logged_in, only: [:edit, :update, :destroy]#this line goes last!!!
+  before_action :delete_old_session, only: :new
 
 
   # GET /users
@@ -106,4 +107,12 @@ class UsersController < ApplicationController
         redirect_to (root_path)
       end
     end
+
+    def delete_old_session
+      if params[:linked_param]
+        session[:omniauth] = nil
+        session[:user_id] = nil
+      end
+    end
+
 end
