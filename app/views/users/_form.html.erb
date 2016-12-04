@@ -55,11 +55,14 @@
   <%= f.hidden_field :uid %>
 
   <div class="actions">
-    <% if user.id == nil %>
-        <div class="g-recaptcha" data-sitekey="<%= ENV['RECAPTCHA_SITE_KEY'] %>"></div>
+    <% if current_page?('/users/new') %>
+        <div id="html_element"></div>
         <%= f.submit 'Sign Up',{class: 'btn btn-primary'}   %>
     <% else %>
         <%= f.submit 'Save',{class: 'btn btn-primary'}   %>
     <% end %>
   </div>
 <% end %>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>

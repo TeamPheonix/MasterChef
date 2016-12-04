@@ -1,5 +1,11 @@
 <% content_for :for_head do %>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('html_element', {
+                'sitekey' : '<%= ENV['RECAPTCHA_SITE_KEY'] %>'
+            });
+        };
+    </script>
 <% end %>
 <body>
   <div class="container" id="big_container">
