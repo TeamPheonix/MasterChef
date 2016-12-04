@@ -9,6 +9,7 @@
     <thead>
       <tr>
         <th>Recipe</th>
+        <td>View Count</td>
         <th>Image</th>
         <th>User</th>
         <th>Recipe name</th>
@@ -21,6 +22,7 @@
     <% @recipes.each do |recipe| %>
             <tr>
               <td><%= recipe.id %></td>
+              <td><%= recipe.impressions_count %></td>
               <td>
                 <%= link_to recipe do %>
                   <% if !recipe.image.blank? %>
