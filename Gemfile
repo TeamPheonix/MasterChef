@@ -48,6 +48,10 @@ gem 'aws-sdk', '~> 2.6', '>= 2.6.18'
 gem 'bitly'
 # HTTParty
 gem 'httparty'
+#Bootstrap
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+# Impressionist
+gem 'impressionist'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
