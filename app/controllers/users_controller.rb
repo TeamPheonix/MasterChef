@@ -41,24 +41,37 @@ class UsersController < ApplicationController
       @user.privileges = 0 #0 is for basic user
     end
     @user.points = 0
-    # Recaptcha verification
-    status = verify_google_recptcha(params['g-recaptcha-response'])
-    respond_to do |format|
-      if status && @user.save
-      #if @user.save
-        # Tell the UserNotifierMailer to send a welcome email when user is created
-        UserNotifierMailer.send_signup_email(@user).deliver_now
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-        if !status
-          @user.errors[:base] << "Please solve the recaptcha."
+    # Depending if rails is in testing or not, enable/disable captcha
+    if !Rails.env.test?
+      # Recaptcha verification
+      status = verify_google_recptcha(params['g-recaptcha-response'])
+      respond_to do |format|
+        if status && @user.save
+          # Tell the UserNotifierMailer to send a welcome email when user is created
+          UserNotifierMailer.send_signup_email(@user).deliver_now
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+          if !status
+            @user.errors[:base] << "Please solve the recaptcha."
+          end
+        end
+      end
+    else
+      respond_to do |format|
+        if @user.save
+          # Tell the UserNotifierMailer to send a welcome email when user is created
+          UserNotifierMailer.send_signup_email(@user).deliver_now
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       end
     end
-
   end
 
   # GET /users/1/edit
