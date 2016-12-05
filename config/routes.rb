@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'recipe_image/new'
 
   get 'recipe_image/delete'
-
+  get 'recipes/:id/mail' => 'recipes#mail', :as => 'mail_recipe'
+  get 'recipes/:id/spam' => 'recipes#spam', :as => 'spam_recipe'
   get 'recipes/success'
   get 'recipes/failed'
   get 'recipes/index'

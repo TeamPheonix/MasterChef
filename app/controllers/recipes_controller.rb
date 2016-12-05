@@ -1,5 +1,19 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :mail, :spam]
+
+  def mail  #mail_recipe_path
+    UserNotifierMailer.newsletter(@recipe, current_user).deliver
+    redirect_to @recipe, notice: 'Email sent.'
+  end
+
+  def spam  # spam_recipe_path
+    #users = User.where( :newsletter => true)
+    users = User.all
+    users.each do | user |
+      UserNotifierMailer.newsletter(@recipe, user).deliver
+    end
+    redirect_to recipes_path, notice: 'Email sent.'
+  end
 
   # GET /recipes
   # GET /recipes.json
@@ -92,5 +106,3 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:recipe_name, :instructions, :complexity, :image)
     end
 end
-
-

@@ -14,7 +14,7 @@
         <th>Recipe name</th>
         <th>Instructions</th>
         <th>Complexity</th>
-        <th colspan="3">Options</th>
+        <th colspan="4">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -37,6 +37,7 @@
               <td><%= recipe.instructions %></td>
               <td><%= recipe.complexity %></td>
               <td><%= link_to 'Show Tags', recipe %></td>
+              <td><%= link_to 'Email Recipe', mail_recipe_path(recipe) %></td>
               <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
                 <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
                 <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -53,4 +54,3 @@
   <%= link_to 'Add New Tag to a Recipe', new_tags_recipe_path, {class: 'btn btn-default'}%>
 <% end %>
 -->
-
