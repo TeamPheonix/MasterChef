@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :mail, :spam]
 
   def mail  #mail_recipe_path
-    UserNotifierMailer.newsletter(@recipe, current_user).deliver
+    UserNotifierMailer.emailrecipe(@recipe, current_user).deliver
     redirect_to @recipe, notice: 'Email sent.'
   end
 

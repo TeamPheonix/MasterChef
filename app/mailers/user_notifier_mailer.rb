@@ -14,13 +14,14 @@ class UserNotifierMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Failed Login Alert')
   end
 
-  # Mail Recipe
-  #def mail
+  # Email Recipe to Current User Self
+  def emailrecipe(recipe, user)
+    @user = user
+    @recipe = recipe
+    mail(to: @user.email, subject: 'Your Chosen Recipe from MasterChef')
+  end
 
-    #mail(to: @user.email, subject: 'Weekly Recommended Recipes')
-  #end
-
-  # Newsletter mailer
+  # Newsletter mailer by Admin to All Users
   def newsletter(recipe, user)
     @user = user
     @recipe = recipe

@@ -14,7 +14,7 @@
         <th>Recipe name</th>
         <th>Instructions</th>
         <th>Complexity</th>
-        <th colspan="4">Options</th>
+        <th colspan="5">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -41,8 +41,11 @@
               <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
                 <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
                 <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+              <% if is_admin %>
+                <td><%= link_to 'Newsletter', spam_recipe_path(recipe) %></td>
+              <% end %>
             </tr>
-        <% end %>
     <% end %>
     </tbody>
   </table>
