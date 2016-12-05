@@ -38,7 +38,9 @@
             </p>
             <p>
               <!--Buttons-->
-              <%= link_to 'Email', mail_recipe_path(@recipes[accessCounter]), :class => 'btn btn-default btn-xs' %>
+              <% if current_user.present? %>
+                <%= link_to 'Email', mail_recipe_path(@recipes[accessCounter]), :class => 'btn btn-default btn-xs' %>
+              <% end %>
               <% if (current_user && @recipes[accessCounter].user_id == current_user.id )|| is_admin %>
                   <%= link_to 'Edit', edit_recipe_path(@recipes[accessCounter]), class: 'btn btn-warning btn-xs' %>
                   <%= link_to 'Destroy', @recipes[accessCounter], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
