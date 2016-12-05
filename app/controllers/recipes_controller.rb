@@ -30,8 +30,10 @@ class RecipesController < ApplicationController
         i = i+1
       end
       @recipes = Recipe.where(id: recipeid)
+      @tags_recipes = TagsRecipe.all
     else
       @recipes = Recipe.all
+      @tags_recipes = TagsRecipe.all
     end
   end
 
