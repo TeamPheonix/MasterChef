@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :mail, :spam]
+  # impressionist :unique => [:session_hash]
+  # impressionist actions: :show
 
   def mail  #mail_recipe_path
     UserNotifierMailer.emailrecipe(@recipe, current_user).deliver
@@ -36,10 +38,12 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    impressionist(@recipe)
     @tags_recipes = TagsRecipe.all
     @recipe_images = @recipe.recipe_images #returns an array of images for the current recipe
     @tags_recipe = TagsRecipe.new
     @tag = Tag.all
+    @recipe_rating = RecipeRating.all
   end
 
   # GET /recipes/new

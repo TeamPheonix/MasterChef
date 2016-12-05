@@ -28,7 +28,7 @@ class TagsRecipesController < ApplicationController
 
     respond_to do |format|
       if @tags_recipe.save
-        format.html { redirect_to @tags_recipe, notice: 'Tags recipe was successfully created.' }
+        format.html { redirect_to @tags_recipe, notice: 'Tags added.' }
         format.json { render :show, status: :created, location: @tags_recipe }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class TagsRecipesController < ApplicationController
   def destroy
     @tags_recipe.destroy
     respond_to do |format|
-      format.html { redirect_to tags_recipes_url, notice: 'Tags recipe was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Tag removed.' }
       format.json { head :no_content }
     end
   end

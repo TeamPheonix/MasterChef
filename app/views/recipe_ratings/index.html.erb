@@ -1,3 +1,4 @@
+<% if is_admin %>
 <p id="notice"><%= notice %></p>
 
 <h1>Recipe Ratings</h1>
@@ -31,3 +32,4 @@
 <br>
 
 <%= link_to 'New Recipe Rating', new_recipe_rating_path %>
+<% end %>

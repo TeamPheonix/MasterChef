@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :confirm_logged_in, only: [:edit, :update, :destroy]#this line goes last!!!
+  before_action :delete_old_session, only: :new
 
 
   # GET /users
@@ -36,19 +37,25 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.user_level = 1
-    @user.privileges = 0 #0 is for basic user
+    if @user.privileges == nil
+      @user.privileges = 0 #0 is for basic user
+    end
     @user.points = 0
-
+    # Recaptcha verification
+    status = verify_google_recptcha(params['g-recaptcha-response'])
     respond_to do |format|
-      if @user.save
+      if status && @user.save
+      # if @user.save
         # Tell the UserNotifierMailer to send a welcome email when user is created
         UserNotifierMailer.send_signup_email(@user).deliver_now
-
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        if !status
+          @user.errors[:base] << "Please solve the recaptcha."
+        end
       end
     end
 
@@ -56,7 +63,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    #implicit @user created because of link
+    #@user created because of before action
   end
 
   # PATCH/PUT /users/1
@@ -78,7 +85,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -100,4 +107,12 @@ class UsersController < ApplicationController
         redirect_to (root_path)
       end
     end
+
+    def delete_old_session
+      if params[:linked_param]
+        session[:omniauth] = nil
+        session[:user_id] = nil
+      end
+    end
+
 end
