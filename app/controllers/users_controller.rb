@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     status = verify_google_recptcha(params['g-recaptcha-response'])
     respond_to do |format|
       if status && @user.save
-      # if @user.save
+      #if @user.save
         # Tell the UserNotifierMailer to send a welcome email when user is created
         UserNotifierMailer.send_signup_email(@user).deliver_now
         format.html { redirect_to @user, notice: 'User was successfully created.' }
