@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ratings
   get 'recipe_image/new'
 
   get 'recipe_image/delete'
