@@ -21,11 +21,20 @@ class UserNotifierMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Your Chosen Recipe from MasterChef')
   end
 
-  # Newsletter mailer by Admin to All Users
+  # Newsletter mailer by Admin to All Users directly through website
   def newsletter(recipe, user)
     @user = user
     @recipe = recipe
     mail(to: @user.email, subject: 'Weekly Recommended Recipes from MasterChef')
+  end
+
+  # Newsletter mailer by Admin to All Users through rake task, run...
+  # $ rake send_email:newsletter2
+  # Once pushed to Heroku, run...
+  # $ heroku run rake send_email:newsletter2
+  def newsletter2(user)
+    @user = user
+    mail(to: @user.email, subject: 'Special Newsletter from MasterChef')
   end
 
 end
