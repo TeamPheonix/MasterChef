@@ -30,7 +30,7 @@
       <% listOfRecipes.each do |recipe| %>
           <a href="<%= recipe_path(recipe) %>" class="thumbnail">
             <% if !recipe.image.blank? %>
-                <%= image_tag recipe.image_url(:thumb).to_s %>
+                <%= image_tag recipe.image_url(:fb_fill_50).to_s %>
             <% else %>
                 <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
             <% end %>
@@ -44,7 +44,7 @@
       <% listOfRecipes.each do |recipe| %>
           <a href="<%= recipe_path(recipe) %>" class="thumbnail">
             <% if !recipe.image.blank? %>
-                <%= image_tag recipe.image_url(:thumb).to_s %>
+                <%= image_tag recipe.image_url(:fb_fill_50).to_s %>
             <% else %>
                 <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
             <% end %>
@@ -58,7 +58,7 @@
       <% listOfRecipes.each do |recipe| %>
           <a href="<%= recipe_path(recipe) %>" class="thumbnail">
             <% if !recipe.image.blank? %>
-                <%= image_tag recipe.image_url(:thumb).to_s %>
+                <%= image_tag recipe.image_url(:fb_fill_50).to_s %>
             <% else %>
                 <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
             <% end %>
