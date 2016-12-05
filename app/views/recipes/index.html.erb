@@ -3,6 +3,41 @@
 <div class="page-header">
   <h1>Recipes</h1>
 </div>
+<div class="container">
+
+  <% outerLoop = (@recipes.length/4.0).ceil %>
+  <% innerLoopCounter = 0 %>
+  <% accessCounter = 0 %>
+  <% outerLoop.times do %>
+    <div class="row">
+
+    <% until innerLoopCounter == 4 || @recipes[accessCounter].nil? do %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%= link_to @recipes[accessCounter] do %>
+            <% if !@recipes[accessCounter].image.blank? %>
+                <%= image_tag @recipes[accessCounter].image_url(:fb_small).to_s %>
+            <% else %>
+                <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+          <% end %>
+          <div class="caption">
+            <h5><%= @recipes[accessCounter].recipe_name %></h5>
+            <p>
+              <%= link_to 'Show Tags', @recipes[accessCounter], :class => 'btn btn-default btn-xs'  %>
+              <%= link_to 'Email Recipe', mail_recipe_path(@recipes[accessCounter]), :class => 'btn btn-default btn-xs' %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% innerLoopCounter = innerLoopCounter + 1 %>
+      <% accessCounter += 1 %>
+    <% end %>
+      <% innerLoopCounter = 0 %>
+
+    </div>
+  <% end %>
+</div>
 
 <div class="container">
   <table class="table table-bordered">
@@ -32,7 +67,7 @@
                   <% end %>
                 <% end %>
               </td>
-              
+
               <td><%= link_to recipe.user.user_name, recipe.user %></td>
               <td><%= recipe.recipe_name %></td>
               <td><%= recipe.instructions %></td>
