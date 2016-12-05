@@ -5,6 +5,7 @@ class Recipe < ApplicationRecord
   mount_uploader :image, ImageUploader
   # Associations
   belongs_to :user
+  has_many :recipe_ratings, :dependent => :delete_all
   has_many :tags_recipes, :dependent => :delete_all
   has_many :tags, -> {uniq}, :through => :tags_recipes
   has_many :recipe_images

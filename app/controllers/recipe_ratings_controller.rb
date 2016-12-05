@@ -28,7 +28,7 @@ class RecipeRatingsController < ApplicationController
 
     respond_to do |format|
       if @recipe_rating.save
-        format.html { redirect_to @recipe_rating, notice: 'Recipe rating was successfully created.' }
+        format.html { redirect_to :back, notice: 'Comment added.' }
         format.json { render :show, status: :created, location: @recipe_rating }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class RecipeRatingsController < ApplicationController
   def destroy
     @recipe_rating.destroy
     respond_to do |format|
-      format.html { redirect_to recipe_ratings_url, notice: 'Recipe rating was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Comment removed' }
       format.json { head :no_content }
     end
   end

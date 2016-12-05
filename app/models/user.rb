@@ -5,6 +5,7 @@ class User < ApplicationRecord
 	mount_uploader :image, ImageUploader
 	# Associations
 	has_many :recipes, dependent: :destroy
+	has_many :recipe_ratings, :dependent => :delete_all
 	# Validations
   validates :encrypted_password, presence: true, unless: ->(user){user.password.present?}
 	validates :user_name, presence: true, uniqueness: true

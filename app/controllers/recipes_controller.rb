@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
     @recipe_images = @recipe.recipe_images #returns an array of images for the current recipe
     @tags_recipe = TagsRecipe.new
     @tag = Tag.all
+    @recipe_rating = RecipeRating.all
   end
 
   # GET /recipes/new
