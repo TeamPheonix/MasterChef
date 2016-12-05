@@ -152,7 +152,7 @@
 </p>
 <br>
 <% if current_user %>
-  <form class="new_recipe_rating" id="new_recipe_rating" action="/recipe_ratings" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="HwTVPG6rAMJkCaLtx949QGw/Y8O/ZBort+PY38JS9wx6OesRd4zNG/ywnOkW9Mf75RSIWWDg7fnxS6ljXkWu2A==" />
+  <form class="new_recipe_rating" id="new_recipe_rating" action="/recipe_ratings" accept-charset="UTF-8" method="post"><%= token_tag %><input type="hidden" name="authenticity_token" value="HwTVPG6rAMJkCaLtx949QGw/Y8O/ZBort+PY38JS9wx6OesRd4zNG/ywnOkW9Mf75RSIWWDg7fnxS6ljXkWu2A==" />
 
   <input type="hidden" name="recipe_rating[user_id]" id="recipe_rating_user_id" value="<%= current_user.id %>" />
   <input type="hidden" name="recipe_rating[recipe_id]" id="recipe_rating_recipe_id" value="<%= @recipe.id %>"/>
