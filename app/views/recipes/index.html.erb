@@ -16,7 +16,7 @@
         <div class="thumbnail">
           <%= link_to @recipes[accessCounter] do %>
             <% if !@recipes[accessCounter].image.blank? %>
-                <%= image_tag @recipes[accessCounter].image_url(:fb_small).to_s %>
+                <%= image_tag @recipes[accessCounter].image_url(:fb_fill_200).to_s %>
             <% else %>
                 <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
             <% end %>
