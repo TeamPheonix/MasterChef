@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Editing <%= @user.user_name %></title>
-  </head>
-
-  <body>
-    <div class="container" id="big_container">
-      <div class="page-header">
-        <% if session[:omniauth] %>
-          <h1>Register via <%= session[:omniauth]["provider"] %></h1>
-          <% else %>
-          <h1>Register</h1>
-        <% end %>
-      </div>
-
-      <div class="col-lg-offset-3 col-lg-6">
-        <%= render 'form', user: @user %>
-      </div>
-		</div>
-  </body>
-</html>
+<% content_for :for_head do %>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('html_element', {
+                'sitekey' : '<%= ENV['RECAPTCHA_SITE_KEY'] %>'
+            });
+        };
+    </script>
+<% end %>
+<body>
+  <div class="container" id="big_container">
+    <div class="page-header">
+      <% if session[:omniauth] %>
+        <h1>Register via <%= session[:omniauth]["provider"] %></h1>
+        <% else %>
+        <h1>Register</h1>
+      <% end %>
+    </div>
+    <div class="col-lg-offset-3 col-lg-6">
+      <%= render 'form', user: @user %>
+    </div>
+  </div>
+</body>

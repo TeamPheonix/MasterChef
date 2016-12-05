@@ -21,8 +21,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="dropdown">
-	<li><%= link_to('Recipes', recipes_path)%></li>
-	<!--
+	    <li><%= link_to('Recipes', recipes_path)%></li>
+      <!--
         <a href="/recipes" class="dropdown-toggle" data-toggle="dropdown">Recipes <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a> Sort by:</a></li>
@@ -30,13 +30,12 @@
           <li><%= link_to 'Difficulty', '#' %></li>
           <li><%= link_to 'Rating', '#' %></li>
         </ul>
-	-->
-      </li>
+    -->
       <li><%= link_to('Contact Us','#')%></li>
       <% if is_admin %>
-      <li><%= link_to('UserList',users_path)%></li>
-      <li><%= link_to('Tags', tags_path)%></li>
-      <li><%= link_to('Tags-Recipe', tags_recipes_path)%></li>
+        <li><%= link_to('UserList',users_path)%></li>
+        <li><%= link_to('Tags', tags_path)%></li>
+        <li><%= link_to('Tags-Recipe', tags_recipes_path)%></li>
       <% else %>
       <li><%= link_to('Tag Search', tags_path)%></li>
       <% end %>
@@ -57,9 +56,9 @@
           <li><%= link_to('Log Out',sessions_destroy_path)%></li>
           <li><%= link_to 'Create New Recipe', new_recipe_path %></li>
       <% else %>
-          <li> <%= link_to 'Login Facebook','/auth/facebook' %></li> <!-- path start with a '/' otherwise routing errors...-->
+          <li><%= link_to 'Login Facebook','/auth/facebook' %></li> <!-- path has to start with a '/' otherwise routing errors...-->
           <li><%= link_to 'Login', sessions_login_path %></li>
-          <li><%= link_to 'Sign Up',sessions_psuedo_destroy_path %></li>
+          <li><%= link_to 'Sign Up', new_user_path(linked_param: true) %></li>
       <% end %>
     </ul>
   </nav>
