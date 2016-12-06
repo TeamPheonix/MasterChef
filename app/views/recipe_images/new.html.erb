@@ -1,11 +1,17 @@
-<%= form_for(@recipe_image,html: {multipart: true}) do |f| %>
-
-    <p>Select Image</p>
-    <div class="form-group">
-      <%= f.file_field :image %>
+<% if flash[:recipe_image_create] %>
+    <div class="container">
+      <div class="alert alert-warning alert-dismissable">
+        <strong><%= flash[:recipe_image_create]%></strong>
+      </div>
     </div>
+<% end %>
 
-    <%= hidden_field_tag 'recipe_id', @recipe_id%>
-    <%= f.submit 'Save',{class: 'btn btn-primary'}   %>
+<%= form_for(@recipe_image, html: {multipart: true}) do |f| %>
+  <p>Select Image</p>
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
 
+  <%= hidden_field_tag 'recipe_id', @recipe_id %>
+  <%= f.submit 'Save',{class: 'btn btn-primary'}   %>
 <% end %>

@@ -2,7 +2,6 @@ class RecipeImagesController < ApplicationController
   def new
     @recipe_image = RecipeImage.new
     @recipe_id = params[:recipe_id]
-
     if current_user != Recipe.find(@recipe_id).user
       redirect_to recipe_path(@recipe_id)
     end
@@ -10,14 +9,14 @@ class RecipeImagesController < ApplicationController
 
   def create
     @recipe_image = RecipeImage.new(recipe_image_params)
-    recipe = Recipe.find(params[:recipe_id])
-
+    @recipe_id = params[:recipe_id]
+    recipe = Recipe.find(@recipe_id)
     if recipe.recipe_images << @recipe_image
       redirect_to recipe_path(recipe)
     else
-      redirect_to root_path
+      flash[:recipe_image_create] = 'Please choose an image.'
+      render 'recipe_images/new'
     end
-    # need something like current_user
   end
 
   def destroy
@@ -32,6 +31,6 @@ class RecipeImagesController < ApplicationController
 
   private
     def recipe_image_params
-      params.require(:recipe_image).permit(:image)
+      params.permit(:image)
     end
 end
