@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :ratings
   get 'recipe_image/new'
-
   get 'recipe_image/delete'
   get 'recipes/:id/mail' => 'recipes#mail', :as => 'mail_recipe'
   get 'recipes/:id/spam' => 'recipes#spam', :as => 'spam_recipe'
@@ -17,7 +15,8 @@ Rails.application.routes.draw do
   get '/sessions/login'
   post 'sessions/create'
   post '/sessions/attempt_login'
-
+  # Resources
+  resources :ratings
   resources :users
   resources :tags
   resources :tags_recipes
@@ -25,5 +24,7 @@ Rails.application.routes.draw do
   resources :recipes
   resources :recipe_images
   resources :recipe_ratings
+  # invalid routes
+  match "*path" => redirect("/")
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
