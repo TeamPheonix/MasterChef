@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: MasterChef_development
-  username: MasterChef
-  password: masterchef
+  database: cmpt276
+  username: cmpt276
+  password: thecmpt276Passw0rd
   host: localhost
 
   # The specified database role being used to connect to postgres.
@@ -60,9 +60,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: MasterChef_test
-  username: MasterChef
-  password: masterchef
+  database: cmp276_test
+  username: cmpt276
+  password: thecmpt276Passw0rd
   host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
