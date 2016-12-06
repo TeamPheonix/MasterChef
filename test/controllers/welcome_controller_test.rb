@@ -11,10 +11,4 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should get recipe index if admin" do
-  #   @user = User.new(user_name: 'admin', password: 'admin', email: 'admin@admin.com', first_name: 'admin', last_name:'admin', privileges:1)
-  #   get recipe_path
-  #   assert_response :success
-  # end
-
 end
