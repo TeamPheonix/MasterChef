@@ -15,6 +15,21 @@ ActiveRecord::Schema.define(version: 20161206034932) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "time"
+    t.string   "activity_type"
+    t.string   "location"
+    t.string   "group_owner"
+    t.string   "member1"
+    t.string   "member2"
+    t.string   "member3"
+    t.string   "member4"
+    t.string   "description"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -87,10 +102,10 @@ ActiveRecord::Schema.define(version: 20161206034932) do
     t.string   "recipe_name"
     t.string   "instructions"
     t.integer  "complexity"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "image"
-    t.integer  "impressions_count"
+    t.integer  "impressions_count", default: 0
   end
 
   create_table "tags", force: :cascade do |t|
