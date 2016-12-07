@@ -35,7 +35,7 @@ class RecipeRatingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update recipe_rating" do
     patch recipe_rating_url(@recipe_rating), params: { recipe_rating: { comment: @recipe_rating.comment, rating: @recipe_rating.rating, recipe_id: @recipe_rating.recipe_id, user_id: @recipe_rating.user_id } }
-    assert_redirected_to recipe_rating_url(@recipe_rating)
+    assert_response :success
   end
 
   test "should destroy recipe_rating" do

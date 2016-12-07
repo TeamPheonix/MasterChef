@@ -120,10 +120,43 @@
 
 
 <% if current_user && (current_user == @recipe.user) %>
-    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %> 
+    <%= link_to 'Add New Image', new_recipe_image_path(:recipe_id => @recipe.id), {class: 'btn btn-primary'} %> |
 <% end %>
 
 <% if (current_user && @recipe.user.id == current_user.id )|| is_admin %>
     <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <% end %>
 <%= link_to 'Back', recipes_path %>
+<% if current_user.present? %>
+  | <%= link_to 'Email Recipe', mail_recipe_path(@recipe) %>
+<% end %>
+<br><br><br>
+
+<p>
+  <strong>Comments</strong>
+  <table>
+    <% @recipe_rating.each do |recipe_rating| %>
+      <% if recipe_rating.recipe_id == @recipe.id %>
+      <tr><td>
+	<%= link_to recipe_rating.user.user_name, recipe_rating.user %>
+        <% if recipe_rating.rating != nil %>'s rating: <%= recipe_rating.rating %><%end%>
+        <% if recipe_rating.user_id == current_user.id || is_admin %>
+      	<%= link_to 'Delete', recipe_rating, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
+	<br>
+	<%= recipe_rating.comment %>
+        <br>
+      </td></tr>
+      <% end %>
+    <% end %>
+  </table>
+</p>
+<br>
+<% if current_user %>
+  <form class="new_recipe_rating" id="new_recipe_rating" action="/recipe_ratings" accept-charset="UTF-8" method="post"><%= token_tag %><input type="hidden" name="authenticity_token" value="HwTVPG6rAMJkCaLtx949QGw/Y8O/ZBort+PY38JS9wx6OesRd4zNG/ywnOkW9Mf75RSIWWDg7fnxS6ljXkWu2A==" />
+
+  <input type="hidden" name="recipe_rating[user_id]" id="recipe_rating_user_id" value="<%= current_user.id %>" />
+  <input type="hidden" name="recipe_rating[recipe_id]" id="recipe_rating_recipe_id" value="<%= @recipe.id %>"/>
+  <textarea rows="4" cols="50" name="recipe_rating[comment]" id="recipe_rating_comment" ></textarea><br>
+  <input type="submit" name="commit" value="Add Comment" />
+  </form>
+<% end %>

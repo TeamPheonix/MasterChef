@@ -3,53 +3,67 @@
 <div class="page-header">
   <h1>Recipes</h1>
 </div>
-
 <div class="container">
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Recipe</th>
-        <th>Image</th>
-        <th>User</th>
-        <th>Recipe name</th>
-        <th>Instructions</th>
-        <th>Complexity</th>
-        <th colspan="3">Options</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @recipes.each do |recipe| %>
-            <tr>
-              <td><%= recipe.id %></td>
-              <td>
-                <%= link_to recipe do %>
-                  <% if !recipe.image.blank? %>
-                      <%= image_tag recipe.image_url(:thumb).to_s %>
-                  <% else %>
-                      <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+
+  <% outerLoop = (@recipes.length/4.0).ceil %>
+  <% innerLoopCounter = 0 %>
+  <% accessCounter = 0 %>
+  <% outerLoop.times do %>
+    <div class="row">
+
+    <% until innerLoopCounter == 4 || @recipes[accessCounter].nil? do %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%= link_to @recipes[accessCounter] do %>
+            <% if !@recipes[accessCounter].image.blank? %>
+                <%= image_tag @recipes[accessCounter].image_url(:fb_fill_200).to_s %>
+            <% else %>
+                <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+          <% end %>
+          <div class="caption">
+            <h5><%= @recipes[accessCounter].recipe_name %></h5>
+            <p>
+              <!--Tags-->
+              Tags:<% @found = 0 %>
+              <% @tags_recipes.each do |tags_recipe| %>
+                  <% if tags_recipe.recipe_id == @recipes[accessCounter].id %>
+                      <% @found = 1 %>
+                      <a href="/recipes?tag[]=<%= tags_recipe.tag.id %>"><%= tags_recipe.tag.tag_name %> </a>
                   <% end %>
-                <% end %>
-              </td>
-              
-              <td><%= link_to recipe.user.user_name, recipe.user %></td>
-              <td><%= recipe.recipe_name %></td>
-              <td><%= recipe.instructions %></td>
-              <td><%= recipe.complexity %></td>
-              <td><%= link_to 'Show Tags', recipe %></td>
-              <% if (current_user && recipe.user_id == current_user.id )|| is_admin %>
-                <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-                <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-        <% end %>
+              <% end %>
+              <% if @found == 0 %>
+                  <i> None </i>
+              <% end %>
+            </p>
+            <p>
+              <!--Buttons-->
+              <% if current_user.present? %>
+                <%= link_to 'Email', mail_recipe_path(@recipes[accessCounter]), :class => 'btn btn-default btn-xs' %>
+              <% end %>
+              <% if (current_user && @recipes[accessCounter].user_id == current_user.id )|| is_admin %>
+                  <%= link_to 'Edit', edit_recipe_path(@recipes[accessCounter]), class: 'btn btn-warning btn-xs' %>
+                  <%= link_to 'Destroy', @recipes[accessCounter], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+              <% end %>
+              <% if is_admin %>
+                  <%= link_to 'Newsletter', spam_recipe_path(@recipes[accessCounter]),class: 'btn btn-default btn-xs' %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% innerLoopCounter = innerLoopCounter + 1 %>
+      <% accessCounter += 1 %>
     <% end %>
-    </tbody>
-  </table>
+      <% innerLoopCounter = 0 %>
+
+    </div>
+  <% end %>
 </div>
-<br>
+
 <!-- going to be removed?
 <% if current_user || is_admin %>
   <%= link_to 'New Recipe', new_recipe_path, {class: 'btn btn-default'} %> ||
   <%= link_to 'Add New Tag to a Recipe', new_tags_recipe_path, {class: 'btn btn-default'}%>
 <% end %>
 -->
-

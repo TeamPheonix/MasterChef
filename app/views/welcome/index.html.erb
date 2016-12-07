@@ -20,3 +20,51 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <!--Display the new recipes-->
+    <div class="col-lg-4">
+      <h2>New Recipes</h2>
+      <% listOfRecipes = Recipe.last(3) %>
+      <% listOfRecipes.each do |recipe| %>
+          <a href="<%= recipe_path(recipe) %>" class="thumbnail">
+            <% if !recipe.image.blank? %>
+                <%= image_tag recipe.image_url(:fb_fill_50).to_s %>
+            <% else %>
+                <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+            <%= recipe.recipe_name %>
+          </a>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+      <h2>Try These</h2>
+      <% listOfRecipes = Recipe.order("RANDOM()").limit(3) %>
+      <% listOfRecipes.each do |recipe| %>
+          <a href="<%= recipe_path(recipe) %>" class="thumbnail">
+            <% if !recipe.image.blank? %>
+                <%= image_tag recipe.image_url(:fb_fill_50).to_s %>
+            <% else %>
+                <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+            <%= recipe.recipe_name %>
+          </a>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+      <h2>Most Viewed</h2>
+      <% listOfRecipes = Recipe.order('impressions_count DESC').limit(3) %>
+      <% listOfRecipes.each do |recipe| %>
+          <a href="<%= recipe_path(recipe) %>" class="thumbnail">
+            <% if !recipe.image.blank? %>
+                <%= image_tag recipe.image_url(:fb_fill_50).to_s %>
+            <% else %>
+                <%= image_tag '/recipePlaceholder.jpg', style: 'height:50px; width:50px'%>
+            <% end %>
+            <%= recipe.recipe_name %>
+          </a>
+      <% end %>
+    </div>
+  </div>
+</div>
