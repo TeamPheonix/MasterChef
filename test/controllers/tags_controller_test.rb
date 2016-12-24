@@ -4,11 +4,10 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user1 = User.new(:email => "admin@a.a", :user_name => "tagAdmin", :password => "tagAdmin", :privileges => 1)
     post users_url, params: { user: { :email => @user1.email, password: @user1.password, privileges: @user1.privileges, user_name: @user1.user_name} }
-    login("tagAdmin","tagAdmin")
+    login(@user1.user_name,@user1.password)
 
     @tag = Tag.new(:approved => true, :tag_name => "testTag")
     post tags_url, params: { tag: { approved: @tag.approved, tag_name: @tag.tag_name } }
-    #assert_response :success
     @tag = Tag.where(tag_name: "testTag").first
   end
 

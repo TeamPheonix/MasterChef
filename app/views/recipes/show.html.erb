@@ -140,7 +140,7 @@
       <tr><td>
 	<%= link_to recipe_rating.user.user_name, recipe_rating.user %>
         <% if recipe_rating.rating != nil %>'s rating: <%= recipe_rating.rating %><%end%>
-        <% if recipe_rating.user_id == current_user.id || is_admin %>
+        <% if (current_user && recipe_rating.user_id == current_user.id) || is_admin %>
       	<%= link_to 'Delete', recipe_rating, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
 	<br>
 	<%= recipe_rating.comment %>
