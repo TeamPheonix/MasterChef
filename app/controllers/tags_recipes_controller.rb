@@ -54,10 +54,14 @@ class TagsRecipesController < ApplicationController
   # DELETE /tags_recipes/1
   # DELETE /tags_recipes/1.json
   def destroy
-    @tags_recipe.destroy
-    respond_to do |format|
-      format.html { redirect_to :back, notice: 'Tag removed.' }
-      format.json { head :no_content }
+    if current_user && (current_user == @recipe.user) || is_admin
+      @tags_recipe.destroy
+      respond_to do |format|
+        format.html { redirect_to :back, notice: 'Tag removed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to (root_path)
     end
   end
 
