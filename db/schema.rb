@@ -15,19 +15,10 @@ ActiveRecord::Schema.define(version: 20161206034932) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "groups", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "time"
-    t.string   "activity_type"
-    t.string   "location"
-    t.string   "group_owner"
-    t.string   "member1"
-    t.string   "member2"
-    t.string   "member3"
-    t.string   "member4"
-    t.string   "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "Measurements", force: :cascade do |t|
+    t.string   "measurement_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -133,9 +124,9 @@ ActiveRecord::Schema.define(version: 20161206034932) do
     t.integer  "points"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "bio"
     t.string   "uid"
     t.string   "provider"
-    t.text     "bio"
     t.string   "image"
     t.string   "salt"
     t.string   "encrypted_password"
